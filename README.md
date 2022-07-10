@@ -1,5 +1,6 @@
 # ooad
-
+## authors
+Maximilian Knodt, Markus Kirkesler and Jannis Gaertner
 
 
 ## Getting started
