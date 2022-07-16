@@ -1,0 +1,48 @@
+/* CSS classes for root */
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('../fonts/Minecraft.ttf');
+}
+
+.button {
+    -fx-background-radius: 0;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #212D5B;
+}
+
+.title-text {
+    -fx-text-fill: #ffffff;
+}
+
+/* CSS classes for menu scene*/
+.menu-main {
+    -fx-background-image: url("../assets/menu-background.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: stretch;
+}
+
+
+
+/* CSS classes for game scene */
+.main-anchor-pane {
+    -fx-background-image: url("../assets/background.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: stretch;
+    -fx-background-position: center center;
+}
+
+.bottom-anchor-pane {
+    -fx-background-color: #212D5B;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-padding: 0 0em 0 0em;
+}
+
+.main-anchor-pane2 {
+    -fx-background-image: url("../assets/Insel.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 600 300;
+    -fx-background-position: center center;
+}
