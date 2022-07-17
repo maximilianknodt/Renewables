@@ -8,11 +8,12 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hsos.gaertner_kirkesler_knodt.game.ConstructableController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="110.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hsos.gaertner_kirkesler_knodt.game.ConstructableController">
    <children>
-      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="125.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="140.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="0.0" />
             <ImageView nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
@@ -24,28 +25,37 @@
                </cursor>
             </ImageView>
             <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="0.0" />
-            <Text fx:id="energyProducerTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Solaranlage">
+            <Text fx:id="energyProducerTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Energieproduzent">
                <VBox.margin>
-                  <Insets bottom="5.0" top="5.0" />
-               </VBox.margin></Text>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Text>
             <HBox prefHeight="0.0" prefWidth="0.0">
                <children>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/icons/coin.png" />
+                     </image></ImageView>
                   <Region prefWidth="1000.0" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" />
                </children>
                <padding>
-                  <Insets bottom="5.0" top="5.0" />
+                  <Insets bottom="5.0" />
                </padding>
             </HBox>
             <HBox prefHeight="0.0" prefWidth="0.0">
                <children>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/icons/energy.png" />
+                     </image></ImageView>
                   <Region prefWidth="1000.0" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" />
                </children>
                <padding>
-                  <Insets bottom="5.0" top="5.0" />
+                  <Insets bottom="5.0" />
                </padding>
             </HBox>
          </children>
