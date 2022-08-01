@@ -1,6 +1,6 @@
 package de.hsos.gaertner_kirkesler_knodt.game
 
-object SolarPark : EnergyProducer() {
+object WindFarm : EnergyProducer() {
     override var level: Int = 0
         set(value) {
             if(value < 0){
@@ -11,19 +11,19 @@ object SolarPark : EnergyProducer() {
             }
         }
 
-    override var cost: Int = 100000
+    override var cost: Int = 110000
         set(value){
-            if(value < 40000) field = 40000
-            if(value > 100000) field = 100000
+            if(value < 50000) field = 50000
+            if(value > 110000) field = 110000
         }
 
     override fun energyOutput(): Int {
         var energy = 0
         when(level){
             0 -> energy = 0
-            1 -> energy = 50000
-            2 -> energy = 60000
-            3 -> energy = 75000
+            1 -> energy = 60000
+            2 -> energy = 80000
+            3 -> energy = 90000
         }
         return energy
     }
@@ -32,9 +32,9 @@ object SolarPark : EnergyProducer() {
         var cost = 0
         when(level){
             0 -> cost = 0
-            1 -> cost = 100000
-            2 -> cost = 40000
-            3 -> cost = 60000
+            1 -> cost = 110000
+            2 -> cost = 60000
+            3 -> cost = 50000
         }
         return cost
     }
@@ -42,9 +42,9 @@ object SolarPark : EnergyProducer() {
     // EARTHQUAKE, TZUNAMI, FIRE, UFO, GIANT_LIZARD, ERUPTION
     override fun destroy(incident: Incident) {
         when(incident) {
-            Incident.EARTHQUAKE -> this.level -= 1
-            Incident.TZUNAMI -> this.level = 0
-            Incident.FIRE, Incident.GIANT_LIZARD -> this.severityImpact(incident)
+            Incident.UFO -> this.level -= 1
+            Incident.TZUNAMI -> this.level -= 2
+            Incident.EARTHQUAKE, Incident.GIANT_LIZARD -> this.severityImpact(incident)
             else -> println("No Impact")
         }
         if(this.level == 0) TODO()

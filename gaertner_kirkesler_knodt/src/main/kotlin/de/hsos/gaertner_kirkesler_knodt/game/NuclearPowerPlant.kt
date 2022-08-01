@@ -21,9 +21,9 @@ object NuclearPowerPlant : EnergyProducer() {
         var energy = 0
         when(SolarPark.level){
             0 -> energy = 0
-            1 -> energy = 50000
-            2 -> energy = 60000
-            3 -> energy = 75000
+            1 -> energy = 500000
+            2 -> energy = 575000
+            3 -> energy = 750000
         }
         return energy
     }
@@ -38,11 +38,12 @@ object NuclearPowerPlant : EnergyProducer() {
         return cost
     }
 
+    // EARTHQUAKE, TZUNAMI, FIRE, UFO, GIANT_LIZARD, ERUPTION
     override fun destroy(incident: Incident) {
         when(incident) {
             Incident.UFO -> this.level -= 2
             Incident.TZUNAMI -> this.level = 0
-            Incident.FIRE, Incident.GIANT_LIZARD -> this.severityImpact(incident)
+            Incident.EARTHQUAKE, Incident.GIANT_LIZARD, Incident.ERUPTION -> this.severityImpact(incident)
             else -> println("No Impact")
         }
         if(this.level == 0) TODO()
@@ -52,12 +53,11 @@ object NuclearPowerPlant : EnergyProducer() {
         TODO("Not yet implemented")
     }
 
-
     private fun severityImpact(inc: Incident){
         when(inc.severity){
-            Severity.LOW -> this.level -=1
-            Severity.MEDIUM -> this.level -=2
-            Severity.HIGH -> this.level -= 3
+            Severity.MEDIUM -> this.level -=1
+            Severity.HIGH -> this.level -= 2
+            else -> println("No Impact")
         }
     }
 }
