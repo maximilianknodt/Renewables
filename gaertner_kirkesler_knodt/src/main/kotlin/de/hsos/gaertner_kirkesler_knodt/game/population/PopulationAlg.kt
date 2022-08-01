@@ -1,14 +1,19 @@
 package de.hsos.gaertner_kirkesler_knodt.game.population
 
 /**
- *
+ * Interface zur Bevoelkerungs-Berechnung je Runde. Verfolgt das Strategy-Pattern, sodass die Variante der Berechnung
+ * austauschbar ist. Realisierende Klassen müssen die Methode [evolve] mit ihrem eigenen Berechnungsalgorithmus
+ * implementieren.
  *
  * @author Gaertner
  */
 interface PopulationAlg {
-    fun evolve(round: Int, current: Int, incident: Incident): Int;
-}
 
-class Incident {
-
+    /**
+     * @param round aktuelle Runde der Simulation
+     * @param current aktuelle Populationsgroesse
+     * @param incident aufgetretenes Ereignis, das Einfluss auf Bevoelkerungsentwicklung haben koennte
+     * @return neue Populationsgroesse nach dieser Runde
+     */
+    fun evolve(round: Int, current: Int, incident: Incident?): Int;
 }

@@ -12,7 +12,7 @@ class LinearPopulation(
     private val change: Int = 1000,
 ) : PopulationAlg {
 
-    override fun evolve(round: Int, current: Int, incident: Incident): Int {
+    override fun evolve(round: Int, current: Int, incident: Incident?): Int {
         var newPopulation = current
 
         // TODO: incidentHandling (if there is an incident)

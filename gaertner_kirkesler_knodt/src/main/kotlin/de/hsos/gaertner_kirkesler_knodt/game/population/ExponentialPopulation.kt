@@ -18,7 +18,7 @@ class ExponentialPopulation(
     private val startingPopulation: Int = 100
 ) : PopulationAlg {
 
-    override fun evolve(round: Int, current: Int, incident: Incident): Int {
+    override fun evolve(round: Int, current: Int, incident: Incident?): Int {
 
         if(current > 0 && base > 0){
             // Rundenzaehler Aequivalent zu aktueller Bevoelkerungszahl ermitteln

@@ -16,7 +16,7 @@ class StagnatingPopulation(
         require(strength in 0.0..1.0) { "strength must be in range [0.0, 1.0]" }
     }
 
-    override fun evolve(round: Int, current: Int, incident: Incident): Int {
+    override fun evolve(round: Int, current: Int, incident: Incident?): Int {
         var newPopulation = current
 
         // TODO: add incident handling
