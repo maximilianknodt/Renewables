@@ -11,9 +11,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:controller="de.hsos.gaertner_kirkesler_knodt.game.ui.ConstructableController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="110.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<!-- FXML-Layout zur Darstellung einer baubaren Energiequelle (@author Gaertner) -->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="110.0" styleClass="card-container" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hsos.gaertner_kirkesler_knodt.game.ui.ConstructableController">
    <children>
-      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="140.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="140.0" styleClass="card-container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="0.0" />
             <ImageView nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
@@ -25,34 +27,40 @@
                </cursor>
             </ImageView>
             <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="0.0" />
-            <Text fx:id="energyProducerTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Energieproduzent">
+            <Text fx:id="energyProducerTitle" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="white-text" text="Energieproduzent">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Consolas Bold" size="12.0" />
                </font></Text>
-            <HBox prefHeight="0.0" prefWidth="0.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="0.0">
                <children>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" styleClass="orange-fill">
                      <image>
                         <Image url="@../../assets/icons/coin.png" />
                      </image></ImageView>
                   <Region prefWidth="1000.0" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" />
+                  <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="white-text" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="39.5859375">
+                     <font>
+                        <Font name="Consolas" size="12.0" />
+                     </font></Text>
                </children>
                <padding>
                   <Insets bottom="5.0" />
                </padding>
             </HBox>
-            <HBox prefHeight="0.0" prefWidth="0.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="0.0">
                <children>
-                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" styleClass="orange-fill">
                      <image>
                         <Image url="@../../assets/icons/energy.png" />
                      </image></ImageView>
                   <Region prefWidth="1000.0" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" />
+                  <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER">
+                     <font>
+                        <Font name="Consolas" size="12.0" />
+                     </font></Text>
                </children>
                <padding>
                   <Insets bottom="5.0" />

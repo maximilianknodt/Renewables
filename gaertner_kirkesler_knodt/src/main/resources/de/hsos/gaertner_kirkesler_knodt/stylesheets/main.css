@@ -15,14 +15,33 @@
     -fx-text-fill: #ffffff;
 }
 
-/* CSS classes for menu scene*/
+.lightblue-text {
+    -fx-text-fill: #00BCDE;
+}
+
+.white-text {
+    -fx-text-fill: #ffffff;
+}
+
+.lightblue-fill {
+    -fx-fill: #00BCDE;
+}
+
+.orange-fill {
+    -fx-fill: #FFC700;
+}
+
+.white-fill {
+    -fx-fill: #ffffff;
+}
+
+
+/* CSS classes for menu scene */
 .menu-main {
     -fx-background-image: url("../assets/menu-background.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: stretch;
 }
-
-
 
 /* CSS classes for game scene */
 .main-anchor-pane {
@@ -32,17 +51,25 @@
     -fx-background-position: center center;
 }
 
-.bottom-anchor-pane {
+.outlined-container {
+    -fx-border-color: #00BCDE;
+    -fx-background-color: #212D5B;
+    -fx-text-fill: #ffffff;
+    -fx-border-width: 2;
+}
+
+.card-container {
+    -fx-background-radius: 10;
+    -fx-background-color: #3A446F;
+    -fx-text-fill: #ffffff;
+}
+
+.level-label {
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 2;
+    -fx-border-color: #00BCDE;
     -fx-background-color: #212D5B;
 }
 
-.split-pane > .split-pane-divider {
-    -fx-padding: 0 0em 0 0em;
-}
-
-.main-anchor-pane2 {
-    -fx-background-image: url("../assets/Insel.png");
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: 600 300;
-    -fx-background-position: center center;
-}

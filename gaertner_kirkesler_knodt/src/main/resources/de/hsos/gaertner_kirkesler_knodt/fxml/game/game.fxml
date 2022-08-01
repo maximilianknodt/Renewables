@@ -1,23 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.SplitPane?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<SplitPane fx:controller="de.hsos.gaertner_kirkesler_knodt.game.ui.GameUIController" dividerPositions="0.7701005025125628" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../stylesheets/main.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
-    <items>
-        <AnchorPane id="mainpane" minHeight="0.0" minWidth="0.0" prefHeight="272.0" prefWidth="598.0" styleClass="main-anchor-pane" stylesheets="@../../stylesheets/main.css">
-            <children>
-                <ImageView fitHeight="284.0" fitWidth="564.0" layoutX="20.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="-9.0">
-                    <image>
-                        <Image url="@../../assets/Insel.png" />
-                    </image>
-                </ImageView>
-            </children>
-        </AnchorPane>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="33.0" prefWidth="598.0" styleClass="bottom-anchor-pane" stylesheets="@../../stylesheets/main.css" >
-            <fx:include source="constructableCard.fxml" />
-        </AnchorPane>
-    </items>
-</SplitPane>
+<!-- FXML-Layout zur Darstellung des Spielfelds (@author Kirkesler) -->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hsos.gaertner_kirkesler_knodt.game.ui.GameUIController">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+              <AnchorPane id="mainpane" prefHeight="451.0" prefWidth="900.0" styleClass="main-anchor-pane" stylesheets="@../../stylesheets/main.css">
+                  <children>
+                  <StackPane alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <fx:include maxHeight="-Infinity" source="resources.fxml" StackPane.alignment="TOP_LEFT" />
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" StackPane.alignment="TOP_RIGHT">
+                           <children>
+                              <fx:include source="notification.fxml" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </StackPane>
+                  <AnchorPane layoutX="590.0" prefWidth="785.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                            <ImageView fitHeight="335.0" fitWidth="718.0" layoutX="115.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../assets/Insel.png" />
+                                </image>
+                            </ImageView>
+                        <fx:include layoutX="530.0" layoutY="160.0" source="constructed.fxml" />
+                        <fx:include layoutX="400.0" layoutY="205.0" source="constructed.fxml" />
+                        <fx:include layoutX="300.0" layoutY="250.0" source="constructed.fxml" />
+                        <fx:include layoutX="195.0" layoutY="225.0" source="constructed.fxml" />
+                        <fx:include layoutX="650.0" layoutY="190.0" source="constructed.fxml" />
+                     </children>
+                  </AnchorPane>
+                  </children>
+              </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" styleClass="outlined-container">
+               <children>
+                  <HBox alignment="CENTER" prefWidth="900.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <fx:include source="constructableCard.fxml" />
+                           <fx:include minHeight="-Infinity" minWidth="-Infinity" source="constructableCard.fxml" AnchorPane.bottomAnchor="-140.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="640.0" AnchorPane.topAnchor="0.0" />
+                        <fx:include source="constructableCard.fxml" />
+                        <fx:include source="constructableCard.fxml" />
+                        <fx:include source="constructableCard.fxml" />
+                        <fx:include source="constructableCard.fxml" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
