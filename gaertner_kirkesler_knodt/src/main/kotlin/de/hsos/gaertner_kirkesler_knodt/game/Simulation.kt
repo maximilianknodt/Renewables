@@ -13,7 +13,7 @@ import de.hsos.gaertner_kirkesler_knodt.game.population.PopulationAlg
 class Simulation(
     private val res: Resources,
     private val notification: NotificationList,
-    private val energyProducer: EnergyProducer,
+    private val energyProducer: List<EnergyProducer>,
     private val populationAlg: PopulationAlg
     ) {
 
