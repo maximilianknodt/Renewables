@@ -11,14 +11,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="110.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hsos.gaertner_kirkesler_knodt.game.ConstructableController">
+<AnchorPane fx:controller="de.hsos.gaertner_kirkesler_knodt.game.ui.ConstructableController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="110.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="140.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="0.0" />
             <ImageView nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@assets/wind.png" />
+                  <Image url="@../../assets/wind.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
@@ -36,7 +36,7 @@
                <children>
                   <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@assets/icons/coin.png" />
+                        <Image url="@../../assets/icons/coin.png" />
                      </image></ImageView>
                   <Region prefWidth="1000.0" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" />
@@ -49,7 +49,7 @@
                <children>
                   <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@assets/icons/energy.png" />
+                        <Image url="@../../assets/icons/energy.png" />
                      </image></ImageView>
                   <Region prefWidth="1000.0" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" />
