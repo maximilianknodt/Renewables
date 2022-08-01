@@ -41,7 +41,7 @@ object NuclearPowerPlant : EnergyProducer() {
     // EARTHQUAKE, TZUNAMI, FIRE, UFO, GIANT_LIZARD, ERUPTION
     override fun destroy(incident: Incident) {
         when(incident) {
-            Incident.UFO -> this.level -= 2
+            incident.UFO -> this.level -= 2
             Incident.TZUNAMI -> this.level = 0
             Incident.EARTHQUAKE, Incident.GIANT_LIZARD, Incident.ERUPTION -> this.severityImpact(incident)
             else -> println("No Impact")

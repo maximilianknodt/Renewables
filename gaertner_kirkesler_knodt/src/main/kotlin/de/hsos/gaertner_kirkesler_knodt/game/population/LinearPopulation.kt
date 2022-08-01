@@ -1,5 +1,7 @@
 package de.hsos.gaertner_kirkesler_knodt.game.population
 
+import de.hsos.gaertner_kirkesler_knodt.game.Incident
+
 /**
  * Algorithmus zur Berechnung der Bevoelkerungsentwicklung, der mit linearem Wachstum arbeitet. Pro Runde veraendert
  * sich die Bevoelkerungsgroesse um den Faktor [change].

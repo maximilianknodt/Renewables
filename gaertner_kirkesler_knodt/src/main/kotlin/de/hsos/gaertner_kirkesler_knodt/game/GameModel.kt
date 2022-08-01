@@ -20,7 +20,7 @@ class GameModel {
         notifications = SimpleObjectProperty<NotificationList>(NotificationList())
 
         // TODO
-        simualtion = Simulation(resources, energyProducer, notifications)
+        simualtion = Simulation(resources, notifications, energyProducer)
     }
 
     fun closeNotification(id: Int) {
