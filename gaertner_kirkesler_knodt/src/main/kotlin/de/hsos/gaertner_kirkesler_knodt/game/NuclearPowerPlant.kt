@@ -22,14 +22,12 @@ object NuclearPowerPlant : EnergyProducer() {
             }
         }
 
-    /**
-     * @exception buildingCosts Ist der Preis zum Bau, oder Upgrade des Konstrukts
-     */
-    override var cost: Int = 1500000
-        set(value){
-            if(value < 1000000) field = 1000000
-            if(value > 1500000) field = 1500000
-        }
+    override val cost: Int = 1500000
+        get() = when (level) {
+                1 -> field
+                else -> 1000000
+            }
+
 
     /**
      * Gibt den Energieertrag des Atomkraftwerks je nach Level zurueck
@@ -38,28 +36,13 @@ object NuclearPowerPlant : EnergyProducer() {
      */
     override fun energyOutput(): Int {
         var energy = 0
-        when(SolarPark.level){
+        when(level){
             0 -> energy = 0
             1 -> energy = 500000
             2 -> energy = 575000
             3 -> energy = 750000
         }
         return energy
-    }
-
-    /**
-     * Gibt die Kosten zum Bau, oder Upgraden des Atomkraftwerks zurueck
-     *
-     * @return Kosten
-     */
-    override fun buildingCosts(): Int {
-        var cost = 0
-        when(SolarPark.level){
-            0 -> cost = 0
-            1 -> cost = 1500000
-            2, 3 -> cost = 1000000
-        }
-        return cost
     }
 
     /**

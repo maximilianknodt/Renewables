@@ -7,7 +7,7 @@ package de.hsos.gaertner_kirkesler_knodt.game
  */
 open abstract class EnergyProducer {
     abstract var level: Int
-    abstract var cost: Int
+    abstract val cost: Int
     protected var state: ProducerState = Constructable()
 
     /**
@@ -16,13 +16,6 @@ open abstract class EnergyProducer {
      * @return Energieertrag
      */
     abstract fun energyOutput(): Int
-
-    /**
-     * Gibt die Kosten des Konstrukt zurueck
-     *
-     * @return Kosten des Konstrukts
-     */
-    abstract fun buildingCosts(): Int
 
     /**
      * Zerstoert das Konstrukt je nach Staerke und Art des Vorfalls

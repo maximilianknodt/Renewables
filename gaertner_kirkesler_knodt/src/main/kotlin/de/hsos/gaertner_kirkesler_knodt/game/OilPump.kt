@@ -54,9 +54,8 @@ object OilPump : EnergyProducer() {
      */
     override fun buildingCosts(): Int {
          return when(level){
-            0 -> 0
-            1 -> 500000
-            2 -> 100000
+            0 -> 500000
+            1 -> 100000
             else -> 250000
         }
     }
