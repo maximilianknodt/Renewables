@@ -1,6 +1,17 @@
 package de.hsos.gaertner_kirkesler_knodt.game
 
+import de.hsos.gaertner_kirkesler_knodt.game.SolarPark.buildingCosts
+import de.hsos.gaertner_kirkesler_knodt.game.SolarPark.level
+
+/**
+ * Die Klasse OilPump enhaelt Kosten, Energieertrag und verschiedene Reaktion auf Katastrophen
+ *
+ * @author Knodt
+ */
 object OilPump : EnergyProducer() {
+    /**
+     * @exception level Ist das aktuelle Level des Konstrukts, da zwischen inklusive 0 und 3 liegt
+     */
     override var level: Int = 0
         set(value) {
             if(value < 0){
@@ -11,12 +22,20 @@ object OilPump : EnergyProducer() {
             }
         }
 
+    /**
+     * @exception buildingCosts Ist der Preis zum Bau, oder Upgrade des Konstrukts
+     */
     override var cost: Int = 500000
         set(value){
             if(value < 100000) field = 100000
             if(value > 500000) field = 500000
         }
 
+    /**
+     * Gibt den Energieertrag des Oelpumpe je nach Level zurueck
+     *
+     * @return Energieertrag
+     */
     override fun energyOutput(): Int {
         var energy = 0
         when(level){
@@ -28,31 +47,47 @@ object OilPump : EnergyProducer() {
         return energy
     }
 
-    override fun cost(): Int {
-        var cost = 0
-        when(level){
-            0 -> cost = 0
-            1 -> cost = 500000
-            2 -> cost = 100000
-            3 -> cost = 250000
+    /**
+     * Gibt die Kosten zum Bau, oder Upgraden der Oelpumpe zurueck
+     *
+     * @return Kosten
+     */
+    override fun buildingCosts(): Int {
+         return when(level){
+            0 -> 0
+            1 -> 500000
+            2 -> 100000
+            else -> 250000
         }
-        return cost
     }
 
-    // EARTHQUAKE, TZUNAMI, FIRE, UFO, GIANT_LIZARD, ERUPTION
+    /**
+     * Zerstoert die Oelpumpe je nach Staerke und Art des Vorfall
+     * und aendert ggf. den Zustand der Oelpumpe
+     *
+     * @param incident Vorfall
+     */
     override fun destroy(incident: Incident) {
-        when(incident) {
-            Incident.UFO -> this.level -= 1
-            Incident.EARTHQUAKE, Incident.TZUNAMI, Incident.FIRE, Incident.GIANT_LIZARD, Incident.ERUPTION -> this.severityImpact(incident)
+        when(incident.type) {
+            IncidentType.UFO -> this.level -= 1
+            IncidentType.EARTHQUAKE, IncidentType.TZUNAMI, IncidentType.FIRE, IncidentType.GIANT_LIZARD, IncidentType.ERUPTION -> this.severityImpact(incident)
             else -> println("No Impact")
         }
-        if(this.level == 0) TODO()
+        if(this.level == 0) super.state = Constructable()
     }
 
+    /**
+     * Aendert den Produktionszustand desr Oelpumpe
+     */
     override fun construct() {
-        TODO("Not yet implemented")
+        super.state.nextState()
     }
 
+    /**
+     * Reduziert das Level der Oelpumpe je nach Staerke des Vorfalls
+     *
+     * @param inc Vorfall
+     */
     private fun severityImpact(inc: Incident){
         when(inc.severity){
             Severity.LOW -> this.level -=1
