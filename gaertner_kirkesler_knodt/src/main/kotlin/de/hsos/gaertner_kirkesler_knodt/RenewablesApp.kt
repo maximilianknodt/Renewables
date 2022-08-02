@@ -14,7 +14,8 @@ class RenewablesApp(
 ) : Application() {
     override fun start(stage: Stage) {
 
-        val menuModel = MenuModel()
+        // TODO: don't forget!
+/*        val menuModel = MenuModel()
 
         val fxmlLoader = FXMLLoader(RenewablesApp::class.java.getResource("menu.fxml"))
         val scene = Scene(fxmlLoader.load(), 720.0, 540.0)
@@ -23,7 +24,7 @@ class RenewablesApp(
 
         stage.title = "Hello!"
         stage.scene = scene
-        stage.show()
+        stage.show()*/
     }
 }
 
