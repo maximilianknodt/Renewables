@@ -1,8 +1,10 @@
 package de.hsos.gaertner_kirkesler_knodt.menu
 
+import de.hsos.gaertner_kirkesler_knodt.BaseModel
+import de.hsos.gaertner_kirkesler_knodt.routing.Router
 import kotlin.system.exitProcess
 
-class MenuModel {
+class MenuModel : BaseModel() {
 
     fun startGame() {
         println("Starte Spiel")

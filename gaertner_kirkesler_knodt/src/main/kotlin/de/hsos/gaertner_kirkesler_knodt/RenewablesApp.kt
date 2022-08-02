@@ -2,15 +2,20 @@ package de.hsos.gaertner_kirkesler_knodt
 
 import de.hsos.gaertner_kirkesler_knodt.menu.MainMenuController
 import de.hsos.gaertner_kirkesler_knodt.menu.MenuModel
+import de.hsos.gaertner_kirkesler_knodt.routing.RouteController
+import de.hsos.gaertner_kirkesler_knodt.routing.Router
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
 import javafx.stage.Stage
 
-class RenewablesApp : Application() {
+class RenewablesApp(
+    val router: RouteController
+) : Application() {
     override fun start(stage: Stage) {
 
-        val menuModel = MenuModel()
+        // TODO: don't forget!
+/*        val menuModel = MenuModel()
 
         val fxmlLoader = FXMLLoader(RenewablesApp::class.java.getResource("menu.fxml"))
         val scene = Scene(fxmlLoader.load(), 720.0, 540.0)
@@ -19,7 +24,7 @@ class RenewablesApp : Application() {
 
         stage.title = "Hello!"
         stage.scene = scene
-        stage.show()
+        stage.show()*/
     }
 }
 

@@ -1,4 +1,15 @@
 package de.hsos.gaertner_kirkesler_knodt.game
 
-class ProducerState {
+/**
+ * Interface mit Methode fuer die jeweiligen Produktionszustaende
+ *
+ * @author Knodt
+ */
+interface ProducerState {
+    /**
+     * Aendert den Zustand des Konstrukts
+     *
+     * @return den aktuellen Zustand
+     */
+    fun nextState() : ProducerState
 }
