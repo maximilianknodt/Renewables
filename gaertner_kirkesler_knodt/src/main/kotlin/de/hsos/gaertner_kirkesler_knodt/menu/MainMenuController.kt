@@ -37,4 +37,8 @@ class MainMenuController : Initializable, EventHandler<ActionEvent> {
         model.endApplication()
     }
 
+    override fun handle(event: ActionEvent?) {
+        TODO("Not yet implemented")
+    }
+
 }

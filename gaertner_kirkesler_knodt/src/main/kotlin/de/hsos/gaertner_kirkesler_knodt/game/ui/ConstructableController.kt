@@ -34,13 +34,12 @@ class ConstructableController : GameUIControllerBase() {
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        TODO("bindings")
-        // add listeners on data here
+        // TODO: hier müssen keine Listener rein, oder?
     }
 
     @FXML
     fun onClick() {
-        TODO("Not yet implemented")
+        this.model.placeConstructable(prod)
     }
 
 }
