@@ -17,7 +17,9 @@ class LinearPopulation(
     override fun evolve(round: Int, current: Int, incident: Incident?): Int {
         var newPopulation = current
 
-        // TODO: incidentHandling (if there is an incident)
+        if (incident != null) {
+            newPopulation = (newPopulation * incident.proportionOfPopulationKilled()).toInt()
+        }
 
         return newPopulation + change;
     }

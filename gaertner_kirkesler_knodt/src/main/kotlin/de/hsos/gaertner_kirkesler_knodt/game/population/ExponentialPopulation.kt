@@ -25,18 +25,22 @@ class ExponentialPopulation(
             // Rundenzaehler Aequivalent zu aktueller Bevoelkerungszahl ermitteln
             val x = finv(current.toDouble())
 
-            // Bevoelkerungszahl vor der Runde
+            // Bevoelkerungszahl vor der Runde und nach der Runde bei Annahme des ungestoerten exponentiellen Wachstums
             val populationAtX = f(x)
-
-            // Bevoelkerungszahl nach der Runde bei Annahme des ungestoerten exponentiellen Wachstums
             val populationAtXPlusOne = f(x + 1)
+            var finalPopulation = populationAtX
 
             // Differenz zwischen Bevoelkerungszahl nach der Runde und vorheriger Runde
             val populationDifference = populationAtXPlusOne - populationAtX
 
-            // TODO: population decrease based on incident
+            // gehemmtes Bevoelkerungswachstum sowie Bestandsdezimierung auf Basis von Vorfall
+            if(incident != null){
+                val popFactor = 1.0 - incident.proportionOfPopulationKilled()
+                finalPopulation *= popFactor
+                finalPopulation += populationDifference * popFactor
+            }
 
-            return populationAtXPlusOne.toInt()
+            return finalPopulation.toInt()
 
         } else {
             return startingPopulation
@@ -49,6 +53,7 @@ class ExponentialPopulation(
      * a = 1, b = base, c = 1, d = 0, e = startingPopulation
      *
      * @param x x-Wert
+     * @return Wert der Exponentialfunktion an der Stelle x
      */
     private fun f(x: Double): Double {
         return  base.pow(x) + startingPopulation;
@@ -58,6 +63,7 @@ class ExponentialPopulation(
      * Berechnet f(x) invers, ermittelt x-Wert fuer gegebenen y-Achsenabschnitt.
      *
      * @param y y-Achsenabschnitt
+     * @return x-Wert fuer gegebenen y-Achsenabschnitt
      */
     private fun finv(y: Double): Double {
         return ln(y - startingPopulation) / ln(base);
