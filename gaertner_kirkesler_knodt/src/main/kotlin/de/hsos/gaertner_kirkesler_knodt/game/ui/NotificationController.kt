@@ -23,11 +23,13 @@ class NotificationController : GameUIControllerBase() {
     private lateinit var message: Label
 
     override fun initData(model: GameModel) {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
+        println("NotificationController.initData()")
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        TODO("bindings")
+        //TODO("bindings")
+        println("NotificationController.initialize()")
     }
 
     @FXML

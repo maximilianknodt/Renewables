@@ -9,6 +9,9 @@ module de.hsos.gaertner_kirkesler_knodt {
     opens de.hsos.gaertner_kirkesler_knodt.game to javafx.fxml;
     exports de.hsos.gaertner_kirkesler_knodt.game;
 
+    opens de.hsos.gaertner_kirkesler_knodt.game.ui to javafx.fxml;
+    exports de.hsos.gaertner_kirkesler_knodt.game.ui;
+
     opens de.hsos.gaertner_kirkesler_knodt to javafx.fxml;
     exports de.hsos.gaertner_kirkesler_knodt;
 }

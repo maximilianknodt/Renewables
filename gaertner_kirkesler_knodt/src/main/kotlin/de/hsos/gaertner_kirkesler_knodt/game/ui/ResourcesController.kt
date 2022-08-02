@@ -24,10 +24,12 @@ class ResourcesController : GameUIControllerBase() {
     private lateinit var money: Label
 
     override fun initData(model: GameModel) {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
+        println("ResourcesController.initData()")
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        TODO("bindings")
+        //TODO("bindings")
+        println("ResourcesController.initialize()")
     }
 }

@@ -18,7 +18,7 @@
                   <children>
                   <StackPane alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <fx:include maxHeight="-Infinity" source="resources.fxml" StackPane.alignment="TOP_LEFT" />
+                        <fx:include fx:id="resources" maxHeight="-Infinity" source="resources.fxml" StackPane.alignment="TOP_LEFT" />
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" StackPane.alignment="TOP_RIGHT">
                            <children>
                               <fx:include source="notification.fxml" />

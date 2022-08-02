@@ -30,11 +30,13 @@ class ConstructableController : GameUIControllerBase() {
     private lateinit var image: Image
 
     override fun initData(model: GameModel) {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
+        println("ConstructableController.initData()")
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         // TODO: hier müssen keine Listener rein, oder?
+        println("ConstructableController.initialize()")
     }
 
     @FXML
