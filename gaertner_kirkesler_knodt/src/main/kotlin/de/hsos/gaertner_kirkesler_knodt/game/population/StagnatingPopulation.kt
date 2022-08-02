@@ -1,5 +1,7 @@
 package de.hsos.gaertner_kirkesler_knodt.game.population
 
+import de.hsos.gaertner_kirkesler_knodt.game.Incident
+
 /**
  * Algorithmus zur Berechnung der Bevoelkerungsentwicklung, der mit einer Annaeherung an einen Asymptotenwert arbeitet.
  * @param asymptote Zielwert fuer Bevoelkerungsentwicklung
@@ -19,7 +21,9 @@ class StagnatingPopulation(
     override fun evolve(round: Int, current: Int, incident: Incident?): Int {
         var newPopulation = current
 
-        // TODO: add incident handling
+        if (incident != null) {
+            newPopulation = (newPopulation * (1.0 - incident.proportionOfPopulationKilled())).toInt()
+        }
 
         val diff = asymptote - newPopulation
         val change = (diff * strength).toInt()

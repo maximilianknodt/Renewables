@@ -26,6 +26,10 @@ enum class Severity(
         }
     }
 
+    fun avgPercentage(): Double {
+        return (min!! + max!!) / 2.0 / 100.0
+    }
+
     companion object {
         // Bestimmt die Schwere des Vorfalls mit Hilfe der Rundenzahl
         // 'floor((index/2))' bis 'index - 1'
