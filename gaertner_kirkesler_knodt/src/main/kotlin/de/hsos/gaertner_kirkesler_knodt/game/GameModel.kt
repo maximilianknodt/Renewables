@@ -1,5 +1,6 @@
 package de.hsos.gaertner_kirkesler_knodt.game
 
+import de.hsos.gaertner_kirkesler_knodt.BaseModel
 import de.hsos.gaertner_kirkesler_knodt.game.population.ExponentialPopulation
 import de.hsos.gaertner_kirkesler_knodt.game.population.LinearPopulation
 import de.hsos.gaertner_kirkesler_knodt.game.population.PopulationAlg
@@ -8,7 +9,7 @@ import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleObjectProperty
 import javafx.collections.ObservableList
 
-class GameModel {
+class GameModel : BaseModel() {
 
     private val energyProducer: ObservableList<EnergyProducer>
     private val resources: ObjectProperty<Resources>
