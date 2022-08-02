@@ -9,7 +9,7 @@ enum class IncidentType {
     EARTHQUAKE,
     ERUPTION,
     APOCALYPSE,
-    ALIENS,
+    FIRE,
     UFO,
     TZUNAMI,
     GIANT_LIZARD;

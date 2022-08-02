@@ -1,6 +1,14 @@
 package de.hsos.gaertner_kirkesler_knodt.game
 
+/**
+ * Die Klasse SolarPark enhaelt Kosten, Energieertrag und verschiedene Reaktion auf Katastrophen
+ *
+ * @author Knodt
+ */
 object SolarPark : EnergyProducer() {
+    /**
+     * @exception level Ist das aktuelle Level des Konstrukts, da zwischen inklusive 0 und 3 liegt
+     */
     override var level: Int = 0
         set(value) {
             if(value < 0){
@@ -11,12 +19,20 @@ object SolarPark : EnergyProducer() {
             }
         }
 
+    /**
+     * @exception buildingCosts Ist der Preis zum Bau, oder Upgrade des Konstrukts
+     */
     override var cost: Int = 100000
         set(value){
             if(value < 40000) field = 40000
             if(value > 100000) field = 100000
         }
 
+    /**
+     * Gibt den Energieertrag des Solarparks je nach Level zurueck
+     *
+     * @return Energieertrag
+     */
     override fun energyOutput(): Int {
         var energy = 0
         when(level){
@@ -28,7 +44,12 @@ object SolarPark : EnergyProducer() {
         return energy
     }
 
-    override fun cost(): Int {
+    /**
+     * Gibt die Kosten zum Bau, oder Upgraden des Solarparks zurueck
+     *
+     * @return Kosten
+     */
+    override fun buildingCosts(): Int {
         var cost = 0
         when(level){
             0 -> cost = 0
@@ -39,21 +60,34 @@ object SolarPark : EnergyProducer() {
         return cost
     }
 
-    // EARTHQUAKE, TZUNAMI, FIRE, UFO, GIANT_LIZARD, ERUPTION
+    /**
+     * Zerstoert den Solarpark je nach Staerke und Art des Vorfall
+     * und aendert ggf. den Zustand des Solarparks
+     *
+     * @param incident Vorfall
+     */
     override fun destroy(incident: Incident) {
-        when(incident) {
-            Incident.EARTHQUAKE -> this.level -= 1
-            Incident.TZUNAMI -> this.level = 0
-            Incident.FIRE, Incident.GIANT_LIZARD -> this.severityImpact(incident)
+        when(incident.type) {
+            IncidentType.EARTHQUAKE -> this.level -= 1
+            IncidentType.TZUNAMI -> this.level = 0
+            IncidentType.FIRE, IncidentType.GIANT_LIZARD -> this.severityImpact(incident)
             else -> println("No Impact")
         }
-        if(this.level == 0) TODO()
+        if(this.level == 0) super.state = Constructable()
     }
 
+    /**
+     * Aendert den Produktionszustand des Solarparks
+     */
     override fun construct() {
-        TODO("Not yet implemented")
+        super.state.nextState()
     }
 
+    /**
+     * Reduziert das Level des Solarparks je nach Staerke des Vorfalls
+     *
+     * @param inc Vorfall
+     */
     private fun severityImpact(inc: Incident){
         when(inc.severity){
             Severity.LOW -> this.level -=1

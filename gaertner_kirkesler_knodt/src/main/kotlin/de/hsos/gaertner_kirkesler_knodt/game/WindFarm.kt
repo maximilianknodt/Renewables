@@ -1,6 +1,17 @@
 package de.hsos.gaertner_kirkesler_knodt.game
 
+import de.hsos.gaertner_kirkesler_knodt.game.SolarPark.buildingCosts
+import de.hsos.gaertner_kirkesler_knodt.game.SolarPark.level
+
+/**
+ * Die Klasse WindFarm enhaelt Kosten, Energieertrag und verschiedene Reaktion auf Katastrophen
+ *
+ * @author Knodt
+ */
 object WindFarm : EnergyProducer() {
+    /**
+     * @exception level Ist das aktuelle Level des Konstrukts, da zwischen inklusive 0 und 3 liegt
+     */
     override var level: Int = 0
         set(value) {
             if(value < 0){
@@ -11,12 +22,20 @@ object WindFarm : EnergyProducer() {
             }
         }
 
+    /**
+     * @exception buildingCosts Ist der Preis zum Bau, oder Upgrade des Konstrukts
+     */
     override var cost: Int = 110000
         set(value){
             if(value < 50000) field = 50000
             if(value > 110000) field = 110000
         }
 
+    /**
+     * Gibt den Energieertrag des Windparks je nach Level zurueck
+     *
+     * @return Energieertrag
+     */
     override fun energyOutput(): Int {
         var energy = 0
         when(level){
@@ -28,7 +47,12 @@ object WindFarm : EnergyProducer() {
         return energy
     }
 
-    override fun cost(): Int {
+    /**
+     * Gibt die Kosten zum Bau, oder Upgraden des Windparks zurueck
+     *
+     * @return Kosten
+     */
+    override fun buildingCosts(): Int {
         var cost = 0
         when(level){
             0 -> cost = 0
@@ -39,21 +63,34 @@ object WindFarm : EnergyProducer() {
         return cost
     }
 
-    // EARTHQUAKE, TZUNAMI, FIRE, UFO, GIANT_LIZARD, ERUPTION
+    /**
+     * Zerstoert den Windpark je nach Staerke und Art des Vorfall
+     * und aendert ggf. den Zustand des Windparks
+     *
+     * @param incident Vorfall
+     */
     override fun destroy(incident: Incident) {
-        when(incident) {
-            Incident.UFO -> this.level -= 1
-            Incident.TZUNAMI -> this.level -= 2
-            Incident.EARTHQUAKE, Incident.GIANT_LIZARD -> this.severityImpact(incident)
+        when(incident.type) {
+            IncidentType.UFO -> this.level -= 1
+            IncidentType.TZUNAMI -> this.level -= 2
+            IncidentType.EARTHQUAKE, IncidentType.GIANT_LIZARD -> this.severityImpact(incident)
             else -> println("No Impact")
         }
-        if(this.level == 0) TODO()
+        if(this.level == 0) super.state = Constructable()
     }
 
+    /**
+     * Aendert den Produktionszustand des Windparks
+     */
     override fun construct() {
-        TODO("Not yet implemented")
+        super.state.nextState()
     }
 
+    /**
+     * Reduziert das Level des Windparks je nach Staerke des Vorfalls
+     *
+     * @param inc Vorfall
+     */
     private fun severityImpact(inc: Incident){
         when(inc.severity){
             Severity.LOW -> this.level -=1
