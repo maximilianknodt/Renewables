@@ -21,6 +21,7 @@ class MainMenuController : Initializable, EventHandler<ActionEvent> {
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         newGameButton.setOnAction(this)
+        exitButton.setOnAction(this)
     }
 
     public fun initData(data: MenuModel) {
@@ -38,7 +39,10 @@ class MainMenuController : Initializable, EventHandler<ActionEvent> {
     }
 
     override fun handle(event: ActionEvent?) {
-        TODO("Not yet implemented")
+        when(event?.source) {
+            newGameButton -> model.startGame()
+            exitButton -> model.endApplication()
+        }
     }
 
 }
