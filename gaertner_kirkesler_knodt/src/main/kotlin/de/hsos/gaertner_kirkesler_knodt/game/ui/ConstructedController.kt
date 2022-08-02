@@ -21,10 +21,12 @@ class ConstructedController : GameUIControllerBase() {
     private  lateinit var image: Image
 
     override fun initData(model: GameModel) {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
+        println("ConstructedController.initData()")
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        TODO("bindings")
+        //TODO("bindings")
+        println("ConstructedController.initialize()")
     }
 }

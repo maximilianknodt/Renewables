@@ -31,24 +31,29 @@ class GameUIController : GameUIControllerBase(), Initializable {
     override fun initData(model: GameModel) {
         super.model = model
 
-        // initData Aufrufe an alle Sub-Controller deligieren
-        constructables.forEach { it.initData(model) }
-        resources.initData(model)
-        notifications.forEach { it.initData(model) }
-        constructed.forEach { it.initData(model) }
+        // TODO: initData Aufrufe an alle Sub-Controller deligieren
+        // constructables.forEach { it.initData(model) }
+        // resources.initData(model)
+        // notifications.forEach { it.initData(model) }
+        // constructed.forEach { it.initData(model) }
+        println(::constructables.isInitialized)
+        println(::resources.isInitialized)
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         // TODO: UI-Elemente, die kontrolliert oder beschrieben werden sollen setzen
         // TODO: Bindings durchführen
 
+        println("GameUIController.initialize()")
+
         // add listeners on data here
-        model.energyProducer.addListener(
+        // TODO: das geht hier nicht, weil zuerst die initData aufgerufen werden muss, damit model initialisiert ist
+        /*model.energyProducer.addListener(
             ListChangeListener{
                 print("changed energy producer")
                 // TODO: update der Liste --> update der UI & Controller in this.constructables und this.constructed
             }
-        )
+        )*/
 
         /*model.notifications.addListener {
             ChangeListener<NotificationList> { _, oldValue, newValue ->
