@@ -50,12 +50,12 @@ class GameUIController : GameUIControllerBase(), Initializable {
             }
         )
 
-        model.notifications.addListener {
+        /*model.notifications.addListener {
             ChangeListener<NotificationList> { _, oldValue, newValue ->
                 print("changed notifications: $oldValue -> $newValue")
                 // TODO: update der NotificationList --> update der UI & Controller in this.notifications
             }
-        }
+        }*/
 
         /* // remove this old stuff:
         model.energyProducer.addListener(

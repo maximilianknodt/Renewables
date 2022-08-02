@@ -28,4 +28,8 @@ open abstract class EnergyProducer {
      * Aendert den Produktionszustand des Konstrukts
      */
     abstract fun construct()
+
+    abstract fun levelUp()
+
+    abstract fun finishConstructing()
 }

@@ -1,6 +1,7 @@
 package de.hsos.gaertner_kirkesler_knodt.game
 
 import de.hsos.gaertner_kirkesler_knodt.game.IncidentType.*
+import kotlin.random.Random
 
 /**
  * Diese Klasse stellt einen Vorfall dar. Sie enthaelt eine Builder-Klasse
@@ -15,8 +16,8 @@ import de.hsos.gaertner_kirkesler_knodt.game.IncidentType.*
  */
 class Incident private constructor(
     val type: IncidentType?,
-    val severity: Severity
-    ) {
+    val severity: Severity,
+) {
 
     /*  Hier wird ein sekundaerer Konstruktor implementiert, welcher als Parameter ein Objekt
         der internen Klasse 'Builder' erhaelt. Es wird anschließend an den Aufruf des primaeren Konstruktors
@@ -56,8 +57,13 @@ class Incident private constructor(
         }
 
         // Bestimmt die Schwere des Vorfalls. Wird im Enum mit Hilfe der Rundenzahl zufällig gewaehlt
+        // Bestimmt die Schwere des Vorfalls mit Hilfe der Rundenzahl
+        // 'floor((index/2))' bis 'index - 1'
         fun withSeverityForRound(index: Int) = apply {
-            this.severity = Severity.getSeverity(index)
+            val min: Int = kotlin.math.floor((index / 2).toDouble()).toInt()
+            val max: Int = index - 1
+            val random = Random.nextInt(min, max) / max.toDouble()
+            this.severity = Severity.getSeverity(random)
         }
 
         // Ruft den sekundaeren Konstruktor der Klasse aeußeren Klasse auf und übergibt sich selbst

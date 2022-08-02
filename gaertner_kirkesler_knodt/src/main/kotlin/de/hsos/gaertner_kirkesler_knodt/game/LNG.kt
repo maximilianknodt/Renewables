@@ -2,6 +2,7 @@ package de.hsos.gaertner_kirkesler_knodt.game
 
 import de.hsos.gaertner_kirkesler_knodt.game.SolarPark.buildingCosts
 import de.hsos.gaertner_kirkesler_knodt.game.SolarPark.level
+import kotlin.math.roundToInt
 
 /**
  * Die Klasse LNG enhaelt Kosten, Energieertrag und verschiedene Reaktion auf Katastrophen
@@ -92,7 +93,8 @@ object LNG : EnergyProducer() {
      *
      * @param inc Vorfall
      */
-    private fun severityImpact(inc: Incident){
+    private fun severityImpact(inc: Incident): Int{
+       // TODO: return -(level * inc.severity.avgPercentage()).roundToInt()
         when(inc.severity){
             Severity.MEDIUM -> this.level -=1
             Severity.HIGH -> this.level -= 2

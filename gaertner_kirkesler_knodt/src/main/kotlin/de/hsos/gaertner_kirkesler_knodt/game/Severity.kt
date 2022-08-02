@@ -11,14 +11,14 @@ import kotlin.random.Random
  */
 enum class Severity(
     var min: Double = 0.0,
-    var max: Double = 0.10
+    var max: Double = 0.10,
 ) {
     // Zuweisung von Schwellenwerten fuer Schwere der Vorfaelle verschiedener Level
     LOW(0.0,0.15),
     MEDIUM(0.16,0.30),
     HIGH(0.31,0.50),
-    CATASTROPHE(0.51, 0.70),
-    GAU(0.71, 0.99);
+    CATASTROPHE(0.51, 0.94),
+    GAU(0.95, 0.99);
 
     init {
         require(min in 0.0..0.99 && max in 0.0..0.99) {
@@ -27,17 +27,17 @@ enum class Severity(
     }
 
     fun avgPercentage(): Double {
-        return (min!! + max!!) / 2.0 / 100.0
+        return (min + max) / 2.0
     }
 
     companion object {
-        // Bestimmt die Schwere des Vorfalls mit Hilfe der Rundenzahl
-        // 'floor((index/2))' bis 'index - 1'
-        public fun getSeverity(index: Int): Severity {
-            val min: Int = kotlin.math.floor((index / 2).toDouble()).toInt()
-            val max: Int = index - 1
-            return Severity.values()[Random.nextInt(min, max)]
+
+        fun getSeverity(random: Double): Severity {
+            return values().first {
+                random in it.min..it.max
+            }
         }
+
     }
 }
 
