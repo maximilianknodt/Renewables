@@ -1,6 +1,7 @@
 package de.hsos.gaertner_kirkesler_knodt.game.ui
 
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
+import de.hsos.gaertner_kirkesler_knodt.game.Notification
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 import java.net.URL
@@ -31,6 +32,6 @@ class NotificationController : GameUIControllerBase() {
 
     @FXML
     private fun onClose(){
-        model.closeNotification(notification)
+        model.closeNotification(notification.id)
     }
 }
