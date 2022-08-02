@@ -35,11 +35,9 @@ class ConstructableController : GameUIControllerBase() {
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        // TODO: hier müssen keine Listener rein, oder?
-        println("ConstructableController.initialize()")
+        // TODO: hier Verbindung der onClick Methode einbauen
     }
 
-    @FXML
     fun onClick() {
         this.model.placeConstructable(prod)
     }

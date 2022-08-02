@@ -39,13 +39,39 @@ class GameUIController : GameUIControllerBase(), Initializable {
     @FXML
     private lateinit var constructedContainer: AnchorPane
 
+    /**
+     * TODO: documentation
+     */
     override fun initData(model: GameModel) {
         super.model = model
 
+        // Da das Model nun bekannt gemacht wurde, koennen jetzt die Bindings zu den Daten aus diesem gesetzt werden
+        initBindings()
+
+        // Zu Beginn sollen bereits alle EnergieProduzenten fuer den Bau angezeigt werden
         for (energyProducer in model.energyProducer) {
             showConstructable(energyProducer)
         }
 
+        // initData Aufrufe an alle Sub-Controller deligieren
+        resourcesController.initData(model)
+        constructableController.forEach { it.initData(model) }
+        constructedController.forEach { it.initData(model) } // TODO: wird nie aufgerufen?
+        notificationController.forEach { it.initData(model) } // TODO: wird nie aufgerufen?
+    }
+
+    /**
+     * TODO: documentation
+     */
+    override fun initialize(location: URL?, resources: ResourceBundle?) {
+        // FXML-Elemente initialisieren (passiert hier durch den FXML-Loader,
+        // dem die Nodes durch Kennzeichnung mit @FXML bekannt gemacht wurden)
+    }
+
+    /**
+     * TODO: documentation
+     */
+    private fun initBindings(){
         // Befuellen der Controller-Listen auf Basis der Model-Daten
         model.energyProducer.addListener(
             ListChangeListener<EnergyProducer> {
@@ -105,29 +131,22 @@ class GameUIController : GameUIControllerBase(), Initializable {
                 }
             }
         )
-
-        // initData Aufrufe an alle Sub-Controller deligieren
-        resourcesController.initData(model)
-        constructableController.forEach { it.initData(model) }
-        constructedController.forEach { it.initData(model) } // TODO: wird nie aufgerufen?
-        notificationController.forEach { it.initData(model) } // TODO: wird nie aufgerufen?
     }
 
-    override fun initialize(location: URL?, resources: ResourceBundle?) {
-        // TODO: UI-Elemente, die kontrolliert oder beschrieben werden sollen setzen
-        // TODO: Bindings durchführen
-
-        println("GameUIController.initialize()")
-    }
-
+    /**
+     * TODO: documentation
+     */
     private fun showConstructable(energyProducer: EnergyProducer) {
         val loader = FXMLLoader(javaClass.getResource("/fxml/game/constructableCard.fxml"))
         val controller = loader.getController<ConstructableController>()
-        controller.initData(model) // TODO: EnergyProducer als Parameter angeben?
+        controller.initData(model) // TODO: EnergyProducer als Parameter angeben? oder eig. besser Controller selbst erstellen und danach zuweisen?
         constructableContainer.children.add(loader.load())
         constructableController.add(controller)
     }
 
+    /**
+     * TODO: documentation
+     */
     private fun showConstructed(energyProducer: EnergyProducer) {
         val loader = FXMLLoader(javaClass.getResource("/fxml/game/constructed.fxml"))
         val controller = loader.getController<ConstructedController>()
@@ -136,10 +155,13 @@ class GameUIController : GameUIControllerBase(), Initializable {
         constructedController.add(controller)
     }
 
+    /**
+     * TODO: documentation
+     */
     private fun showNotification(notification: Notification) {
         val loader = FXMLLoader(javaClass.getResource("/fxml/game/notification.fxml"))
         val controller = loader.getController<NotificationController>()
-        controller.initData(model) // TODO: ID des Notifications-Objekts angeben?
+        controller.initData(model) // TODO: ID des Notifications-Objekts angeben? oder besser über eigens erstellten Konstruktor machen
         notificationContainer.children.add(loader.load())
         notificationController.add(controller)
     }

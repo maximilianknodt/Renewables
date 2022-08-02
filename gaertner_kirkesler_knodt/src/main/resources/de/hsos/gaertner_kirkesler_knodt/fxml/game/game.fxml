@@ -19,7 +19,7 @@
                   <StackPane alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <fx:include fx:id="resources" maxHeight="-Infinity" source="resources.fxml" StackPane.alignment="TOP_LEFT" />
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" StackPane.alignment="TOP_RIGHT">
+                        <VBox id="notificationContainer" maxHeight="-Infinity" maxWidth="-Infinity" StackPane.alignment="TOP_RIGHT">
                            <children>
                               <fx:include source="notification.fxml" />
                            </children>
@@ -29,13 +29,13 @@
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </padding>
                   </StackPane>
-                  <AnchorPane layoutX="590.0" prefWidth="785.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <ImageView fitHeight="337.0" fitWidth="693.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="104.0">
+                          <image>
+                              <Image url="@../../assets/Insel.png" />
+                          </image>
+                      </ImageView>
+                  <AnchorPane id="constructedContainer" layoutX="590.0" prefWidth="785.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                            <ImageView fitHeight="335.0" fitWidth="718.0" layoutX="115.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@../../assets/Insel.png" />
-                                </image>
-                            </ImageView>
                         <fx:include layoutX="530.0" layoutY="160.0" source="constructed.fxml" />
                         <fx:include layoutX="400.0" layoutY="205.0" source="constructed.fxml" />
                         <fx:include layoutX="300.0" layoutY="250.0" source="constructed.fxml" />
@@ -47,7 +47,7 @@
               </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" styleClass="outlined-container">
                <children>
-                  <HBox alignment="CENTER" prefWidth="900.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <HBox id="constructableContainer" alignment="CENTER" prefWidth="900.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <fx:include source="constructableCard.fxml" />
                            <fx:include minHeight="-Infinity" minWidth="-Infinity" source="constructableCard.fxml" AnchorPane.bottomAnchor="-140.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="640.0" AnchorPane.topAnchor="0.0" />
