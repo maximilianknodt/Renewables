@@ -1,6 +1,5 @@
-package de.hsos.gaertner_kirkesler_knodt.game
-import java.lang.Math.floor
-import kotlin.random.Random
+package de.hsos.gaertner_kirkesler_knodt.game.incident
+
 /**
  * Dieses Enum enthaelt verschiedene Level.
  *

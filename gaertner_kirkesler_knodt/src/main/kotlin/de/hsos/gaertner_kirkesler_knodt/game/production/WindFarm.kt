@@ -1,6 +1,7 @@
 package de.hsos.gaertner_kirkesler_knodt.game.production
 
-import de.hsos.gaertner_kirkesler_knodt.game.*
+import de.hsos.gaertner_kirkesler_knodt.game.incident.Incident
+import de.hsos.gaertner_kirkesler_knodt.game.incident.IncidentType
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructable
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing

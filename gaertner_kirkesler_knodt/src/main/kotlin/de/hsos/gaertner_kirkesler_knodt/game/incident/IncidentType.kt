@@ -1,4 +1,4 @@
-package de.hsos.gaertner_kirkesler_knodt.game
+package de.hsos.gaertner_kirkesler_knodt.game.incident
 import kotlin.random.Random
 /**
  * Dieses Enum enthaelt verschiedene Arten von Vorfaellen.
@@ -23,7 +23,7 @@ enum class IncidentType {
 
         // zufaelliges Auswaehlen eines Incidents
         public fun getRandom(): IncidentType {
-            return IncidentType.enums.get(Random.Default.nextInt(IncidentType.size))
+            return enums.get(Random.Default.nextInt(size))
         }
     }
 }

@@ -1,6 +1,6 @@
-package de.hsos.gaertner_kirkesler_knodt.game
+package de.hsos.gaertner_kirkesler_knodt.game.incident
 
-import de.hsos.gaertner_kirkesler_knodt.game.IncidentType.*
+import de.hsos.gaertner_kirkesler_knodt.game.incident.IncidentType.*
 import kotlin.random.Random
 
 /**

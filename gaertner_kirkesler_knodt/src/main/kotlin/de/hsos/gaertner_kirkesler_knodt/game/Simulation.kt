@@ -1,4 +1,5 @@
 package de.hsos.gaertner_kirkesler_knodt.game
+import de.hsos.gaertner_kirkesler_knodt.game.incident.Incident
 import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.population.PopulationAlg
 /**

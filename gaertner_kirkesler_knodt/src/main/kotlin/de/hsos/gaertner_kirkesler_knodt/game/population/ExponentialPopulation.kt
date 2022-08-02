@@ -1,6 +1,6 @@
 package de.hsos.gaertner_kirkesler_knodt.game.population
 
-import de.hsos.gaertner_kirkesler_knodt.game.Incident
+import de.hsos.gaertner_kirkesler_knodt.game.incident.Incident
 import kotlin.math.ln
 import kotlin.math.pow
 

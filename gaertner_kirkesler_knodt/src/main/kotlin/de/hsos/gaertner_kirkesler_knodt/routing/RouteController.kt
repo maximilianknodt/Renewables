@@ -10,13 +10,22 @@ import javafx.fxml.Initializable
 import javafx.scene.Scene
 import javafx.stage.Stage
 /**
- * TODO: documentation
+ * Diese Klasse implementiert das Interface 'Router' und die dort deklarierte Methode
+ * 'showScene()'. Bei Aufruf der Methode 'showScene()' wird die Zielroute übergeben.
+ * Anschließend wird das entsprechende FXML geladen und der Stage zugewiesen.
  *
  * @author Kirkesler
  */
 class RouteController() : Router {
     private val stage: Stage = Stage()
 
+    /**
+     * Implementation des Interfaces 'Router'. Methode dient zur Navigation zwischen
+     * unterschiedlichen Szenen.
+     *
+     * @param route Zielroute als Instanz des Enums 'Route'
+     * @author Kirkesler
+     */
     override fun showScene(route: Route) {
         val fxmlLoader = FXMLLoader(RenewablesApp::class.java.getResource(route.path))
         val scene = Scene(fxmlLoader.load(), 720.0, 540.0)
