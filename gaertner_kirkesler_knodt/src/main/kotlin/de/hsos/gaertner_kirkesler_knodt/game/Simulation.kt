@@ -1,4 +1,5 @@
 package de.hsos.gaertner_kirkesler_knodt.game
+import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.population.PopulationAlg
 /**
  * Diese Klasse dient als 'Steuerklasse' fuer die Spiellogik.
@@ -11,10 +12,10 @@ import de.hsos.gaertner_kirkesler_knodt.game.population.PopulationAlg
  * @author Kirkesler
  */
 class Simulation(
-    private val res: Resources,
-    private val notification: NotificationList,
-    private val energyProducer: List<EnergyProducer>,
-    private val populationAlg: PopulationAlg
+        private val res: Resources,
+        private val notification: NotificationList,
+        private val energyProducer: List<EnergyProducer>,
+        private val populationAlg: PopulationAlg
     ) {
 
     companion object {

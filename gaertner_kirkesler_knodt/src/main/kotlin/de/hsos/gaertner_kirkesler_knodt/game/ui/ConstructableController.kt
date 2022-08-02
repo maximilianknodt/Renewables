@@ -1,6 +1,6 @@
 package de.hsos.gaertner_kirkesler_knodt.game.ui
 
-import de.hsos.gaertner_kirkesler_knodt.game.EnergyProducer
+import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
 import javafx.fxml.FXML
 import javafx.scene.control.Label

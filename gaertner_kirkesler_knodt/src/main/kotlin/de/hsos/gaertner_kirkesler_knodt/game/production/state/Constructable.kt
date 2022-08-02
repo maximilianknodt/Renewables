@@ -1,4 +1,4 @@
-package de.hsos.gaertner_kirkesler_knodt.game
+package de.hsos.gaertner_kirkesler_knodt.game.production.state
 
 /**
  * Die Klasse Constructable repraesentiert den Zustand, des Konstrukt wenn es gebaut werden kann
@@ -15,7 +15,7 @@ class Constructable : ProducerState {
      *
      * @return Das Konstrukt befindet sich in der Bauphase
      */
-    override fun nextState(): ProducerState{
+    override fun nextState(): ProducerState {
        return Constructing()
     }
 }

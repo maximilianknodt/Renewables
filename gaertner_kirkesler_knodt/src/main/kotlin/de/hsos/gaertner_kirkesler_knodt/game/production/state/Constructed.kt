@@ -1,4 +1,4 @@
-package de.hsos.gaertner_kirkesler_knodt.game
+package de.hsos.gaertner_kirkesler_knodt.game.production.state
 
 /**
  * Die Klasse Constructed repraesentiert den Zustand, des Konstrukt wenn der Bau fertig gestellt wurde

@@ -1,4 +1,4 @@
-package de.hsos.gaertner_kirkesler_knodt.game
+package de.hsos.gaertner_kirkesler_knodt.game.production.state
 
 /**
  * Die Klasse Constructing repraesentiert den Zustand, des Konstrukt waehrend es sich im Bau befindet

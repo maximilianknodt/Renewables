@@ -1,9 +1,8 @@
 package de.hsos.gaertner_kirkesler_knodt.game
 
 import de.hsos.gaertner_kirkesler_knodt.BaseModel
-import de.hsos.gaertner_kirkesler_knodt.game.population.ExponentialPopulation
+import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.population.LinearPopulation
-import de.hsos.gaertner_kirkesler_knodt.game.population.PopulationAlg
 import de.hsos.gaertner_kirkesler_knodt.routing.Route
 import javafx.beans.property.ObjectProperty
 import javafx.beans.property.SimpleListProperty

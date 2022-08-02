@@ -1,4 +1,4 @@
-package de.hsos.gaertner_kirkesler_knodt.game
+package de.hsos.gaertner_kirkesler_knodt.game.production.state
 
 /**
  * Interface mit Methode fuer die jeweiligen Produktionszustaende
