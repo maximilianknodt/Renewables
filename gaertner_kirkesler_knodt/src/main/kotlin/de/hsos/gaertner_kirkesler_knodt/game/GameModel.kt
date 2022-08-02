@@ -1,12 +1,13 @@
 package de.hsos.gaertner_kirkesler_knodt.game
 
 import de.hsos.gaertner_kirkesler_knodt.BaseModel
-import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.population.LinearPopulation
+import de.hsos.gaertner_kirkesler_knodt.game.production.*
 import de.hsos.gaertner_kirkesler_knodt.routing.Route
 import javafx.beans.property.ObjectProperty
 import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleObjectProperty
+import javafx.collections.FXCollections
 import javafx.collections.ObservableList
 
 /**
@@ -25,7 +26,10 @@ class GameModel : BaseModel() {
     private val simulation: Simulation
 
     init {
-        energyProducer = SimpleListProperty<EnergyProducer>(null) // TODO: initialize with real data
+        val list = listOf(LNG, NuclearPowerPlant, OilPump, SolarPark, WindFarm)
+        var observableEnergyProducerList = FXCollections.observableArrayList(list)
+        energyProducer = SimpleListProperty(observableEnergyProducerList)
+
         resources = SimpleObjectProperty<Resources>(Resources())
         notifications = SimpleObjectProperty<NotificationList>(NotificationList())
 

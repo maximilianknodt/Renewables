@@ -13,7 +13,7 @@ import kotlin.math.roundToInt
 open abstract class EnergyProducer {
     abstract var level: Int
     abstract val cost: Int
-    protected var state: ProducerState = Constructable()
+    var state: ProducerState = Constructable()
     protected val maxLevel = 3
 
     /**
