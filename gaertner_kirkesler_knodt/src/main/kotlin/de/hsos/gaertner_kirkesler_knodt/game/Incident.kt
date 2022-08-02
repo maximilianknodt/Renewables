@@ -10,7 +10,7 @@ package de.hsos.gaertner_kirkesler_knodt.game
  *
  * @author Kirkesler
  */
-class Incident(
+class Incident private constructor(
     val type: IncidentType?,
     val severity: Severity
     ) {
@@ -27,12 +27,12 @@ class Incident(
             private set
 
         // Ruft die Methode getRandom() des Enums 'IncidentType' auf, um ein zufaelliges Ereignis zu erzeugen
-        fun randomType() {
+        fun randomType() = apply {
             this.type = IncidentType.getRandom()
         }
 
         // Bestimmt die Schwere des Vorfalls. Wird im Enum mit Hilfe der Rundenzahl zufällig gewaehlt
-        fun withSeverityForRound(index: Int) {
+        fun withSeverityForRound(index: Int) = apply {
             this.severity = Severity.getSeverity(index)
         }
 

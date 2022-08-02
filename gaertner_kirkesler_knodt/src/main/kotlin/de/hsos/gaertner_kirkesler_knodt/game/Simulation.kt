@@ -17,9 +17,40 @@ class Simulation(
     private val populationAlg: PopulationAlg
     ) {
 
-    private var round: Int = 0;
-
+    companion object {
+        private var round: Int = 1
+        private lateinit var currentIncident: Incident
+        private val SPENDRATE: Int = 2
+    }
     public fun next() {
         //TODO: no implementation yet
+        
+        // Runde erhoehen
+        round++
+
+        // Incident bauen
+        currentIncident = Incident
+            .Builder()
+            .randomType()
+            .withSeverityForRound(round)
+            .build()
+
+        // Bevoelkerungswachstum aufrufen
+        this.res.population = this.populationAlg.evolve(
+            round,
+            this.res.population,
+            currentIncident
+        )
+
+        // Geld verdienen
+        this.res.earn(this.res.population * SPENDRATE)
+
+        // Zerstoerung aufrufen
+        // TODO: geht das? sieht auf jeden Fall nett aus.
+        currentIncident?.run {
+            energyProducer.forEach {
+                it.destroy(this)
+            }
+        }
     }
 }

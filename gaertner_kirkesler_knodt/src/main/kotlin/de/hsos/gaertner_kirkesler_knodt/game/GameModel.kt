@@ -1,6 +1,7 @@
 package de.hsos.gaertner_kirkesler_knodt.game
 
 import de.hsos.gaertner_kirkesler_knodt.game.population.ExponentialPopulation
+import de.hsos.gaertner_kirkesler_knodt.game.population.LinearPopulation
 import de.hsos.gaertner_kirkesler_knodt.game.population.PopulationAlg
 import javafx.beans.property.ObjectProperty
 import javafx.beans.property.SimpleListProperty
@@ -21,7 +22,7 @@ class GameModel {
         notifications = SimpleObjectProperty<NotificationList>(NotificationList())
 
         // TODO
-        simulation = Simulation(resources.get(), notifications.get(), energyProducer.toList(), ExponentialPopulation())
+        simulation = Simulation(resources.get(), notifications.get(), energyProducer.toList(), LinearPopulation())
     }
 
     fun closeNotification(id: Int) {
