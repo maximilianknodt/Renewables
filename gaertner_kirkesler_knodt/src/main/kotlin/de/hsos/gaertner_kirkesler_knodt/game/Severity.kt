@@ -10,18 +10,18 @@ import kotlin.random.Random
  * @author Kirkesler
  */
 enum class Severity(
-    var min: Int? = 0,
-    var max: Int? = 10
+    var min: Double = 0.0,
+    var max: Double = 0.10
 ) {
     // Zuweisung von Schwellenwerten fuer Schwere der Vorfaelle verschiedener Level
-    LOW(0,15),
-    MEDIUM(16,30),
-    HIGH(31,50),
-    CATASTROPHE(51, 70),
-    GAU(71, 99);
+    LOW(0.0,0.15),
+    MEDIUM(0.16,0.30),
+    HIGH(0.31,0.50),
+    CATASTROPHE(0.51, 0.70),
+    GAU(0.71, 0.99);
 
     init {
-        require(min in 0..100 && max in 0..100) {
+        require(min in 0.0..0.99 && max in 0.0..0.99) {
             "min and max must be in range between 0% and 100%"
         }
     }
