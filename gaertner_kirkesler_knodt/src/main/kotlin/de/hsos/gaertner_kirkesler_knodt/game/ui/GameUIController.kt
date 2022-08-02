@@ -20,7 +20,7 @@ class GameUIController : GameUIControllerBase(), Initializable {
     private lateinit var constructables: List<ConstructableController>
 
     @FXML
-    private lateinit var resources: ResourcesController
+    private lateinit var resourcesController: ResourcesController
 
     @FXML
     private lateinit var notifications: List<NotificationController>
@@ -33,11 +33,13 @@ class GameUIController : GameUIControllerBase(), Initializable {
 
         // TODO: initData Aufrufe an alle Sub-Controller deligieren
         // constructables.forEach { it.initData(model) }
-        // resources.initData(model)
         // notifications.forEach { it.initData(model) }
         // constructed.forEach { it.initData(model) }
+        println("GameUIController.initData()")
         println(::constructables.isInitialized)
-        println(::resources.isInitialized)
+        println(::resourcesController.isInitialized)
+
+        resourcesController.initData(model)
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
