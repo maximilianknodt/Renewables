@@ -9,10 +9,12 @@ import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing
 import javafx.beans.value.ChangeListener
 import javafx.collections.ListChangeListener
+import javafx.event.EventHandler
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
+import javafx.scene.input.MouseEvent
 import javafx.scene.layout.AnchorPane
 import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
@@ -77,9 +79,10 @@ class GameUIController : GameUIControllerBase() {
      * gesetzt, der die naechste Runde starten soll. Dieser Befehl wird an die Spiellogik im [model] delegiert.
      */
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        // FXML-Elemente initialisieren (passiert hier durch den FXML-Loader,
-        // dem die Nodes durch Kennzeichnung mit @FXML bekannt gemacht wurden)
-        // TODO: nextRoundButton.onMouseClicked = { _ -> model.simulateRound() }
+        nextRoundButton.onMouseClicked = EventHandler {
+            println("nextRoundButton clicked")
+            model.simulateRound()
+        } // TODO: warum geht das nicht?
     }
 
     /**
@@ -90,10 +93,10 @@ class GameUIController : GameUIControllerBase() {
      */
     private fun initBindings(){
         // Befuellen der Controller-Listen auf Basis der Model-Daten
-        model.energyProducer.addListener(
-            ListChangeListener<EnergyProducer> {
-                fun onChanged(c: ListChangeListener.Change<out EnergyProducer>?) {
+        println("initBindings")
+        model.energyProducer.addListener( ListChangeListener{ change ->
                     // Darstellung der gesetzten Energieproduzenten zuruecksetzen
+                    println("energyProducer changed")
                     constructedContainer.children.clear()
                     constructedController.clear()
 
@@ -103,13 +106,13 @@ class GameUIController : GameUIControllerBase() {
                             showConstructed(energyProducer)
                         }
                     }
-                }
             }
         )
 
         model.notifications.addListener(
-            ChangeListener<NotificationList> { _, _, newValue ->
+            ChangeListener { _, _, newValue ->
                 // Darstellung der Benachrichtigungen zuruecksetzen
+                println("notifications changed")
                 notificationContainer.children.clear()
                 notificationController.clear()
 

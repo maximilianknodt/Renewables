@@ -88,6 +88,7 @@ class ConstructableController(
      * dargestellten [EnergyProducer] vorliegt, wird die View aktualisiert.
      */
     override fun onChanged(c: ListChangeListener.Change<out EnergyProducer>?) {
+        println("ConstructableController: onChanged")
         if (c != null) {
             while(c.next()){
                 if(c.wasUpdated()){

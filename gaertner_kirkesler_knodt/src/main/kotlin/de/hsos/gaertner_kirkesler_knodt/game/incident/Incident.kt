@@ -59,11 +59,22 @@ class Incident private constructor(
         // Bestimmt die Schwere des Vorfalls. Wird im Enum mit Hilfe der Rundenzahl zufällig gewaehlt
         // Bestimmt die Schwere des Vorfalls mit Hilfe der Rundenzahl
         // 'floor((index/2))' bis 'index - 1'
+
+        // TODO: proper documentation
+        /*val min: Int = kotlin.math.floor(index / 2.0).toInt()
+        val max: Int = index
+        val random = Random.nextInt(min, max) / max.toDouble()
+        this.severity = Severity.getSeverity(random)*/
         fun withSeverityForRound(index: Int) = apply {
-            val min: Int = kotlin.math.floor((index / 2).toDouble()).toInt()
-            val max: Int = index - 1
-            val random = Random.nextInt(min, max) / max.toDouble()
-            this.severity = Severity.getSeverity(random)
+            val factor = 4.0
+            val maxRound = 10
+            val diffToMax = maxRound - index
+            val min = index / factor
+            val max = index + diffToMax / factor
+            val rand = (Math.random() * (max - min) + min).toDouble()
+            var fin = rand / maxRound
+            if(fin > 1.0) fin = 1.0
+            this.severity = Severity.getSeverity(fin)
         }
 
         // Ruft den sekundaeren Konstruktor der Klasse aeußeren Klasse auf und übergibt sich selbst
