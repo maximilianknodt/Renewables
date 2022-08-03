@@ -126,12 +126,11 @@ class GameUIController : GameUIControllerBase() {
      * diesen in der horizontalen Liste der konstruierbaren Energieproduzenten dar.
      */
     private fun showConstructable(energyProducer: EnergyProducer) {
-        val loader = FXMLLoader(javaClass.getResource("/fxml/game/constructableCard.fxml"))
+        val loader = FXMLLoader(javaClass.getResource("constructableCard.fxml"))
         val controller = ConstructableController(energyProducer)
         controller.initData(model)
         loader.setController(controller)
-        //constructableContainer.children.add(loader.load())
-        // TODO: Error "Location is not set."
+        constructableContainer.children.add(loader.load())
         constructableController.add(controller)
     }
 
@@ -139,7 +138,7 @@ class GameUIController : GameUIControllerBase() {
      * Laedt die View fuer einen auf dem Spielfeld platzierten konstruierten EnergieProduzenten und zeigt diesen an.
      */
     private fun showConstructed(energyProducer: EnergyProducer) {
-        val loader = FXMLLoader(javaClass.getResource("/fxml/game/constructed.fxml"))
+        val loader = FXMLLoader(javaClass.getResource("constructed.fxml"))
         val controller = loader.getController<ConstructedController>()
         controller.initData(model)
         constructedContainer.children.add(loader.load())
@@ -150,7 +149,7 @@ class GameUIController : GameUIControllerBase() {
      * Laedt die View fuer eine Benachrichtigung in der Benachrichtigungsliste und zeigt diese an.
      */
     private fun showNotification(notification: Notification) {
-        val loader = FXMLLoader(javaClass.getResource("/fxml/game/notification.fxml"))
+        val loader = FXMLLoader(javaClass.getResource("notification.fxml"))
         val controller = NotificationController(notification)
         controller.initData(model)
         loader.setController(controller)
