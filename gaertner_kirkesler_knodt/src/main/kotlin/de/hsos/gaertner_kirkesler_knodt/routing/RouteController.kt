@@ -3,6 +3,8 @@ import de.hsos.gaertner_kirkesler_knodt.BaseModel
 import de.hsos.gaertner_kirkesler_knodt.RenewablesApp
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
 import de.hsos.gaertner_kirkesler_knodt.game.ui.GameUIController
+import de.hsos.gaertner_kirkesler_knodt.gameover.GameOverController
+import de.hsos.gaertner_kirkesler_knodt.gameover.GameOverModel
 import de.hsos.gaertner_kirkesler_knodt.menu.MainMenuController
 import de.hsos.gaertner_kirkesler_knodt.menu.MenuModel
 import javafx.fxml.FXMLLoader
@@ -37,7 +39,7 @@ class RouteController() : Router {
         when(route) {
             Route.MENU -> (controller as MainMenuController).initData(MenuModel())
             Route.GAME -> (controller as GameUIController).initData(GameModel())
-            Route.GAMEOVER -> (controller as GameUIController).initData(GameModel())
+            Route.GAMEOVER -> (controller as GameOverController).initData(GameOverModel())
         }
 
         stage.title = route.stageTitle

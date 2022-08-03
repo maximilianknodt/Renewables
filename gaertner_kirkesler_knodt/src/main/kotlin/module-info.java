@@ -14,4 +14,7 @@ module de.hsos.gaertner_kirkesler_knodt {
 
     opens de.hsos.gaertner_kirkesler_knodt to javafx.fxml;
     exports de.hsos.gaertner_kirkesler_knodt;
+
+    opens de.hsos.gaertner_kirkesler_knodt.gameover to javafx.fxml;
+    exports de.hsos.gaertner_kirkesler_knodt.gameover;
 }
