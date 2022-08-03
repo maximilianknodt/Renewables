@@ -33,7 +33,6 @@ class GameModel : BaseModel() {
         resources = SimpleObjectProperty<Resources>(Resources())
         notifications = SimpleObjectProperty<NotificationList>(NotificationList())
 
-        // TODO
         simulation = Simulation(resources.get(), notifications.get(), energyProducer.toList(), LinearPopulation())
     }
 

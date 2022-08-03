@@ -1,5 +1,9 @@
 package de.hsos.gaertner_kirkesler_knodt.game
-
+/**
+ * Zentrale Datenklasse fuer die Resourcen Population, Energieproduzenten, Energiekonsum und Geld.
+ *
+ * @author
+ */
 data class Resources (
     var population: Int = 0,
     var energyProduction: Int = 0,

@@ -3,6 +3,7 @@ import de.hsos.gaertner_kirkesler_knodt.game.incident.Incident
 import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.population.PopulationAlg
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing
+import kotlin.random.Random
 
 /**
  * Diese Klasse dient als 'Steuerklasse' fuer die Spiellogik.
@@ -25,6 +26,13 @@ class Simulation(
         private var round: Int = 1
         private lateinit var currentIncident: Incident
         private const val EARNRATE: Int = 2
+    }
+
+    init {
+        println("generating random start values")
+        res.population = Random.nextInt(200, 500)
+        res.money = Random.nextInt(700, 2000)
+        res.energyConsumption = res.population * 2
     }
     public fun next() {
         // Runde erhoehen
