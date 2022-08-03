@@ -54,8 +54,7 @@ class GameModel : BaseModel() {
      * @param prod EnergyProducer, welcher zu 'Constructed' gewechselt werden soll.
      */
     fun constructOrLevelupConstructable(prod: EnergyProducer){
-        println("placeConstructable $prod")
-        val index = this.energyProducer.indexOf(prod) // TODO:
+        val index = this.energyProducer.indexOf(prod)
         prod.construct()
         resources.get().spend(prod.cost)
         energyProducer[index] = prod

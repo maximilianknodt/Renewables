@@ -88,11 +88,21 @@ class ConstructableController(
      * dargestellten [EnergyProducer] vorliegt, wird die View aktualisiert.
      */
     override fun onChanged(c: ListChangeListener.Change<out EnergyProducer>?) {
-        println("ConstructableController: onChanged")
         if (c != null) {
             while(c.next()){
-                if(c.wasUpdated()){
+                if(c.wasAdded()){
+                    for(prod in c.addedSubList){
+                        if(prod == this.prod){
+                            println("ich wurde hinzugefuegt")
+                            print("ConstructableController: onChanged: ${prod.name} + ${prod.state} + ${prod.level} + ${prod.cost}")
+                            updateView()
+                            break
+                        }
+                    }
+                } else if(c.wasUpdated()){
+                    println("ConstructableController: wasUpdated")
                     for(i in c.from..c.to){
+                        println("updated $i")
                         if(c.list[i] == prod){
                             updateView()
                             break

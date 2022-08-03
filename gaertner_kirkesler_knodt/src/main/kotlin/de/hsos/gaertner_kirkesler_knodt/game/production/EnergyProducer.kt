@@ -18,8 +18,9 @@ abstract class EnergyProducer {
     abstract val cost: Int
     var level: Int = 0
         set(value) {
-            if(value < 0) field = this.maxLevel
-            if(value > this.maxLevel) field = this.maxLevel
+            field = if(value < 0) 0
+                else if(value > this.maxLevel) this.maxLevel
+                else value
         }
 
     private val maxLevel = 3
@@ -43,7 +44,7 @@ abstract class EnergyProducer {
      * Aendert den Produktionszustand des Konstrukts in Constructing und dessen Level
      */
     fun construct(){
-        this.level++
+        level += 1
         this.state.nextState()
     }
 
