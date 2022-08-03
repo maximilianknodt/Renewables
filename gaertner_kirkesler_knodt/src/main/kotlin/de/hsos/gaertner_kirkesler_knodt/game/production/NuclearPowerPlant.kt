@@ -10,8 +10,11 @@ import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructable
  * @author Knodt
  */
 object NuclearPowerPlant : EnergyProducer() {
+
     override var name: String = "Atomkraftwerk"
     override val imgPath: String = "assets/atomic.png"
+    override val position: Pair<Double, Double> = Pair(0.5889, 0.2667)
+
     override val cost: Int = 1500000
         get() = when (this.level) {
                 1 -> field

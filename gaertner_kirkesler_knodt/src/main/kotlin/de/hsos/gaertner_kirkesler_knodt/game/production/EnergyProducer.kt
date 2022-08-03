@@ -13,9 +13,13 @@ import kotlin.math.roundToInt
  * @author Knodt
  */
 abstract class EnergyProducer {
+
     abstract val name: String
     abstract val imgPath: String
+    abstract val position: Pair<Double, Double>
+
     abstract val cost: Int
+
     var level: Int = 0
         set(value) {
             field = if(value < 0) 0

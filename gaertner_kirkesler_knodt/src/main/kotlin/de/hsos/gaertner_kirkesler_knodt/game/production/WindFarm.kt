@@ -10,8 +10,11 @@ import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructable
  * @author Knodt
  */
 object WindFarm : EnergyProducer() {
+
     override var name: String = "Windpark"
     override val imgPath: String = "assets/wind.png"
+    override val position: Pair<Double, Double> = Pair(0.72222, 0.3167)
+
     override var cost: Int = 110000
         get() = when(this.level) {
             1 -> field

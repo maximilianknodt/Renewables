@@ -10,8 +10,11 @@ import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructable
  * @author Knodt
  */
 object OilPump : EnergyProducer() {
+
     override var name: String = "Oelpumpe"
     override val imgPath: String = "assets/oil.png"
+    override val position: Pair<Double, Double> = Pair(0.4444, 0.3417)
+
     override var cost: Int = 500000
         get() = when(this.level) {
             1 -> field

@@ -1,9 +1,7 @@
 package de.hsos.gaertner_kirkesler_knodt.game.ui
 
 import de.hsos.gaertner_kirkesler_knodt.RenewablesApp
-import de.hsos.gaertner_kirkesler_knodt.game.GameModel
 import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
-import javafx.collections.ListChangeListener
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 import javafx.scene.image.Image
@@ -26,6 +24,9 @@ class ConstructedController(
     @FXML
     private  lateinit var image: ImageView
 
+    /**
+     * Initialisiert die Darstellung des [energyProducer].
+     */
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         level.text = energyProducer.level.toString()
         image.image = Image(RenewablesApp::class.java.getResource(energyProducer.imgPath).toString())
