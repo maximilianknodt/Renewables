@@ -49,7 +49,10 @@ class GameUIController : GameUIControllerBase() {
     private lateinit var nextRoundButton: Button
 
     /**
-     * TODO: documentation
+     * Bekanntmachen des GameModels [model] beim Controller. Da nun die Model-Daten bekannt sind, koennen hier auch die
+     * Bindings durchgefuehrt und der Initialzustand der View auf Basis der vorhandenen Daten gesetzt werden.
+     *
+     * @param model Das GameModel, das bekannt gemacht werden soll.
      */
     override fun initData(model: GameModel) {
         super.model = model
@@ -70,7 +73,8 @@ class GameUIController : GameUIControllerBase() {
     }
 
     /**
-     * TODO: documentation
+     * Wird vom FXMLLoader aufgerufen, sobald die View geladen wurde. Hier wird die Callback-Methode fuer den Button
+     * gesetzt, der die naechste Runde starten soll. Dieser Befehl wird an die Spiellogik im [model] delegiert.
      */
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         // FXML-Elemente initialisieren (passiert hier durch den FXML-Loader,
@@ -79,7 +83,10 @@ class GameUIController : GameUIControllerBase() {
     }
 
     /**
-     * TODO: documentation
+     * Initialisiert die Bindings / Listener zu den Daten des Models.
+     * Die Verbindungen zu der [ObservableList] energyProducer und der [ObjectProperty] notificationList sind relevant,
+     * da es sich eine Aenderung in diesen Daten auf die Menge der Kinder der View-Komponenten [constructableContainer]
+     * und [notificationContainer] auswirkt.
      */
     private fun initBindings(){
         // Befuellen der Controller-Listen auf Basis der Model-Daten
@@ -116,7 +123,7 @@ class GameUIController : GameUIControllerBase() {
 
     /**
      * Laedt die View fuer einen konstruierbaren Energieproduzenten, erstellt den zugehoerigen Controller und stellt
-     *
+     * diesen in der horizontalen Liste der konstruierbaren Energieproduzenten dar.
      */
     private fun showConstructable(energyProducer: EnergyProducer) {
         val loader = FXMLLoader(javaClass.getResource("/fxml/game/constructableCard.fxml"))
@@ -128,7 +135,7 @@ class GameUIController : GameUIControllerBase() {
     }
 
     /**
-     * TODO: documentation
+     * Laedt die View fuer einen auf dem Spielfeld platzierten konstruierten EnergieProduzenten und zeigt diesen an.
      */
     private fun showConstructed(energyProducer: EnergyProducer) {
         val loader = FXMLLoader(javaClass.getResource("/fxml/game/constructed.fxml"))
@@ -139,7 +146,7 @@ class GameUIController : GameUIControllerBase() {
     }
 
     /**
-     * TODO: documentation
+     * Laedt die View fuer eine Benachrichtigung in der Benachrichtigungsliste und zeigt diese an.
      */
     private fun showNotification(notification: Notification) {
         val loader = FXMLLoader(javaClass.getResource("/fxml/game/notification.fxml"))

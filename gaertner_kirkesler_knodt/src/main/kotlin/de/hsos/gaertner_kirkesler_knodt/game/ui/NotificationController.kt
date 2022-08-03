@@ -26,10 +26,6 @@ class NotificationController(
     @FXML
     private lateinit var closeButton: Button
 
-    override fun initData(model: GameModel) {
-        this.model = model
-    }
-
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         title.text = notification.title
         message.text = notification.desc

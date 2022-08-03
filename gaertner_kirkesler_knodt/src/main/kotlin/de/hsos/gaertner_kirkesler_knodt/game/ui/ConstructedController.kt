@@ -22,10 +22,6 @@ class ConstructedController : GameUIControllerBase() {
     @FXML
     private  lateinit var image: Image
 
-    override fun initData(model: GameModel) {
-        this.model = model
-    }
-
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         // keine Bindings oder Callbacks in diesem Controller noetig
     }
