@@ -40,7 +40,7 @@ abstract class EnergyProducer {
     /**
      * Aendert den Produktionszustand des Konstrukts in Constructing und dessen Level
      */
-    public fun construct(){
+    fun construct(){
         this.level++
         this.state.nextState()
     }
@@ -48,7 +48,7 @@ abstract class EnergyProducer {
     /**
      * Aendert das Level des Konstrukts
      */
-    public fun levelUp(){
+    fun levelUp(){
         if(this.state is Constructed){
             if(this.level < this.maxLevel) {
                 this.level++
@@ -59,7 +59,7 @@ abstract class EnergyProducer {
     /**
      * Aendert den Produktionszustand des Konstrukts in Constructed
      */
-    public fun finishConstructing(){
+    fun finishConstructing(){
         if(this.state is Constructing) {
             this.state.nextState()
         }
