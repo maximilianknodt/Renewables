@@ -2,9 +2,7 @@ package de.hsos.gaertner_kirkesler_knodt.game.ui
 
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
 import de.hsos.gaertner_kirkesler_knodt.game.Notification
-import de.hsos.gaertner_kirkesler_knodt.game.NotificationList
 import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
-import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructable
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing
 import javafx.beans.value.ChangeListener
@@ -12,9 +10,7 @@ import javafx.collections.ListChangeListener
 import javafx.event.EventHandler
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
-import javafx.fxml.Initializable
 import javafx.scene.control.Button
-import javafx.scene.input.MouseEvent
 import javafx.scene.layout.AnchorPane
 import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
@@ -30,6 +26,8 @@ import java.util.*
  * @author Gaertner
  */
 class GameUIController : GameUIControllerBase() {
+
+    private val gameFieldSize: Pair<Int, Int> = Pair(900, 600)
 
     @FXML // geschachtelter Controller wird von FXML-Loader instanziiert
     private lateinit var resourcesController: ResourcesController
@@ -49,6 +47,9 @@ class GameUIController : GameUIControllerBase() {
 
     @FXML
     private lateinit var nextRoundButton: Button
+
+    @FXML
+    private lateinit var endGameButton: Button
 
     /**
      * Bekanntmachen des GameModels [model] beim Controller. Da nun die Model-Daten bekannt sind, koennen hier auch die
@@ -78,12 +79,15 @@ class GameUIController : GameUIControllerBase() {
     /**
      * Wird vom FXMLLoader aufgerufen, sobald die View geladen wurde. Hier wird die Callback-Methode fuer den Button
      * gesetzt, der die naechste Runde starten soll. Dieser Befehl wird an die Spiellogik im [model] delegiert.
+     * Dasselbe gilt fuer den Ende-Button, der im [model] die Methode [GameModel.endGame] aufruft.
      */
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         nextRoundButton.onMouseClicked = EventHandler {
-            println("nextRoundButton clicked")
             model.simulateRound()
-        } // TODO: warum geht das nicht?
+        }
+        endGameButton.onMouseClicked = EventHandler {
+            model.endGame()
+        }
     }
 
     /**
@@ -94,7 +98,6 @@ class GameUIController : GameUIControllerBase() {
      */
     private fun initBindings(){
         // Befuellen der Controller-Listen auf Basis der Model-Daten
-        println("initBindings")
         model.energyProducer.addListener( ListChangeListener{ change ->
                     // Darstellung der gesetzten Energieproduzenten zuruecksetzen
                     println("energyProducer changed")
@@ -103,6 +106,7 @@ class GameUIController : GameUIControllerBase() {
 
                     // Energieproduzenten anzeigen
                     for(energyProducer in model.energyProducer) {
+                        println("energyProducer ${energyProducer.state}")
                         if(energyProducer.state is Constructed || energyProducer.state is Constructing){
                             showConstructed(energyProducer)
                         }
@@ -143,10 +147,15 @@ class GameUIController : GameUIControllerBase() {
      */
     private fun showConstructed(energyProducer: EnergyProducer) {
         val loader = FXMLLoader(javaClass.getResource("constructed.fxml"))
-        val controller = loader.getController<ConstructedController>()
+        val controller = ConstructedController(energyProducer)
         controller.initData(model)
-        constructedContainer.children.add(loader.load())
+        loader.setController(controller)
+        val node = loader.load<AnchorPane>()
+        node.layoutX = energyProducer.position.first * gameFieldSize.first
+        node.layoutY = energyProducer.position.second * gameFieldSize.second
+        constructedContainer.children.add(node)
         constructedController.add(controller)
+        println("showConstructed: ${energyProducer.name}")
     }
 
     /**
