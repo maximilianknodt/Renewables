@@ -14,6 +14,7 @@ import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
+import javafx.scene.image.ImageView
 import javafx.scene.input.MouseEvent
 import javafx.scene.layout.AnchorPane
 import javafx.scene.layout.HBox
@@ -93,7 +94,6 @@ class GameUIController : GameUIControllerBase() {
      */
     private fun initBindings(){
         // Befuellen der Controller-Listen auf Basis der Model-Daten
-        println("initBindings")
         model.energyProducer.addListener( ListChangeListener{ change ->
                     // Darstellung der gesetzten Energieproduzenten zuruecksetzen
                     println("energyProducer changed")
@@ -102,6 +102,7 @@ class GameUIController : GameUIControllerBase() {
 
                     // Energieproduzenten anzeigen
                     for(energyProducer in model.energyProducer) {
+                        println("energyProducer ${energyProducer.state}")
                         if(energyProducer.state is Constructed || energyProducer.state is Constructing){
                             showConstructed(energyProducer)
                         }
@@ -142,10 +143,12 @@ class GameUIController : GameUIControllerBase() {
      */
     private fun showConstructed(energyProducer: EnergyProducer) {
         val loader = FXMLLoader(javaClass.getResource("constructed.fxml"))
-        val controller = loader.getController<ConstructedController>()
+        val controller = ConstructedController(energyProducer)
         controller.initData(model)
+        loader.setController(controller)
         constructedContainer.children.add(loader.load())
         constructedController.add(controller)
+        println("showConstructed: ${energyProducer.name}")
     }
 
     /**

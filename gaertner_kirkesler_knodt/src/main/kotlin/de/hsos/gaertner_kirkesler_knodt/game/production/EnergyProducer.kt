@@ -45,7 +45,7 @@ abstract class EnergyProducer {
      */
     fun construct(){
         level += 1
-        this.state.nextState()
+        state = state.nextState()
     }
 
     /**
