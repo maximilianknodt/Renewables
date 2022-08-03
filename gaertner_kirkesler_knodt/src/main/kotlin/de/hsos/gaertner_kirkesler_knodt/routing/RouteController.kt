@@ -44,6 +44,7 @@ class RouteController() : Router {
 
         stage.title = route.stageTitle
         stage.scene = scene
+        //stage.setResizable(false)
         stage.show()
     }
 }

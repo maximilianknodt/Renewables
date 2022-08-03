@@ -1,5 +1,6 @@
 package de.hsos.gaertner_kirkesler_knodt.game.ui
 
+import de.hsos.gaertner_kirkesler_knodt.RenewablesApp
 import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
@@ -76,10 +77,10 @@ class ConstructableController(
      * Wird ausgefuehrt, sobald sich der EnergyProducer in der Liste veraendert, um die View zu aktualisieren.
      */
     private fun updateView(){
-        // TODO: name.text = prod.name
+        name.text = prod.name
         energy.text = prod.energyOutput().toString()
         cost.text = prod.cost.toString()
-        // TODO: image.url = prod.imagePath
+        image.image = Image(RenewablesApp::class.java.getResource(prod.imgPath).toString())
     }
 
     /**

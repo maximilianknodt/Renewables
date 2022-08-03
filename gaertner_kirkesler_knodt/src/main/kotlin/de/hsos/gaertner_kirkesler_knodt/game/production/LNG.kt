@@ -10,6 +10,8 @@ import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructable
  * @author Knodt
  */
 object LNG : EnergyProducer() {
+    override var name: String = "LNG Terminal"
+    override val imgPath: String = "assets/lng.png"
     override var cost: Int = 1200000
         get() = when(this.level) {
             1 -> field

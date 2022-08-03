@@ -10,6 +10,8 @@ import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructable
  * @author Knodt
  */
 object SolarPark : EnergyProducer() {
+    override var name: String = "Solarpark"
+    override val imgPath: String = "assets/solar.png"
     override var cost: Int = 100000
         get() = when(this.level){
             1 -> field
