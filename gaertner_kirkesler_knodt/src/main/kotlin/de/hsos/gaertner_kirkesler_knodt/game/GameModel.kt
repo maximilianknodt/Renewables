@@ -53,7 +53,7 @@ class GameModel : BaseModel() {
      *
      * @param prod EnergyProducer, welcher zu 'Constructed' gewechselt werden soll.
      */
-    fun placeConstructable(prod: EnergyProducer){
+    fun constructOrLevelupConstructable(prod: EnergyProducer){
         print("placeConstructable $prod")
         prod.construct()
         resources.get().spend(prod.cost)
