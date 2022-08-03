@@ -1,6 +1,7 @@
 package de.hsos.gaertner_kirkesler_knodt.game.ui
 
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
+import javafx.beans.value.ChangeListener
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 import javafx.scene.image.Image
@@ -35,12 +36,16 @@ class ResourcesController : GameUIControllerBase() {
      */
     override fun initData(model: GameModel) {
         this.model = model
-        model.resources.addListener { _, _, newValue ->
-            energyConsumption.text = "- " +  newValue.energyConsumption.toString()
-            energyProduction.text = "+ " + newValue.energyProduction.toString()
-            population.text = newValue.population.toString()
-            money.text = newValue.money.toString()
+        println("Wird geinittet")
+        model.resources.addListener { _, _, changed ->
+            println("Hallo, läuft")
+            energyConsumption.text = "- " +  changed.energyConsumption.toString()
+            energyProduction.text = "+ " + changed.energyProduction.toString()
+            population.text = changed.population.toString()
+            money.text = changed.money.toString()
         }
+
+
     }
 
     /**

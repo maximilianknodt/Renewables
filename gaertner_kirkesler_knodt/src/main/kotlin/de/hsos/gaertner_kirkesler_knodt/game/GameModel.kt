@@ -3,6 +3,8 @@ package de.hsos.gaertner_kirkesler_knodt.game
 import de.hsos.gaertner_kirkesler_knodt.BaseModel
 import de.hsos.gaertner_kirkesler_knodt.game.population.LinearPopulation
 import de.hsos.gaertner_kirkesler_knodt.game.production.*
+import de.hsos.gaertner_kirkesler_knodt.game.simulation.Simulation
+import de.hsos.gaertner_kirkesler_knodt.game.simulation.Simulator
 import de.hsos.gaertner_kirkesler_knodt.routing.Route
 import javafx.beans.property.ObjectProperty
 import javafx.beans.property.SimpleListProperty
@@ -23,7 +25,7 @@ class GameModel : BaseModel() {
     val resources: ObjectProperty<Resources>
     val notifications: ObjectProperty<NotificationList>
 
-    private val simulation: Simulation
+    private val simulator: Simulator = Simulation(LinearPopulation())
 
     init {
         val list = listOf(LNG, NuclearPowerPlant, OilPump, SolarPark, WindFarm)
@@ -32,8 +34,6 @@ class GameModel : BaseModel() {
 
         resources = SimpleObjectProperty<Resources>(Resources())
         notifications = SimpleObjectProperty<NotificationList>(NotificationList())
-
-        simulation = Simulation(resources.get(), notifications.get(), energyProducer.toList(), LinearPopulation())
     }
 
     /**
@@ -64,7 +64,7 @@ class GameModel : BaseModel() {
      */
     fun simulateRound(){
         print("simulateRound")
-        simulation.next()
+        simulator.simulate()
     }
 
     /**
@@ -73,5 +73,14 @@ class GameModel : BaseModel() {
     fun endGame(){
         print("endGame")
         router.showScene(Route.MENU)
+    }
+
+    fun setResources(res: Resources) {
+        resources.set(res)
+    }
+
+    fun register() {
+        println("Registriert")
+        simulator.register(this)
     }
 }
