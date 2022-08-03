@@ -2,20 +2,30 @@ package de.hsos.gaertner_kirkesler_knodt.game.ui
 
 import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
+import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
+import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing
+import javafx.collections.ListChangeListener
+import javafx.event.EventHandler
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 import javafx.scene.image.Image
+import javafx.scene.input.MouseEvent
+import javafx.scene.layout.AnchorPane
 import java.net.URL
 import java.util.*
 
 /**
- * TODO: documentation
+ * Controller fuer die View "constructableCard.fxml". Zu Demonstrationszwecken wird hier kein anonymer Listener ver-
+ * wendet, sondern [ConstructableController] realisiert das Interface [ListChangeListener] selbst, um bei Aenderungen
+ * an der Datengrundlage im Model die Methode [onChanged] auszufuehren.
+ *
+ * @param prod EnergieProduzent, dessen Daten angezeigt werden sollen.
  *
  * @author Gaertner
  */
-class ConstructableController : GameUIControllerBase() {
-
-    lateinit var prod: EnergyProducer
+class ConstructableController(
+    private val prod: EnergyProducer
+) : GameUIControllerBase(), ListChangeListener<EnergyProducer> {
 
     @FXML
     private lateinit var name: Label
@@ -29,17 +39,64 @@ class ConstructableController : GameUIControllerBase() {
     @FXML
     private lateinit var image: Image
 
+    @FXML
+    private lateinit var card: AnchorPane
+
+    /**
+     * Macht das GameModel dem [ConstructableController] bekannt. Sobald die Daten bekannt sind, koennen die Bindings
+     * durchgefuehrt werden. Fuer bessere Uebersichtlichkeit und zu Demonstrationszwecken wird hier kein anonymer
+     * Listener verwendet, sondern [ConstructableController] realisiert das Interface [ListChangeListener] selbst.
+     *
+     * @param model Das GameModel, das dem [ConstructableController] bekannt gemacht werden soll.
+     */
     override fun initData(model: GameModel) {
-        //TODO("Not yet implemented")
-        println("ConstructableController.initData()")
+        this.model = model
+        model.energyProducer.addListener(this)
     }
 
+    /**
+     * Wird vom FXMLLoader aufgerufen, sobald die View geladen und die Komponenten injected wurden, verbindet daraufhin
+     * ebenfalls das Klick-Event auf die Karte mit der Methode [onClick].
+     */
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        // TODO: hier Verbindung der onClick Methode einbauen
+        updateView()
+        card.onMouseClicked = EventHandler { e -> onClick(e) }
     }
 
-    fun onClick() {
-        this.model.placeConstructable(prod)
+    /**
+     * Wird ausgefuehrt, sobald auf die Karte geklickt wurde.
+     */
+    private fun onClick(event: MouseEvent) {
+        this.model.constructOrLevelupConstructable(prod)
+    }
+
+    /**
+     * Wird ausgefuehrt, sobald sich der EnergyProducer in der Liste veraendert, um die View zu aktualisieren.
+     */
+    private fun updateView(){
+        // TODO: name.text = prod.name
+        energy.text = prod.energyOutput().toString()
+        cost.text = prod.cost.toString()
+        // TODO: image.url = prod.imagePath
+    }
+
+    /**
+     * Wird aufgerufen, sobald die ObservableList im GameModel veraendert wird. Falls eine Aenderung an dem hier
+     * dargestellten [EnergyProducer] vorliegt, wird die View aktualisiert.
+     */
+    override fun onChanged(c: ListChangeListener.Change<out EnergyProducer>?) {
+        if (c != null) {
+            while(c.next()){
+                if(c.wasUpdated()){
+                    for(i in c.from..c.to){
+                        if(c.list[i] == prod){
+                            updateView()
+                            break
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }

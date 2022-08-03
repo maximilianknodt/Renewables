@@ -23,7 +23,7 @@
                       </image>
                </ImageView>
                   <Region prefWidth="1000.0" />
-                  <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="39.5859375">
+                  <Text fx:id="population" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="39.5859375">
                       <font>
                           <Font name="Consolas" size="12.0" />
                       </font>
@@ -38,7 +38,7 @@
                   </image>
                </ImageView>
                <Region prefWidth="1000.0" />
-               <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="39.5859375">
+               <Text fx:id="money" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="39.5859375">
                   <font>
                      <Font name="Consolas" size="12.0" />
                   </font>
@@ -53,7 +53,22 @@
                   </image>
                </ImageView>
                <Region prefWidth="1000.0" />
-               <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="39.5859375">
+               <Text fx:id="energyProduction" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="39.5859375">
+                  <font>
+                     <Font name="Consolas" size="12.0" />
+                  </font>
+               </Text>
+            </children>
+         </HBox>
+         <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="0.0">
+            <children>
+               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../assets/icons/energy.png" />
+                  </image>
+               </ImageView>
+               <Region prefWidth="1000.0" />
+               <Text fx:id="energyConsumption" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="39.5859375">
                   <font>
                      <Font name="Consolas" size="12.0" />
                   </font>

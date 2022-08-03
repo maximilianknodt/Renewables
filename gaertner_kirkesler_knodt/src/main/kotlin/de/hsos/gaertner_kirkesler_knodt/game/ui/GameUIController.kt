@@ -5,11 +5,14 @@ import de.hsos.gaertner_kirkesler_knodt.game.Notification
 import de.hsos.gaertner_kirkesler_knodt.game.NotificationList
 import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructable
+import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
+import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing
 import javafx.beans.value.ChangeListener
 import javafx.collections.ListChangeListener
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
+import javafx.scene.control.Button
 import javafx.scene.layout.AnchorPane
 import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
@@ -17,11 +20,14 @@ import java.net.URL
 import java.util.*
 
 /**
- * TODO: documentation
+ * Zentraler Controller der Spiel-Seite. Hier werden die dynamisch aufgrund von Listeneintraegen im Model erzeugten
+ * Controller erstellt und verwaltet. Der FXMLLoader kann den einzelnen Controller [resourcesController] mithilfe der
+ * FXML-Annotation selbststaendig als geschachtelten Controller zuweisen. Die weiteren Controller fuer Listenelemente
+ * werden in Listen auf Basis des [model] gespeichert.
  *
  * @author Gaertner
  */
-class GameUIController : GameUIControllerBase(), Initializable {
+class GameUIController : GameUIControllerBase() {
 
     @FXML // geschachtelter Controller wird von FXML-Loader instanziiert
     private lateinit var resourcesController: ResourcesController
@@ -38,6 +44,9 @@ class GameUIController : GameUIControllerBase(), Initializable {
 
     @FXML
     private lateinit var constructedContainer: AnchorPane
+
+    @FXML
+    private lateinit var nextRoundButton: Button
 
     /**
      * TODO: documentation
@@ -66,6 +75,7 @@ class GameUIController : GameUIControllerBase(), Initializable {
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         // FXML-Elemente initialisieren (passiert hier durch den FXML-Loader,
         // dem die Nodes durch Kennzeichnung mit @FXML bekannt gemacht wurden)
+        // TODO: nextRoundButton.onMouseClicked = { _ -> model.simulateRound() }
     }
 
     /**
@@ -76,48 +86,19 @@ class GameUIController : GameUIControllerBase(), Initializable {
         model.energyProducer.addListener(
             ListChangeListener<EnergyProducer> {
                 fun onChanged(c: ListChangeListener.Change<out EnergyProducer>?) {
-                    // Darstellung der Energieproduzenten zuruecksetzen
-                    constructableContainer.children.clear()
-                    constructableController.clear()
+                    // Darstellung der gesetzten Energieproduzenten zuruecksetzen
                     constructedContainer.children.clear()
                     constructedController.clear()
 
                     // Energieproduzenten anzeigen
                     for(energyProducer in model.energyProducer) {
-                        when(energyProducer.state){
-                            is Constructable -> showConstructable(energyProducer)
-                            else -> showConstructed(energyProducer)
+                        if(energyProducer.state is Constructed || energyProducer.state is Constructing){
+                            showConstructed(energyProducer)
                         }
                     }
                 }
             }
         )
-
-        // "filigrane" Methode mit Filterung auf exakte Änderungen
-        /*model.energyProducer.addListener(
-            ListChangeListener<EnergyProducer> {
-                fun onChanged(c: ListChangeListener.Change<out EnergyProducer>?) {
-                    print("changed")
-                    while(c?.next() == true){
-                        if(c.wasUpdated()){
-                            print("updated")
-
-                            // Iterieren ueber alle EnergyProducer, die sich veraendert haben
-                            for(index in c.from..c.to){
-                                val energyProducer = c.list[index]
-                                when(energyProducer.state){
-                                    is Constructable -> {
-                                        // falls vorher constructed oder constructing war, muss der Controller und das View entfernt werden
-                                        showConstructable(energyProducer)
-                                    }
-
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        )*/
 
         model.notifications.addListener(
             ChangeListener<NotificationList> { _, _, newValue ->
@@ -134,12 +115,14 @@ class GameUIController : GameUIControllerBase(), Initializable {
     }
 
     /**
-     * TODO: documentation
+     * Laedt die View fuer einen konstruierbaren Energieproduzenten, erstellt den zugehoerigen Controller und stellt
+     *
      */
     private fun showConstructable(energyProducer: EnergyProducer) {
         val loader = FXMLLoader(javaClass.getResource("/fxml/game/constructableCard.fxml"))
-        val controller = loader.getController<ConstructableController>()
-        controller.initData(model) // TODO: EnergyProducer als Parameter angeben? oder eig. besser Controller selbst erstellen und danach zuweisen?
+        val controller = ConstructableController(energyProducer)
+        controller.initData(model)
+        loader.setController(controller)
         constructableContainer.children.add(loader.load())
         constructableController.add(controller)
     }
@@ -160,8 +143,9 @@ class GameUIController : GameUIControllerBase(), Initializable {
      */
     private fun showNotification(notification: Notification) {
         val loader = FXMLLoader(javaClass.getResource("/fxml/game/notification.fxml"))
-        val controller = loader.getController<NotificationController>()
-        controller.initData(model) // TODO: ID des Notifications-Objekts angeben? oder besser über eigens erstellten Konstruktor machen
+        val controller = NotificationController(notification)
+        controller.initData(model)
+        loader.setController(controller)
         notificationContainer.children.add(loader.load())
         notificationController.add(controller)
     }

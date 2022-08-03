@@ -1,6 +1,8 @@
 package de.hsos.gaertner_kirkesler_knodt.game.ui
 
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
+import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
+import javafx.collections.ListChangeListener
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 import javafx.scene.image.Image
@@ -8,7 +10,7 @@ import java.net.URL
 import java.util.*
 
 /**
- * TODO: documentation
+ * Controller zur Darstellung eines gebauten EnergyProducers.
  *
  * @author Gaertner
  */
@@ -21,12 +23,10 @@ class ConstructedController : GameUIControllerBase() {
     private  lateinit var image: Image
 
     override fun initData(model: GameModel) {
-        //TODO("Not yet implemented")
-        println("ConstructedController.initData()")
+        this.model = model
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        //TODO("bindings")
-        println("ConstructedController.initialize()")
+        // keine Bindings oder Callbacks in diesem Controller noetig
     }
 }
