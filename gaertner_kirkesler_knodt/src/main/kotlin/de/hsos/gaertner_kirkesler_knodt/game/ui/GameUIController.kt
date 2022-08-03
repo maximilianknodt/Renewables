@@ -130,7 +130,8 @@ class GameUIController : GameUIControllerBase() {
         val controller = ConstructableController(energyProducer)
         controller.initData(model)
         loader.setController(controller)
-        constructableContainer.children.add(loader.load())
+        //constructableContainer.children.add(loader.load())
+        // TODO: Error "Location is not set."
         constructableController.add(controller)
     }
 

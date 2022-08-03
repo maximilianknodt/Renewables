@@ -4,6 +4,7 @@ import de.hsos.gaertner_kirkesler_knodt.game.GameModel
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 import javafx.scene.image.Image
+import javafx.scene.text.Text
 import java.net.URL
 import java.util.*
 
@@ -15,16 +16,16 @@ import java.util.*
 class ResourcesController : GameUIControllerBase() {
 
     @FXML
-    private lateinit var energyConsumption: Label
+    private lateinit var energyConsumption: Text
 
     @FXML
-    private lateinit var energyProduction: Label
+    private lateinit var energyProduction: Text
 
     @FXML
-    private lateinit var population: Label
+    private lateinit var population: Text
 
     @FXML
-    private lateinit var money: Label
+    private lateinit var money: Text
 
     /**
      * Fuehrt die Bindings zwischen den Model- und View-Komponenten aus, nachdem das Model dem Controller bekannt

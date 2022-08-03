@@ -23,8 +23,8 @@ class NotificationController(
     @FXML
     private lateinit var message: Label
 
-    @FXML
-    private lateinit var closeButton: Button
+    //@FXML TODO:
+    //private lateinit var closeButton: Button
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         title.text = notification.title
@@ -34,8 +34,7 @@ class NotificationController(
     /**
      * Methode, die aufgerufen wird, wenn der Benutzer auf den Schliessen-Button klickt. Zu Demonstrationszwecken hier
      * direkt uber den FXMLLoader in der View bekannt gemacht, statt manuell in der initialize()-Methode zugewiesen.
-     */
-    @FXML
+     */ // TODO
     private fun onClose(){
         model.closeNotification(notification.id)
     }
