@@ -31,7 +31,7 @@ class RouteController() : Router {
      */
     override fun showScene(route: Route) {
         val fxmlLoader = FXMLLoader(RenewablesApp::class.java.getResource(route.path))
-        val scene = Scene(fxmlLoader.load(), 720.0, 540.0)
+        val scene = Scene(fxmlLoader.load(), 900.0, 750.0)
         var controller = fxmlLoader.getController<Initializable>()
 
         when(route) {

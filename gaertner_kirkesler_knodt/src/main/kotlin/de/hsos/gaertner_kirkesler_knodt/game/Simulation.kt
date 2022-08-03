@@ -2,6 +2,8 @@ package de.hsos.gaertner_kirkesler_knodt.game
 import de.hsos.gaertner_kirkesler_knodt.game.incident.Incident
 import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.population.PopulationAlg
+import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing
+
 /**
  * Diese Klasse dient als 'Steuerklasse' fuer die Spiellogik.
  *
@@ -25,8 +27,6 @@ class Simulation(
         private const val EARNRATE: Int = 2
     }
     public fun next() {
-        //TODO: no implementation yet
-
         // Runde erhoehen
         round++
 
@@ -48,16 +48,14 @@ class Simulation(
         this.res.earn(this.res.population * EARNRATE)
 
         // Zerstoerung aufrufen
-        // TODO: geht das? sieht auf jeden Fall nett aus.
 /*        currentIncident?.run {
             energyProducer.forEach {
                 it.destroy(this)
-                // TODO: nextState aufrufen
             }
         }*/
         energyProducer.forEach {
             it.destroy(currentIncident)
-            // TODO: nextState aufrufen
+            if (it.state is Constructing) it.finishConstructing()
         }
     }
 }

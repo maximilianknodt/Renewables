@@ -20,8 +20,7 @@ class MainMenuController : Initializable, EventHandler<ActionEvent> {
     private lateinit var exitButton: Button
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        newGameButton.setOnAction(this)
-        exitButton.setOnAction(this)
+
     }
 
     public fun initData(data: MenuModel) {
@@ -39,10 +38,7 @@ class MainMenuController : Initializable, EventHandler<ActionEvent> {
     }
 
     override fun handle(event: ActionEvent?) {
-        when(event?.source) {
-            newGameButton -> model.startGame()
-            exitButton -> model.endApplication()
-        }
+
     }
 
 }

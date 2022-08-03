@@ -23,13 +23,19 @@ class GameOverController : Initializable, EventHandler<ActionEvent> {
     }
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
-        backToMenuButton.setOnAction(this)
+
+    }
+
+    public fun onReturn() {
+        model.backToMainMenu()
+    }
+
+    public fun onEnd() {
+        model.endGame()
     }
 
     override fun handle(event: ActionEvent?) {
-        when(event?.source) {
-            backToMenuButton -> model.backToMainMenu()
-        }
+
     }
 
 }

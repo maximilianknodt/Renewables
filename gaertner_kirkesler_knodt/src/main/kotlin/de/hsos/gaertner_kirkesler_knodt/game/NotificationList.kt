@@ -6,8 +6,6 @@ package de.hsos.gaertner_kirkesler_knodt.game
  *
  * @author Kirkesler
  */
-
-// TODO: Datenklasse oder nicht?
 class NotificationList() {
     var notifications: LinkedHashMap<Int, Notification>
 
@@ -22,8 +20,5 @@ class NotificationList() {
     }
     public fun add(notification: Notification) {
         this.notifications?.put(notification.id, notification)
-    }
-    public fun delete() {
-        //TODO: not implemented yet
     }
 }
