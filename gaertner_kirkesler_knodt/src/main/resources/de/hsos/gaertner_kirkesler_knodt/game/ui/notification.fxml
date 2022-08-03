@@ -12,7 +12,7 @@
 
 <!-- FXML-Layout zur Darstellung einer Benachrichtigung (@author Gaertner) -->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="200.0" styleClass="outlined-container" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="200.0" style="-fx-background-color: #212D5B;" styleClass="outlined-container" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -26,15 +26,15 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Label maxWidth="1.7976931348623157E308" prefWidth="1000.0" styleClass="lightblue-text" text="Ereignis">
+                  <Label maxWidth="1.7976931348623157E308" prefWidth="1000.0" styleClass="lightblue-text" text="Ereignis" textFill="#00bcde">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                      <font>
-                        <Font name="Consolas" size="12.0" />
+                        <Font name="Minecraft" size="12.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" text="X">
+                  <Button mnemonicParsing="false" text="X" textFill="#ffc700">
                      <font>
                         <Font name="Consolas" size="12.0" />
                      </font>
@@ -44,20 +44,20 @@
                   </Button>
                </children>
             </HBox>
-            <Label fx:id="title" maxWidth="1.7976931348623157E308" prefWidth="1000.0" styleClass="white-text" text="Ereignis">
+            <Label fx:id="title" maxWidth="1.7976931348623157E308" prefWidth="1000.0" style="-fx-text-fill: white;" styleClass="white-text" text="Ereignis">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <font>
-                  <Font name="Consolas Bold" size="12.0" />
+                  <Font name="Minecraft" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="message" alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1000.0" prefWidth="150.0" styleClass="white-text" text="Message" wrapText="true">
+            <Label fx:id="message" alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1000.0" prefWidth="150.0" style="-fx-text-fill: white;" styleClass="white-text" text="Message" wrapText="true">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <font>
-                  <Font name="Consolas" size="12.0" />
+                  <Font name="Minecraft" size="12.0" />
                </font>
             </Label>
          </children>

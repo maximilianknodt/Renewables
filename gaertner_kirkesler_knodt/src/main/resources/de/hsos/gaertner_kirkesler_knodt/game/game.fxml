@@ -19,11 +19,7 @@
                   <StackPane alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <fx:include fx:id="resources" maxHeight="-Infinity" source="ui/resources.fxml" StackPane.alignment="TOP_LEFT" />
-                        <VBox fx:id="notificationContainer" maxHeight="-Infinity" maxWidth="-Infinity" StackPane.alignment="TOP_RIGHT">
-                           <children>
-                              <fx:include source="ui/notification.fxml" />
-                           </children>
-                        </VBox>
+                        <VBox fx:id="notificationContainer" maxHeight="-Infinity" maxWidth="-Infinity" StackPane.alignment="TOP_RIGHT" />
                      </children>
                      <padding>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -34,18 +30,10 @@
                               <Image url="@../assets/Insel.png" />
                           </image>
                       </ImageView>
-                  <AnchorPane fx:id="constructedContainer" layoutX="590.0" prefWidth="785.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <fx:include layoutX="530.0" layoutY="160.0" source="ui/constructed.fxml" />
-                        <fx:include layoutX="400.0" layoutY="205.0" source="ui/constructed.fxml" />
-                        <fx:include layoutX="300.0" layoutY="250.0" source="ui/constructed.fxml" />
-                        <fx:include layoutX="195.0" layoutY="225.0" source="ui/constructed.fxml" />
-                        <fx:include layoutX="650.0" layoutY="190.0" source="ui/constructed.fxml" />
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane fx:id="constructedContainer" layoutX="590.0" prefWidth="785.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   </children>
               </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" styleClass="outlined-container">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" style="-fx-background-color: #212D5B;" styleClass="outlined-container">
                <children>
                   <HBox fx:id="constructableContainer" alignment="CENTER" prefWidth="900.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>

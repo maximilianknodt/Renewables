@@ -41,7 +41,7 @@
                         <Image url="@../../assets/icons/coin.png" />
                      </image></ImageView>
                   <Region prefWidth="1000.0" />
-                  <Text fx:id="cost" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="white-text" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="39.5859375">
+                  <Text fx:id="cost" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="white-text" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="70.0">
                      <font>
                         <Font name="Minecraft" size="12.0" />
                      </font></Text>
@@ -57,7 +57,7 @@
                         <Image url="@../../assets/icons/energy.png" />
                      </image></ImageView>
                   <Region prefWidth="1000.0" />
-                  <Text fx:id="energy" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER">
+                  <Text fx:id="energy" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="69.042" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="70.0">
                      <font>
                         <Font name="Minecraft" size="12.0" />
                      </font></Text>
