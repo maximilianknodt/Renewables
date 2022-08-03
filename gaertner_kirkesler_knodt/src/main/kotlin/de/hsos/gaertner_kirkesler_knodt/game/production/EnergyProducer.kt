@@ -13,15 +13,15 @@ import kotlin.math.roundToInt
  * @author Knodt
  */
 abstract class EnergyProducer {
-    protected var level: Int = 0
+    abstract val cost: Int
+    var level: Int = 0
         set(value) {
             if(value < 0) field = this.maxLevel
             if(value > this.maxLevel) field = this.maxLevel
         }
 
-    var state: ProducerState = Constructable()
     private val maxLevel = 3
-    abstract val cost: Int
+    var state: ProducerState = Constructable()
 
     /**
      * Gibt den Energieertrag des Konstrukts zurueck
@@ -40,7 +40,7 @@ abstract class EnergyProducer {
     /**
      * Aendert den Produktionszustand des Konstrukts in Constructing und dessen Level
      */
-    protected fun construct(){
+    public fun construct(){
         this.level++
         this.state.nextState()
     }
@@ -48,7 +48,7 @@ abstract class EnergyProducer {
     /**
      * Aendert das Level des Konstrukts
      */
-    protected fun levelUp(){
+    public fun levelUp(){
         if(this.state is Constructed){
             if(this.level < this.maxLevel) {
                 this.level++
@@ -59,7 +59,7 @@ abstract class EnergyProducer {
     /**
      * Aendert den Produktionszustand des Konstrukts in Constructed
      */
-    protected fun finishConstructing(){
+    public fun finishConstructing(){
         if(this.state is Constructing) {
             this.state.nextState()
         }
