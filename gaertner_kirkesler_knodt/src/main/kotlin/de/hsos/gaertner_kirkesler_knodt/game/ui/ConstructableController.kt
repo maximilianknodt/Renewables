@@ -9,8 +9,10 @@ import javafx.event.EventHandler
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 import javafx.scene.image.Image
+import javafx.scene.image.ImageView
 import javafx.scene.input.MouseEvent
 import javafx.scene.layout.AnchorPane
+import javafx.scene.text.Text
 import java.net.URL
 import java.util.*
 
@@ -28,16 +30,16 @@ class ConstructableController(
 ) : GameUIControllerBase(), ListChangeListener<EnergyProducer> {
 
     @FXML
-    private lateinit var name: Label
+    private lateinit var name: Text
 
     @FXML
-    private lateinit var energy: Label
+    private lateinit var energy: Text
 
     @FXML
-    private lateinit var cost: Label
+    private lateinit var cost: Text
 
     @FXML
-    private lateinit var image: Image
+    private lateinit var image: ImageView
 
     @FXML
     private lateinit var card: AnchorPane

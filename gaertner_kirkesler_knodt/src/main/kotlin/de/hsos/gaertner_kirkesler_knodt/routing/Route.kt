@@ -11,7 +11,7 @@ enum class Route(
     val path: String,
     val stageTitle: String
 ) {
-    MENU("fxml/menu.fxml","Renewables - Menu"),
-    GAME("fxml/game/game.fxml","Renewables - Game"),
-    GAMEOVER("fxml/gameover.fxml", "Renewables - Game Over");
+    MENU("menu/menu.fxml","Renewables - Menu"),
+    GAME("game/game.fxml","Renewables - Game"),
+    GAMEOVER("gameover/gameover.fxml", "Renewables - Game Over");
 }
