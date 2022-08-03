@@ -14,13 +14,13 @@ enum class Severity(
 ) {
     // Zuweisung von Schwellenwerten fuer Schwere der Vorfaelle verschiedener Level
     LOW(0.0,0.15),
-    MEDIUM(0.16,0.30),
-    HIGH(0.31,0.50),
-    CATASTROPHE(0.51, 0.94),
-    GAU(0.95, 0.99);
+    MEDIUM(0.15,0.30),
+    HIGH(0.30,0.50),
+    CATASTROPHE(0.50, 0.95),
+    GAU(0.95, 1.0);
 
     init {
-        require(min in 0.0..0.99 && max in 0.0..0.99) {
+        require(min in 0.0..1.0 && max in 0.0..1.0 && min < max) {
             "min and max must be in range between 0% and 100%"
         }
     }
@@ -32,6 +32,7 @@ enum class Severity(
     companion object {
 
         fun getSeverity(random: Double): Severity {
+            println("getSeverity $random")
             return values().first {
                 random in it.min..it.max
             }
