@@ -74,7 +74,7 @@ class ConstructableController(
     }
 
     /**
-     * Wird ausgefuehrt, sobald sich der EnergyProducer in der Liste veraendert, um die View zu aktualisieren
+     * Wird ausgefuehrt, sobald sich der EnergyProducer in der Liste veraendert, um die View zu aktualisieren.
      */
     private fun updateView(){
         name.text = prod.name
