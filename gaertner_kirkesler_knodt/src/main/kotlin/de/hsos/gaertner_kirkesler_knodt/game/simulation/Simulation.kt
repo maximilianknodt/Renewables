@@ -28,11 +28,17 @@ class Simulation() : Simulator {
     }
 
     init {
+        // Zufaellige Wahl eines Populationsalgorithmus
         val list = listOf(ExponentialPopulation(), LinearPopulation(), StagnatingPopulation())
         populationAlg = list.random()
-        println("Algo is $populationAlg")
+        println("algo is $populationAlg")
     }
-
+    /**
+     * Diese Methode wird nach erfolgreicher Registrierung eines Models aufgerufen um Initialwerte
+     * des Spiels zu setzen.
+     *
+     * @author Kirkesler
+     */
     private fun initValues() {
         println("generating random start values")
         var population: Int = Random.nextInt(200, 500)
@@ -43,6 +49,11 @@ class Simulation() : Simulator {
             Random.nextInt(30000, 60000)
         ))
     }
+    /**
+     * Diese Methode wird bei jeder neuen Runde aufgerufen. Berechnet neue Resourcenwerte.
+     *
+     * @author Kirkesler
+     */
     override fun simulate() {
         if(model != null) {
             val oldRes: Resources = model.resources.value
@@ -85,6 +96,14 @@ class Simulation() : Simulator {
             ))
         }
     }
+
+    /**
+     * Diese Methode dient zur Registrierung eines Models an einem Simulator.
+     *
+     * @param model GameModel, welches registriert werden soll
+     *
+     * @author Kirkesler
+     */
     override fun register(model: GameModel) {
         this.model = model
         initValues()
