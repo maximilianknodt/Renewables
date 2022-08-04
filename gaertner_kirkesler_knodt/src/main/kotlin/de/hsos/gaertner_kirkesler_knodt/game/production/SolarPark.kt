@@ -25,7 +25,7 @@ object SolarPark : EnergyProducer() {
     override val energy = arrayOf(0, 50000, 60000, 75000)
 
     /**
-     * Zerstoert den Solarpark je nach Staerke und Art des Vorfall
+     * Zerstoert den Solarpark je nach Staerke und Art des Vorfalls
      * und aendert ggf. den Zustand des Solarparks
      *
      * @param incident Vorfall

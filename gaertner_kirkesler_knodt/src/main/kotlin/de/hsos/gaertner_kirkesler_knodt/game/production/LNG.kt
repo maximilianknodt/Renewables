@@ -25,7 +25,7 @@ object LNG : EnergyProducer() {
     override val energy = arrayOf(0, 300000, 400000, 500000)
 
     /**
-     * Zerstoert den LNG-Tanker je nach Staerke und Art des Vorfall
+     * Zerstoert den LNG-Tanker je nach Staerke und Art des Vorfalls
      * und aendert ggf. den Zustand des LNG-Tankers
      *
      * @param incident Vorfall

@@ -24,7 +24,7 @@ object NuclearPowerPlant : EnergyProducer() {
     override val energy = arrayOf(0, 500000, 575000, 750000)
 
     /**
-     * Zerstoert das Atomkraftwerk je nach Staerke und Art des Vorfall
+     * Zerstoert das Atomkraftwerk je nach Staerke und Art des Vorfalls
      * und aendert ggf. den Zustand des Atomkraftwerks
      *
      * @param incident Vorfall

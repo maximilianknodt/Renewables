@@ -25,7 +25,7 @@ object WindFarm : EnergyProducer() {
     override val energy = arrayOf(0, 60000, 80000, 90000)
 
     /**
-     * Zerstoert den Windpark je nach Staerke und Art des Vorfall
+     * Zerstoert den Windpark je nach Staerke und Art des Vorfalls
      * und aendert ggf. den Zustand des Windparks
      *
      * @param incident Vorfall

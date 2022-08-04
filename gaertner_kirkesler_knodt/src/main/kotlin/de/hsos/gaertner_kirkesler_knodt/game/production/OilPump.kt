@@ -23,9 +23,9 @@ object OilPump : EnergyProducer() {
         }
 
     override val energy = arrayOf(0, 200000, 275000, 350000)
-    
+
     /**
-     * Zerstoert die Oelpumpe je nach Staerke und Art des Vorfall
+     * Zerstoert die Oelpumpe je nach Staerke und Art des Vorfalls
      * und aendert ggf. den Zustand der Oelpumpe
      *
      * @param incident Vorfall

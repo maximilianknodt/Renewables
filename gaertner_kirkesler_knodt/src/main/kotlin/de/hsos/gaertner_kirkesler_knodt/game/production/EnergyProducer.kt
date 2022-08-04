@@ -39,7 +39,7 @@ abstract class EnergyProducer {
     abstract fun destroy(incident: Incident)
 
     /**
-     * Gibt den aktuellen Energieertrag des Konstrukts abhaengig des Levels zurueck
+     * Gibt den aktuellen Energieertrag des Konstrukts abhaengig vom Level zurueck
      *
      * @return aktueller Energieertrag des Konstrukts
      */
