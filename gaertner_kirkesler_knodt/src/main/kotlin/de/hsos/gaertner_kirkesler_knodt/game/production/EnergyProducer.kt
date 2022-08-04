@@ -19,6 +19,7 @@ abstract class EnergyProducer {
     abstract val position: Pair<Double, Double>
 
     abstract val cost: Int
+    abstract val energy: Array<Int>
 
     var level: Int = 0
         set(value) {
@@ -31,18 +32,32 @@ abstract class EnergyProducer {
     var state: ProducerState = Constructable()
 
     /**
-     * Gibt den Energieertrag des Konstrukts zurueck
-     *
-     * @return Energieertrag
-     */
-    abstract fun energyOutput(): Int
-
-    /**
      * Zerstoert das Konstrukt je nach Staerke und Art des Vorfalls
      *
      * @param incident ereigneter Vorfall
      */
     abstract fun destroy(incident: Incident)
+
+    /**
+     * Gibt den aktuellen Energieertrag des Konstrukts abhaengig des Levels zurueck
+     *
+     * @return aktueller Energieertrag des Konstrukts
+     */
+    fun activeEnergyOutput(): Int {
+        return this.energy[this.level]
+    }
+
+    /**
+     * Gibt den gesamten Energieetrag des Konstrukts zurueck, der durch das naechste Level erreicht wird
+     *
+     * @return gesamt Energieetrag des Konstrukts fuer nachstes Level
+     */
+    fun nextLevelEnergyOutput(): Int {
+        if(this.level < this.maxLevel) {
+            return this.energy[this.level++]
+        }
+        return this.energy[this.maxLevel]
+    }
 
     /**
      * Aendert den Produktionszustand des Konstrukts in Constructing und dessen Level

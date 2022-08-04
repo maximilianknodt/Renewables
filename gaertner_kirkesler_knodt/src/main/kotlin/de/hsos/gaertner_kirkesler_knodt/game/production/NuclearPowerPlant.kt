@@ -21,15 +21,7 @@ object NuclearPowerPlant : EnergyProducer() {
                 else -> 1000000
             }
 
-    /**
-     * Gibt den Energieertrag des Atomkraftwerks je nach Level zurueck
-     *
-     * @return Energieertrag
-     */
-    override fun energyOutput(): Int {
-        val output = arrayOf(0, 500000, 575000, 750000)
-        return output[this.level]
-    }
+    override val energy = arrayOf(0, 500000, 575000, 750000)
 
     /**
      * Zerstoert das Atomkraftwerk je nach Staerke und Art des Vorfall

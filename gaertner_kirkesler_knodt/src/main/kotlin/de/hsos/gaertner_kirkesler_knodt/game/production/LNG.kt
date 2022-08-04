@@ -22,15 +22,7 @@ object LNG : EnergyProducer() {
             else -> 800000
         }
 
-    /**
-     * Gibt den Energieertrag des LNG-Tankers je nach Level zurueck
-     *
-     * @return Energieertrag
-     */
-    override fun energyOutput(): Int {
-        val output = arrayOf(0, 300000, 400000, 500000)
-        return output[this.level]
-    }
+    override val energy = arrayOf(0, 300000, 400000, 500000)
 
     /**
      * Zerstoert den LNG-Tanker je nach Staerke und Art des Vorfall

@@ -78,7 +78,7 @@ class ConstructableController(
      */
     private fun updateView(){
         name.text = prod.name
-        energy.text = prod.energyOutput().toString()
+        energy.text = prod.nextLevelEnergyOutput().toString()
         cost.text = prod.cost.toString()
         image.image = Image(RenewablesApp::class.java.getResource(prod.imgPath).toString())
     }

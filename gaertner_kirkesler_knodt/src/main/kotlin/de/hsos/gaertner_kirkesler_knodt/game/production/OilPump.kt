@@ -22,16 +22,8 @@ object OilPump : EnergyProducer() {
             else -> 250000
         }
 
-    /**
-     * Gibt den Energieertrag des Oelpumpe je nach Level zurueck
-     *
-     * @return Energieertrag
-     */
-    override fun energyOutput(): Int {
-        val output = arrayOf(0, 200000, 275000, 350000)
-        return output[this.level]
-    }
-
+    override val energy = arrayOf(0, 200000, 275000, 350000)
+    
     /**
      * Zerstoert die Oelpumpe je nach Staerke und Art des Vorfall
      * und aendert ggf. den Zustand der Oelpumpe

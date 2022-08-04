@@ -22,15 +22,7 @@ object SolarPark : EnergyProducer() {
             else -> 60000
         }
 
-    /**
-     * Gibt den Energieertrag des Solarparks je nach Level zurueck
-     *
-     * @return Energieertrag
-     */
-    override fun energyOutput(): Int {
-        val output = arrayOf(0, 50000, 60000, 75000)
-        return output[this.level]
-    }
+    override val energy = arrayOf(0, 50000, 60000, 75000)
 
     /**
      * Zerstoert den Solarpark je nach Staerke und Art des Vorfall

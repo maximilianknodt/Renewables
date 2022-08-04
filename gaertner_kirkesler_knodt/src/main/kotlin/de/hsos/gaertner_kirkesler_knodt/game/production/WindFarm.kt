@@ -22,15 +22,7 @@ object WindFarm : EnergyProducer() {
             else -> 50000
         }
 
-    /**
-     * Gibt den Energieertrag des Windparks je nach Level zurueck
-     *
-     * @return Energieertrag
-     */
-    override fun energyOutput(): Int {
-        val output = arrayOf(0, 60000, 80000, 90000)
-        return output[this.level]
-    }
+    override val energy = arrayOf(0, 60000, 80000, 90000)
 
     /**
      * Zerstoert den Windpark je nach Staerke und Art des Vorfall
