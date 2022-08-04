@@ -59,8 +59,6 @@ class GameUIController : GameUIControllerBase() {
      */
     override fun initData(model: GameModel) {
         super.model = model
-        resourcesController.initData(model)
-        model.register()
 
         // Da das Model nun bekannt gemacht wurde, koennen jetzt die Bindings zu den Daten aus diesem gesetzt werden
         initBindings()
@@ -74,6 +72,10 @@ class GameUIController : GameUIControllerBase() {
         constructableController.forEach { it.initData(model) }
         constructedController.forEach { it.initData(model) } // TODO: wird nie aufgerufen?
         notificationController.forEach { it.initData(model) } // TODO: wird nie aufgerufen?
+        resourcesController.initData(model)
+
+        // Model registriert sich bei der Simulation
+        model.register()
     }
 
     /**

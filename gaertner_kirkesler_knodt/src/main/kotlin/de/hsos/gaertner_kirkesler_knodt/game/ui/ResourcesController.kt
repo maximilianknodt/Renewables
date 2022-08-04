@@ -36,7 +36,6 @@ class ResourcesController : GameUIControllerBase() {
      */
     override fun initData(model: GameModel) {
         this.model = model
-        println("Wird geinittet")
         model.resources.addListener { _, _, changed ->
             println("Hallo, läuft")
             energyConsumption.text = "- " +  changed.energyConsumption.toString()

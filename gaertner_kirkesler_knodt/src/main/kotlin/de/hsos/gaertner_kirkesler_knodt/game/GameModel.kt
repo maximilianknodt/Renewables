@@ -25,7 +25,7 @@ class GameModel : BaseModel() {
     val resources: ObjectProperty<Resources>
     val notifications: ObjectProperty<NotificationList>
 
-    private val simulator: Simulator = Simulation(LinearPopulation())
+    private val simulator: Simulator = Simulation()
 
     init {
         val list = listOf(LNG, NuclearPowerPlant, OilPump, SolarPark, WindFarm)
@@ -43,7 +43,9 @@ class GameModel : BaseModel() {
      */
     fun closeNotification(id: Int) {
         print("close notification $id")
-        notifications.get().close(id) // der get()-Aufruf ist notwendig, da es sich um eine ObjectProperty handelt
+        var notifications = notifications.get() // der get()-Aufruf ist notwendig, da es sich um eine ObjectProperty handelt
+        notifications.close(id)
+        setNotifications(notifications)
     }
 
     /**
@@ -55,7 +57,17 @@ class GameModel : BaseModel() {
     fun constructOrLevelupConstructable(prod: EnergyProducer){
         val index = this.energyProducer.indexOf(prod)
         prod.construct()
-        resources.get().spend(prod.cost)
+
+        // TODO: check whether an new object resources is necessary
+        var res: Resources = resources.get()
+        res.spend(prod.cost)
+        setResources(Resources(
+            res.population,
+            res.energyProduction,
+            res.energyConsumption,
+            res.money
+        ))
+
         energyProducer[index] = prod
     }
 
@@ -77,6 +89,10 @@ class GameModel : BaseModel() {
 
     fun setResources(res: Resources) {
         resources.set(res)
+    }
+
+    fun setNotifications(notifcation: NotificationList) {
+        notifications.set(notifcation)
     }
 
     fun register() {
