@@ -84,7 +84,7 @@ class Simulation() : Simulator {
             model.energyProducer.forEach {
                 it.destroy(currentIncident)
                 if (it.state is Constructing) it.finishConstructing()
-                if (it.state is Constructed) energyProduction += it.energyOutput()
+                if (it.state is Constructed) energyProduction += it.activeEnergyOutput()
             }
 
             // TODO: EnergyConsumption und Demand fehlen
