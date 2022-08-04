@@ -9,8 +9,7 @@ import de.hsos.gaertner_kirkesler_knodt.routing.Router
  * @author Kirkesler
  */
 open class BaseModel() {
-    lateinit var router: Router
-    init {
-        this.router = RouteController()
+    companion object {
+        var router: Router = RouteController()
     }
 }
