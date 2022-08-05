@@ -21,7 +21,7 @@ abstract class EnergyProducer {
     abstract val cost: Int
     abstract val energy: Array<Int>
 
-    var level: Int = 0
+    protected var level: Int = 0
         set(value) {
             field = if(value < 0) 0
                 else if(value > this.maxLevel) this.maxLevel
@@ -45,15 +45,6 @@ abstract class EnergyProducer {
      */
     fun activeEnergyOutput(): Int {
         return this.energy[this.level]
-    }
-
-    /**
-     * Setzt den Zustand auf Constructable und das Level des Singletons auf 0 zurueck.
-     * Da die Werte [cost] und [energy] vom Level abhaengig sind, muessen diese nicht separat geaendert werden.
-     */
-    fun resetObject(){
-        this.level = 0
-        this.state = Constructable()
     }
 
     /**
@@ -94,6 +85,15 @@ abstract class EnergyProducer {
         if(this.state is Constructing) {
             this.state.nextState()
         }
+    }
+
+    /**
+     * Setzt den Zustand auf Constructable und das Level des Singletons auf 0 zurueck.
+     * Da die Werte [cost] und [energy] vom Level abhaengig sind, muessen diese nicht separat geaendert werden.
+     */
+    fun resetObject(){
+        this.level = 0
+        this.state = Constructable()
     }
 
     /**
