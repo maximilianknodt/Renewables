@@ -9,8 +9,8 @@ package de.hsos.gaertner_kirkesler_knodt.game
  * @author Kirkesler
  */
 data class Notification(
-    public val id: Int,
-    public val title: String,
-    public val desc: String
+    val id: Int,
+    val title: String,
+    val desc: String,
 )
 

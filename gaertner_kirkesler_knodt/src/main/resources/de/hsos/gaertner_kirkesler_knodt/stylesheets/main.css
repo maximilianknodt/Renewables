@@ -77,3 +77,9 @@
     -fx-background-color: #001c4f;
 }
 
+.locked {
+    -fx-background-color: #212D5B !important;
+    -fx-text-fill: #ff3333 !important;
+    -fx-blend-mode: screen;
+}
+

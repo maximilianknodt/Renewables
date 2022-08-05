@@ -3,6 +3,7 @@ package de.hsos.gaertner_kirkesler_knodt.game
 import de.hsos.gaertner_kirkesler_knodt.BaseModel
 import de.hsos.gaertner_kirkesler_knodt.game.population.LinearPopulation
 import de.hsos.gaertner_kirkesler_knodt.game.production.*
+import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.simulation.Simulation
 import de.hsos.gaertner_kirkesler_knodt.game.simulation.Simulator
 import de.hsos.gaertner_kirkesler_knodt.routing.Route
@@ -39,6 +40,16 @@ class GameModel : BaseModel() {
     /**
      * Deligiert das Schliessen einer Benachrichtigung an die dafuer zustaendige NotificationList.
      *
+     * Der verwendete get-Aufruf mit nachfolgender Bearbeitung des Objektes ausserhalb der haltenden Klasse entspricht
+     * nicht der grundlegenden Idee der Objektorientierung, ist aber notwendig, da es sich um eine ObjectProperty aus
+     * dem Paket javafx.beans.property handelt. Die Klasse kann alternativ nachtraeglich ergaenzt werden, indem eine
+     * Extension-Methode verwendet wird. Auf diese Weise waere ein Aufruf `this.notifications.close(id)` moeglich.
+     * ```
+     * fun ObjectProperty<NotificationList>.close(id: Int) {
+     *   this.value.close(id)
+     * }
+     * ```
+     *
      * @param id ID der Benachrichtigung, welche geschlossen werden soll.
      */
     fun closeNotification(id: Int) {
@@ -50,15 +61,20 @@ class GameModel : BaseModel() {
 
     /**
      * Beauftragt einen State-Wechsel des EnergyProducers, sodass dieser in den Zustand 'Constructed' wechseln kann.
-     * Gibt die Kosten fuer die Konstruktion des EnergyProducers vom vorhandenen Geld aus.
+     * Gibt die Kosten fuer die Konstruktion des EnergyProducers vom vorhandenen Geld aus. Falls ein reines Levelup
+     * geschehen soll, wird kein State-Wechsel durchgefuehrt.
      *
-     * @param prod EnergyProducer, welcher zu 'Constructed' gewechselt werden soll.
+     * @param prod EnergyProducer, der gebaut oder aufgelevelt werden soll.
      */
     fun constructOrLevelupConstructable(prod: EnergyProducer){
         val index = this.energyProducer.indexOf(prod)
-        prod.construct()
 
-        // TODO: check whether an new object resources is necessary
+        if(prod.state is Constructed){
+            prod.levelUp()
+        } else {
+            prod.construct()
+        }
+
         var res: Resources = resources.get()
         res.spend(prod.cost)
         setResources(Resources(
@@ -75,7 +91,6 @@ class GameModel : BaseModel() {
      * Startet die Simulation der naechsten Runde.
      */
     fun simulateRound(){
-        print("simulateRound")
         simulator.simulate()
     }
 
@@ -83,7 +98,6 @@ class GameModel : BaseModel() {
      * Beendet das Spiel, indem der Router zu dem Hauptmenue wechseln soll.
      */
     fun endGame(){
-        print("endGame")
         router.showScene(Route.MENU)
     }
 
@@ -98,5 +112,9 @@ class GameModel : BaseModel() {
     fun register() {
         println("Registriert")
         simulator.register(this)
+    }
+
+    fun canPay(price: Int): Boolean {
+        return resources.get().money >= price
     }
 }

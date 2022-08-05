@@ -3,8 +3,11 @@ package de.hsos.gaertner_kirkesler_knodt.game.ui
 import de.hsos.gaertner_kirkesler_knodt.RenewablesApp
 import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
+import de.hsos.gaertner_kirkesler_knodt.game.Resources
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing
+import javafx.beans.value.ChangeListener
+import javafx.beans.value.ObservableValue
 import javafx.collections.ListChangeListener
 import javafx.event.EventHandler
 import javafx.fxml.FXML
@@ -28,7 +31,7 @@ import java.util.*
  */
 class ConstructableController(
     private val prod: EnergyProducer
-) : GameUIControllerBase(), ListChangeListener<EnergyProducer> {
+) : GameUIControllerBase(), ListChangeListener<EnergyProducer>, ChangeListener<Resources> {
 
     @FXML
     private lateinit var name: Text
@@ -55,6 +58,7 @@ class ConstructableController(
     override fun initData(model: GameModel) {
         this.model = model
         model.energyProducer.addListener(this)
+        model.resources.addListener(this)
     }
 
     /**
@@ -63,7 +67,6 @@ class ConstructableController(
      */
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         updateView()
-        card.onMouseClicked = EventHandler { e -> onClick(e) }
     }
 
     /**
@@ -81,6 +84,18 @@ class ConstructableController(
         energy.text = prod.nextLevelEnergyOutput().toString()
         cost.text = prod.cost.toString()
         image.image = Image(RenewablesApp::class.java.getResource(prod.imgPath).toString())
+
+        val active: Boolean = model.canPay(prod.cost)
+        println("updateView: " + prod.name + " will be active: " + active)
+        val deactivatedStyleClass = "locked"
+        if(!active){
+            card.styleClass.add(deactivatedStyleClass)
+            card.styleClass.remove("card-container")
+            card.onMouseClicked = null
+        } else if( card.styleClass.contains(deactivatedStyleClass)) {
+            card.styleClass.remove(deactivatedStyleClass)
+            card.onMouseClicked = EventHandler { e -> onClick(e) }
+        }
     }
 
     /**
@@ -93,14 +108,11 @@ class ConstructableController(
                 if(c.wasAdded()){
                     for(prod in c.addedSubList){
                         if(prod == this.prod){
-                            println("ich wurde hinzugefuegt")
-                            print("ConstructableController: onChanged: ${prod.name} + ${prod.state} + ${prod.level} + ${prod.cost}")
                             updateView()
                             break
                         }
                     }
                 } else if(c.wasUpdated()){
-                    println("ConstructableController: wasUpdated")
                     for(i in c.from..c.to){
                         println("updated $i")
                         if(c.list[i] == prod){
@@ -111,6 +123,14 @@ class ConstructableController(
                 }
             }
         }
+    }
+
+    /**
+     * Wird aufgerufen, wenn die Ressourenwerte im [model] veraendert werden, sodass moeglicherweise ein Kauf moeglich
+     * wird oder nicht mehr moeglich ist.
+     */
+    override fun changed(p0: ObservableValue<out Resources>, p1: Resources, p2: Resources) {
+        updateView()
     }
 
 }

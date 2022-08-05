@@ -3,6 +3,7 @@ package de.hsos.gaertner_kirkesler_knodt.game.ui
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
 import de.hsos.gaertner_kirkesler_knodt.game.Notification
 import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
+import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructable
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing
 import javafx.beans.value.ChangeListener
@@ -102,13 +103,11 @@ class GameUIController : GameUIControllerBase() {
         // Befuellen der Controller-Listen auf Basis der Model-Daten
         model.energyProducer.addListener( ListChangeListener{ change ->
                     // Darstellung der gesetzten Energieproduzenten zuruecksetzen
-                    println("energyProducer changed")
                     constructedContainer.children.clear()
                     constructedController.clear()
 
                     // Energieproduzenten anzeigen
                     for(energyProducer in model.energyProducer) {
-                        println("energyProducer ${energyProducer.state}")
                         if(energyProducer.state is Constructed || energyProducer.state is Constructing){
                             showConstructed(energyProducer)
                         }
@@ -135,7 +134,7 @@ class GameUIController : GameUIControllerBase() {
      * Laedt die View fuer einen konstruierbaren Energieproduzenten, erstellt den zugehoerigen Controller und stellt
      * diesen in der horizontalen Liste der konstruierbaren Energieproduzenten dar.
      */
-    private fun showConstructable(energyProducer: EnergyProducer) {
+    private fun showConstructable(energyProducer: EnergyProducer, constructable: Boolean = true) {
         val loader = FXMLLoader(javaClass.getResource("constructableCard.fxml"))
         val controller = ConstructableController(energyProducer)
         controller.initData(model)
