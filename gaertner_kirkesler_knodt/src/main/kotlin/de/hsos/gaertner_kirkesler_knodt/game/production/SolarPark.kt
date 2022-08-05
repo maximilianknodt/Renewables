@@ -15,7 +15,7 @@ object SolarPark : EnergyProducer() {
     override val imgPath: String = "assets/solar.png"
     override val position: Pair<Double, Double> = Pair(0.2167, 0.3750)
 
-    override var cost: Int = 100000
+    override val cost: Int = 100000
         get() = when(this.level){
             1 -> field
             2 -> 40000
@@ -32,9 +32,11 @@ object SolarPark : EnergyProducer() {
      */
     override fun destroy(incident: Incident) {
         when(incident.type) {
-            IncidentType.EARTHQUAKE -> this.level -= 1
+            IncidentType.ERUPTION -> this.level -= 1
             IncidentType.TZUNAMI -> this.level = 0
-            IncidentType.FIRE, IncidentType.GIANT_LIZARD -> this.severityImpact(incident)
+            IncidentType.FIRE,
+                IncidentType.GIANT_LIZARD,
+                IncidentType.EARTHQUAKE -> this.severityImpact(incident)
             else -> println("No Impact")
         }
         if(this.level == 0) super.state = Constructable()

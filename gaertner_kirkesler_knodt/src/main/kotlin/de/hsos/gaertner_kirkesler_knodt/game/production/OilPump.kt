@@ -15,7 +15,7 @@ object OilPump : EnergyProducer() {
     override val imgPath: String = "assets/oil.png"
     override val position: Pair<Double, Double> = Pair(0.4444, 0.3417)
 
-    override var cost: Int = 500000
+    override val cost: Int = 500000
         get() = when(this.level) {
             1 -> field
             2 -> 100000
@@ -33,7 +33,12 @@ object OilPump : EnergyProducer() {
     override fun destroy(incident: Incident) {
         when(incident.type) {
             IncidentType.UFO -> this.level -= 1
-            IncidentType.EARTHQUAKE, IncidentType.TZUNAMI, IncidentType.FIRE, IncidentType.GIANT_LIZARD, IncidentType.ERUPTION -> this.severityImpact(incident)
+            IncidentType.APOCALYPSE -> this.level = 0
+            IncidentType.EARTHQUAKE,
+                IncidentType.TZUNAMI,
+                IncidentType.FIRE,
+                IncidentType.GIANT_LIZARD,
+                IncidentType.ERUPTION -> this.severityImpact(incident)
             else -> println("No Impact")
         }
         if(this.level == 0) super.state = Constructable()

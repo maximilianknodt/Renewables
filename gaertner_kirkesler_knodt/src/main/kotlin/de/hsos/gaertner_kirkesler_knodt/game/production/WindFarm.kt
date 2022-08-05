@@ -15,7 +15,7 @@ object WindFarm : EnergyProducer() {
     override val imgPath: String = "assets/wind.png"
     override val position: Pair<Double, Double> = Pair(0.72222, 0.3167)
 
-    override var cost: Int = 110000
+    override val cost: Int = 110000
         get() = when(this.level) {
             1 -> field
             2 -> 60000
@@ -34,7 +34,9 @@ object WindFarm : EnergyProducer() {
         when(incident.type) {
             IncidentType.UFO -> this.level -= 1
             IncidentType.TZUNAMI -> this.level -= 2
-            IncidentType.EARTHQUAKE, IncidentType.GIANT_LIZARD -> this.severityImpact(incident)
+            IncidentType.EARTHQUAKE,
+                IncidentType.ERUPTION,
+                IncidentType.GIANT_LIZARD -> this.severityImpact(incident)
             else -> println("No Impact")
         }
         if(this.level == 0) super.state = Constructable()

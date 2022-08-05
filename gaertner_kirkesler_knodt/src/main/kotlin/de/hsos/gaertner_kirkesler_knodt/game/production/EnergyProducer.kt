@@ -48,6 +48,15 @@ abstract class EnergyProducer {
     }
 
     /**
+     * Setzt den Zustand auf Constructable und das Level des Singletons auf 0 zurueck.
+     * Da die Werte [cost] und [energy] vom Level abhaengig sind, muessen diese nicht separat geaendert werden.
+     */
+    fun resetObject(){
+        this.level = 0
+        this.state = Constructable()
+    }
+
+    /**
      * Gibt den gesamten Energieetrag des Konstrukts zurueck, der durch das naechste Level erreicht wird
      *
      * @return gesamt Energieetrag des Konstrukts fuer nachstes Level

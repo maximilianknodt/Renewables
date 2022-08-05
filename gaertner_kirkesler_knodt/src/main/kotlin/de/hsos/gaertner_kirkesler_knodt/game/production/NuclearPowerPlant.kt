@@ -35,7 +35,7 @@ object NuclearPowerPlant : EnergyProducer() {
             IncidentType.TZUNAMI -> this.level = 0
             IncidentType.EARTHQUAKE,
                 IncidentType.GIANT_LIZARD,
-                IncidentType.ERUPTION -> this.level -= this.severityImpact(incident)
+                IncidentType.APOCALYPSE-> this.level -= this.severityImpact(incident)
             else -> println("No Impact")
         }
         if(this.level == 0) super.state = Constructable()
