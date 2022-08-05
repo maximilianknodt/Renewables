@@ -1,0 +1,470 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>12</zoom_level><element><id>UMLClass</id><coordinates><x>1428</x><y>684</y><w>240</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+GameUIController
+--
+--
+initData(model: GameModel)
+
+bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1464</x><y>168</y><w>132</w><h>84</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Initializable
+--
+--
+# initialize()
+fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>240</x><y>0</y><w>2328</w><h>324</h></coordinates><panel_attributes>javafx
+fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>2160</x><y>60</y><w>192</w><h>228</h></coordinates><panel_attributes>scene
+fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1524</x><y>240</y><w>36</w><h>324</h></coordinates><panel_attributes>lt=&lt;&lt;-
+fg=#cccccc</panel_attributes><additional_attributes>10;10;10;250</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1428</x><y>540</y><w>240</w><h>84</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+/GameUIControllerBase/
+--
+--
+initData(model: GameModel)
+
+bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1524</x><y>612</y><w>36</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1872</x><y>672</y><w>216</w><h>180</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+ConstructableController
+--
+- prod: EnergyProducer
+- name: Label
+- energy: Label
+- cost: Label
+- image: Image (?)
+--
+- @FXML onClick()
+
+bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1920</x><y>876</y><w>216</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+ResourcesController
+--
+- energy: Label
+- population: Label
+- money: Label
+
+bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1968</x><y>1032</y><w>216</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+NotificationController
+--
+- title: Label
+- message: Label
+--
+- @FXML onClose()
+
+bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1656</x><y>720</y><w>288</w><h>240</h></coordinates><panel_attributes>lt=&lt;-
+r1=-resources
+m1=1
+m2=1</panel_attributes><additional_attributes>220;170;50;170;50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1656</x><y>708</y><w>240</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+r1=-constructables
+m1=0..n
+m2=1</panel_attributes><additional_attributes>180;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1656</x><y>720</y><w>336</w><h>396</h></coordinates><panel_attributes>lt=&lt;-
+r1=-notification
+m1=1 (ggf. auch 0..n)
+m2=1</panel_attributes><additional_attributes>260;300;50;300;50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1524</x><y>612</y><w>564</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;450;30;450;50</additional_attributes></element><element><id>Relation</id><coordinates><x>1524</x><y>612</y><w>612</w><h>288</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;490;30;490;220</additional_attributes></element><element><id>Relation</id><coordinates><x>1524</x><y>612</y><w>660</w><h>444</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;530;30;530;350</additional_attributes></element><element><id>UMLClass</id><coordinates><x>948</x><y>540</y><w>396</w><h>216</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+GameModel
+--
+energyProducer: ObservableList&lt;EnergyProducer&gt;
+resources: ObjectProperty&lt;Resources&gt;
+notification: ObjectProperty&lt;NotificationList&gt;
+--
++ closeNotification(id: int)
++ placeConstructable(prod: EnergyProducer)
++ simulateRound()
++ endGame()
++ register()
+
+
+bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1428</x><y>108</y><w>204</w><h>180</h></coordinates><panel_attributes>fxml
+fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2196</x><y>120</y><w>120</w><h>36</h></coordinates><panel_attributes>/Node/
+fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2196</x><y>216</y><w>120</w><h>36</h></coordinates><panel_attributes>Label
+fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2244</x><y>156</y><w>36</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;-
+fg=#cccccc</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>1332</x><y>528</y><w>120</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+r1=- model
+m1=1
+m2=1</panel_attributes><additional_attributes>10;20;80;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>564</x><y>1296</y><w>216</w><h>156</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+MainMenuController
+--
+- newGameButton: Button
+- exitButton: Button
+--
+initData(d: MenuModel)
+- @FXML onStart()
+- @FXML onEnd()
+
+bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>264</x><y>1296</y><w>216</w><h>156</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+GameOverController
+--
+- cause: Label
+
+--
+initData(d: GameOverModel)
+- @FXML onClick()
+bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>564</x><y>1080</y><w>216</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+MenuModel
+--
+
+--
++ startGame()
++ endApplication()
+
+bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2244</x><y>684</y><w>204</w><h>48</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+constructableCard.fxml
+
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2244</x><y>876</y><w>204</w><h>48</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+resourcesBox.fxml
+
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2244</x><y>1032</y><w>204</w><h>48</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+notification.fxml
+
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1428</x><y>828</y><w>216</w><h>48</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+game.fxml
+
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>264</x><y>1464</y><w>216</w><h>48</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+gameOver.fxml
+
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>564</x><y>1464</y><w>216</w><h>48</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+menu.fxml
+
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>576</y><w>192</w><h>108</h></coordinates><panel_attributes>&lt;&lt;Klasse&gt;&gt;
+RenewablesApp
+--
+
+--
++ start(stage: Stage)
+
+bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>84</x><y>516</y><w>36</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>0</x><y>432</y><w>192</w><h>108</h></coordinates><panel_attributes>javafx.application
+fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>12</x><y>468</y><w>168</w><h>60</h></coordinates><panel_attributes>/Application/
+--
+--
++ start(stage: Stage)
+fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>1188</y><w>84</w><h>132</h></coordinates><panel_attributes>lt=&lt;-
+r1=-model
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1752</x><y>1332</y><w>240</w><h>168</h></coordinates><panel_attributes>&lt;&lt;Data Class&gt;&gt;
+Resources
+--
+- population: int
+- energyProduction: int
+- energyConsumption: int
+- money: int
+--
++ spend(amount: int)
++ earn(amount: int)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1740</x><y>1116</y><w>216</w><h>84</h></coordinates><panel_attributes>In der initialize() Methode
+werden je Listener auf die
+Object Properties des
+Models gesetzt.
+fg=#888888</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2016</x><y>1188</y><w>216</w><h>96</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+ConstructedController
+--
+- level: Label
+- image: Image (?)
+
+bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1524</x><y>612</y><w>708</w><h>600</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;570;30;570;480</additional_attributes></element><element><id>Relation</id><coordinates><x>1656</x><y>720</y><w>384</w><h>552</h></coordinates><panel_attributes>lt=&lt;-
+r1=-constructed
+m1=0..n
+m2=1</panel_attributes><additional_attributes>300;430;50;430;50;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2172</x><y>1524</y><w>252</w><h>132</h></coordinates><panel_attributes>&lt;&lt;Data Class&gt;&gt;
+Incident
+--
+- type: IncidentType
+- severity: Severity
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2244</x><y>1188</y><w>204</w><h>48</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+constructed.fxml
+
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2496</x><y>1524</y><w>204</w><h>132</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+IncidentType
+--
+EARTHQUAKE,
+ERUPTION,
+APOCALYPSE,
+ALIENS, ...</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2412</x><y>1572</y><w>108</w><h>36</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>2568</x><y>1188</y><w>204</w><h>96</h></coordinates><panel_attributes>Builder / Factory / whatever,
+die Incident Objekte baut
+mit Methoden wie 
+randomDestruction() etc.
+fg=#888888
+bg=white
+layer=100</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1140</x><y>1524</y><w>144</w><h>168</h></coordinates><panel_attributes>lt=&lt;-
+r1=- populationAlg
+m1=1
+m2=1</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>996</x><y>3048</y><w>240</w><h>60</h></coordinates><panel_attributes>/ObjectProperty/
+template=MyDataClass</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>924</x><y>3060</y><w>96</w><h>168</h></coordinates><panel_attributes>lt=&lt;-
+r1=-data
+m1=1
+m2=1</panel_attributes><additional_attributes>60;20;10;20;10;110;60;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>996</x><y>2976</y><w>180</w><h>36</h></coordinates><panel_attributes>/Observable/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1068</x><y>3000</y><w>36</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;-
+bg=#eeeeff</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>1164</x><y>2964</y><w>180</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+r1=-listener
+m1=0..n
+m2=1</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1320</x><y>2976</y><w>168</w><h>36</h></coordinates><panel_attributes>ChangeListener</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1392</x><y>3000</y><w>36</w><h>192</h></coordinates><panel_attributes>lt=&lt;&lt;-
+bg=#eeeeff</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2496</x><y>1320</y><w>204</w><h>132</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+Severity
+--
+Low = [0%, 10%],
+Medium = [10%, 30%],
+High,
+catastrophe</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1440</x><y>1716</y><w>240</w><h>240</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+/EnergyProducer/
+--
+/+ cost: int/
++ level: int
+- maxLevel: int
+--
+/+ energyOutput(): int/
+/+ destroy(inc: Incident)/
++ construct()
++ levelUp()
++ finishConstructing()
+# severityImpact(inc: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1440</x><y>2064</y><w>240</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Singleton&gt;&gt;
+SolarPark
+--
++ cost: int
+--
++ energyOutput(): int
++ destroy(inc: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1548</x><y>1944</y><w>36</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1704</x><y>2064</y><w>240</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Singleton&gt;&gt;
+WindFarm
+--
++ cost: int
+--
++ energyOutput(): int
++ destroy(inc: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1548</x><y>1944</y><w>312</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;240;80;240;100</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>876</x><y>432</y><w>1932</w><h>1776</h></coordinates><panel_attributes>game
+layer=-1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1392</x><y>480</y><w>1092</w><h>816</h></coordinates><panel_attributes>ui</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>888</x><y>2868</y><w>648</w><h>372</h></coordinates><panel_attributes>MVC Kommunikation mit Properties und Listenern
+halign=left</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>996</x><y>3168</y><w>180</w><h>48</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+MyModel
+
+
+
+bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1320</x><y>3168</y><w>168</w><h>48</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+MyController
+
+
+
+bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1164</x><y>3168</y><w>180</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+r1=-model
+m1=1
+m2=1</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>912</x><y>2928</y><w>600</w><h>204</h></coordinates><panel_attributes>javafx.beans
+bg=#eeeeff</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>888</x><y>2280</y><w>708</w><h>564</h></coordinates><panel_attributes>Bekanntmachung vom Model beim Controller
+(Variante ohne Dependency Injection)
+halign=left</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1392</x><y>3408</y><w>36</w><h>180</h></coordinates><panel_attributes>lt=&lt;-(+)</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1572</x><y>3468</y><w>180</w><h>48</h></coordinates><panel_attributes>&lt;&lt;anonymous&gt;&gt;
+EventHandler
+layer=1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1548</x><y>3420</y><w>228</w><h>120</h></coordinates><panel_attributes>javafx.event
+bg=#ffddbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>888</x><y>3276</y><w>1176</w><h>408</h></coordinates><panel_attributes>MVC Alternative mit anonymen Listenern
+halign=left</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>996</x><y>3576</y><w>180</w><h>48</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+MyModel
+
+
+
+bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1164</x><y>3576</y><w>180</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+r1=-model
+m1=1
+m2=1</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1320</x><y>3576</y><w>168</w><h>48</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+MyController
+
+
+
+bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1320</x><y>3372</y><w>168</w><h>48</h></coordinates><panel_attributes>&lt;&lt;anonymous&gt;&gt;
+ChangeListener</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1488</x><y>3504</y><w>192</w><h>108</h></coordinates><panel_attributes>lt=&lt;-(+)</panel_attributes><additional_attributes>140;10;140;70;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1896</x><y>3480</y><w>120</w><h>36</h></coordinates><panel_attributes>Node</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1740</x><y>3468</y><w>180</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+r1=-onAction
+m1=1
+m2=1</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1476</x><y>3588</y><w>444</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+r1=-myButton
+m1=1
+m2=1</panel_attributes><additional_attributes>350;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1896</x><y>3588</y><w>120</w><h>36</h></coordinates><panel_attributes>Button</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1944</x><y>3504</y><w>36</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1872</x><y>3420</y><w>168</w><h>228</h></coordinates><panel_attributes>javafx.scene
+bg=#ffffdd</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>996</x><y>3456</y><w>240</w><h>60</h></coordinates><panel_attributes>/ObjectProperty/
+template=MyDataClass</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>996</x><y>3384</y><w>180</w><h>36</h></coordinates><panel_attributes>/Observable/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1068</x><y>3408</y><w>36</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;-
+bg=#eeeeff</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>1164</x><y>3372</y><w>180</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+r1=-listener
+m1=0..n
+m2=1</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>912</x><y>3336</y><w>600</w><h>204</h></coordinates><panel_attributes>javafx.beans
+bg=#eeeeff</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>924</x><y>3468</y><w>96</w><h>168</h></coordinates><panel_attributes>lt=&lt;-
+r1=-data
+m1=1
+m2=1</panel_attributes><additional_attributes>60;20;10;20;10;110;60;110</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>540</x><y>1020</y><w>264</w><h>516</h></coordinates><panel_attributes>menu</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>1188</y><w>84</w><h>132</h></coordinates><panel_attributes>lt=&lt;-
+r1=-model
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLNote</id><coordinates><x>516</x><y>240</y><w>264</w><h>204</h></coordinates><panel_attributes>Alternative: Statt Routen für
+jede anzeigbare Seite eine
+allgemeine Methode showScene
+im RouteController zum Erstellen,
+Initialisieren und Setzen von
+Szenen. Dadurch, dass alle Mo-
+dels und alle Root-Controller
+die Interfaces "BaseModel" und
+"BaseController" realisieren wür-
+den.
+fg=#888888</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>684</y><w>252</w><h>48</h></coordinates><panel_attributes>lt=&lt;.
+r1=&lt;&lt;instantiates&gt;&gt;</panel_attributes><additional_attributes>190;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>576</x><y>540</y><w>192</w><h>72</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Router
+--
++ showScene(r: Routes)
+
+bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>636</x><y>600</y><w>36</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>564</y><w>732</w><h>228</h></coordinates><panel_attributes>lt=&lt;.
+r1=&lt;&lt;uses&gt;&gt;</panel_attributes><additional_attributes>590;20;540;20;540;170;10;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>288</x><y>540</y><w>228</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+Routes
+--
+MENU, GAME, GAMEOVER
+--
++PATH: String
++stageTitle: String
+bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>264</x><y>432</y><w>528</w><h>408</h></coordinates><panel_attributes>routing</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>84</x><y>672</y><w>276</w><h>84</h></coordinates><panel_attributes>lt=&lt;-
+r1=-router
+m1=1
+m2=1</panel_attributes><additional_attributes>210;40;10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>504</x><y>552</y><w>96</w><h>36</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>240</x><y>1020</y><w>264</w><h>516</h></coordinates><panel_attributes>gameover</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>264</x><y>1080</y><w>216</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+GameOverModel
+--
+
+--
++ backToMainMenu()
+
+bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>876</y><w>216</w><h>84</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+/BaseModel/
+--
+
+bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>948</y><w>192</w><h>156</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;10;140;50;10;50;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>516</x><y>948</y><w>192</w><h>156</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;140;50;140;110</additional_attributes></element><element><id>Relation</id><coordinates><x>348</x><y>780</y><w>132</w><h>324</h></coordinates><panel_attributes>lt=&lt;.
+r1=&lt;&lt;instantiates&gt;&gt;</panel_attributes><additional_attributes>10;250;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>780</y><w>132</w><h>324</h></coordinates><panel_attributes>lt=&lt;.
+r1=&lt;&lt;instantiates&gt;&gt;</panel_attributes><additional_attributes>10;250;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>624</x><y>552</y><w>216</w><h>408</h></coordinates><panel_attributes>lt=&lt;-
+r2=-router
+m2=1</panel_attributes><additional_attributes>120;10;160;10;160;310;10;310</additional_attributes></element><element><id>Relation</id><coordinates><x>516</x><y>720</y><w>456</w><h>312</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;200;10;240;280;240;280;10;360;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1308</x><y>2640</y><w>204</w><h>84</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+MyBaseController
+--
++ initiData(d: MyModel):void
+
+
+
+bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1308</x><y>2736</y><w>204</w><h>48</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+example.fxml
+
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>972</x><y>2652</y><w>180</w><h>48</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+MyModel
+
+
+
+bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1140</x><y>2652</y><w>192</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+r1=-model
+m1=1
+m2=1</panel_attributes><additional_attributes>10;20;140;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>936</x><y>2424</y><w>216</w><h>36</h></coordinates><panel_attributes>&lt;&lt;FXMLLoader&gt;&gt;
+
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>948</x><y>2544</y><w>624</w><h>276</h></coordinates><panel_attributes>game
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1260</x><y>2592</y><w>288</w><h>216</h></coordinates><panel_attributes>ui
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1332</x><y>2400</y><w>216</w><h>96</h></coordinates><panel_attributes>&lt;&lt;Klasse&gt;&gt;
+RouteController
+--
+-stage: Stage
+--
++ load():FXMLLoader
+bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1416</x><y>2484</y><w>144</w><h>180</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;initializes data&gt;&gt;</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1296</x><y>2352</y><w>276</w><h>168</h></coordinates><panel_attributes>routing
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1140</x><y>2424</y><w>216</w><h>48</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>912</x><y>2376</y><w>276</w><h>120</h></coordinates><panel_attributes>javafx.fxml
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>336</x><y>684</y><w>396</w><h>108</h></coordinates><panel_attributes>&lt;&lt;Klasse&gt;&gt;
+RouteController
+--
+-stage: Stage
+--
+-loader(path: String): FXMLLoader
+bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>252</x><y>1260</y><w>240</w><h>264</h></coordinates><panel_attributes>ui</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>552</x><y>1260</y><w>240</w><h>264</h></coordinates><panel_attributes>ui</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2172</x><y>1320</y><w>252</w><h>156</h></coordinates><panel_attributes>&lt;&lt;&gt;&gt;
+IncidentBuilder
+--
+- type: IncidentType
+--
+_+ createBuilder(): IncidentBuilder_
++ randomType()
++ withSeverityForRound(i: int)
++ build(): Incident</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2280</x><y>1464</y><w>36</w><h>84</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1488</x><y>1344</y><w>708</w><h>192</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>570;10;530;10;530;140;200;140;200;100;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>2412</x><y>1368</y><w>108</w><h>36</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2412</x><y>1404</y><w>108</w><h>180</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;10;40;10;40;130;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>948</x><y>1380</y><w>552</w><h>156</h></coordinates><panel_attributes>Simulation
+--
+- round: int
+--
++ Simulation(r: Resources, n: NotificationList, e: List&lt;EnergyProducer&gt;)
++ next(): void
+--
+in next: Incident bauen
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>948</x><y>1692</y><w>432</w><h>72</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+PopulationAlg
+--
++ evolve(round: int, current: int, incident: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>996</x><y>1788</y><w>384</w><h>156</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+ExponentialPopulation
+--
+- base: double
+- startingPopulation: int
+--
++ evolve(round: int, current: int, incident: Incident)
+- f(x: double): double
+- finv(y: double): double
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>996</x><y>1956</y><w>384</w><h>108</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+LinearPopulation
+--
+- change: int
+--
++ evolve(round: int, current: int, incident: Incident)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>996</x><y>2076</y><w>384</w><h>96</h></coordinates><panel_attributes>StagnatingPopulation
+--
+- asymptote: int
+- strength: double
+--
++ evolve(round: int, current: int, incident: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>948</x><y>1752</y><w>72</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;70;40;70</additional_attributes></element><element><id>Relation</id><coordinates><x>948</x><y>1752</y><w>72</w><h>276</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;210;40;210</additional_attributes></element><element><id>Relation</id><coordinates><x>948</x><y>1752</y><w>72</w><h>396</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;310;40;310</additional_attributes></element><element><id>Relation</id><coordinates><x>972</x><y>744</y><w>84</w><h>660</h></coordinates><panel_attributes>lt=-&gt;
+r1=- model
+m1=1
+m2=1</panel_attributes><additional_attributes>10;530;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>996</x><y>948</y><w>240</w><h>132</h></coordinates><panel_attributes>&lt;&lt;Data Class&gt;&gt;
+Notification
+--
+- id: int
+- title: String
+- desc: String
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1104</x><y>1068</y><w>132</w><h>120</h></coordinates><panel_attributes>lt=&lt;-[id]
+r1=- notifications
+m1=n
+m2=1</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>996</x><y>1176</y><w>240</w><h>108</h></coordinates><panel_attributes>&lt;&lt;Data Class&gt;&gt;
+NotificationList
+--
+--
++ clear()
++ close(id: int)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1440</x><y>1500</y><w>180</w><h>240</h></coordinates><panel_attributes>lt=&lt;-
+r1=- energyProducer
+r1pos=-120,-30
+m1=n
+m2=1</panel_attributes><additional_attributes>120;180;120;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1488</x><y>1404</y><w>288</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+r1=- resources
+m1=1
+m2=1</panel_attributes><additional_attributes>220;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1104</x><y>1272</y><w>132</w><h>132</h></coordinates><panel_attributes>lt=&lt;-
+r1=- notifications
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1836</x><y>1836</y><w>228</w><h>72</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+ProducerState
+--
++ nextState(): ProducerState</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2136</x><y>1740</y><w>216</w><h>84</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+Constructable
+--
+--
+nextState(): ProducerState</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2136</x><y>1836</y><w>216</w><h>84</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+Constructing
+--
+--
+nextState(): ProducerState</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2136</x><y>1932</y><w>216</w><h>84</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+Constructed
+--
+--
+nextState(): ProducerState</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2052</x><y>1860</y><w>108</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1668</x><y>1848</y><w>192</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+r1=+ state
+m1=1
+m2=1</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1332</x><y>732</y><w>444</w><h>636</h></coordinates><panel_attributes>lt=&lt;.
+r1=&lt;&lt;uses&gt;&gt;</panel_attributes><additional_attributes>350;510;10;510;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1308</x><y>744</y><w>384</w><h>996</h></coordinates><panel_attributes>lt=&lt;.
+r1=&lt;&lt;uses&gt;&gt;
+r1pos=0,-30</panel_attributes><additional_attributes>260;810;260;520;10;520;10;10</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>924</x><y>1644</y><w>480</w><h>552</h></coordinates><panel_attributes>population</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2232</x><y>2064</y><w>240</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Singleton&gt;&gt;
+LNG
+--
++ cost: int
+--
++ energyOutput(): int
++ destroy(inc: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1968</x><y>2064</y><w>240</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Singleton&gt;&gt;
+OilPump
+--
++ cost: int
+--
++ energyOutput(): int
++ destroy(inc: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2496</x><y>2064</y><w>240</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Singleton&gt;&gt;
+NuclearPowerPlant
+--
++ cost: int
+--
++ energyOutput(): int
++ destroy(inc: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1548</x><y>1944</y><w>576</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;460;80;460;100</additional_attributes></element><element><id>Relation</id><coordinates><x>1548</x><y>1944</y><w>1092</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;890;80;890;100</additional_attributes></element><element><id>Relation</id><coordinates><x>1548</x><y>1944</y><w>828</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;670;80;670;100</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1428</x><y>1656</y><w>1320</w><h>540</h></coordinates><panel_attributes>production</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2052</x><y>1860</y><w>108</w><h>132</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;40;10;40;90;70;90</additional_attributes></element><element><id>Relation</id><coordinates><x>2052</x><y>1752</y><w>108</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;100;40;100;40;10;70;10</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1824</x><y>1692</y><w>564</w><h>336</h></coordinates><panel_attributes>state
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1080</x><y>840</y><w>228</w><h>96</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Simulator
+--
++ simulate(): void
++ register(m: GameModel): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1212</x><y>744</y><w>108</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+r1=1
+r2=1
+r2pos=2,10
+r1pos=2,2
+m2=- simulator</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1248</x><y>924</y><w>36</w><h>480</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;380</additional_attributes></element></diagram>
