@@ -17,7 +17,7 @@ import javafx.stage.Stage
  * @author
  */
 class RenewablesApp() : Application() {
-    val router: RouteController = RouteController()
+    val router: RouteController = RouteController
     override fun start(stage: Stage) {
         router.showScene(Route.MENU)
     }

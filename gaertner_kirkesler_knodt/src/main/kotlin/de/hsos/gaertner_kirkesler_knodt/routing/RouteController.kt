@@ -18,11 +18,9 @@ import javafx.stage.Stage
  *
  * @author Kirkesler
  */
-class RouteController() : Router {
+object RouteController : Router {
     // TODO: In Modellierung uebernehmen
-    companion object {
-        private val stage: Stage = Stage()
-    }
+    private val stage: Stage = Stage()
 
     /**
      * Implementation des Interfaces 'Router'. Methode dient zur Navigation zwischen
@@ -37,9 +35,9 @@ class RouteController() : Router {
         var controller = fxmlLoader.getController<Initializable>()
 
         when(route) {
-            Route.MENU -> (controller as MainMenuController).initData(MenuModel())
-            Route.GAME -> (controller as GameUIController).initData(GameModel())
-            Route.GAMEOVER -> (controller as GameOverController).initData(GameOverModel())
+            Route.MENU -> (controller as MainMenuController).initData(MenuModel(this))
+            Route.GAME -> (controller as GameUIController).initData(GameModel(this))
+            Route.GAMEOVER -> (controller as GameOverController).initData(GameOverModel(this))
         }
 
         stage.title = route.stageTitle

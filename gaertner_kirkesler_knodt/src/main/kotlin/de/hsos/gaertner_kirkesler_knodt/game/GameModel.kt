@@ -7,6 +7,7 @@ import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.simulation.Simulation
 import de.hsos.gaertner_kirkesler_knodt.game.simulation.Simulator
 import de.hsos.gaertner_kirkesler_knodt.routing.Route
+import de.hsos.gaertner_kirkesler_knodt.routing.Router
 import javafx.beans.property.ObjectProperty
 import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleObjectProperty
@@ -20,7 +21,9 @@ import javafx.collections.ObservableList
  *
  * @author Gaertner
  */
-class GameModel : BaseModel() {
+class GameModel(
+    override var router: Router
+    ) : BaseModel(router) {
 
     val energyProducer: ObservableList<EnergyProducer>
     val resources: ObjectProperty<Resources>

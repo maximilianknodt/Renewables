@@ -21,7 +21,7 @@ abstract class EnergyProducer {
     abstract val cost: Int
     abstract val energy: Array<Int>
 
-    protected var level: Int = 0
+    var level: Int = 0
         set(value) {
             field = if(value < 0) 0
                 else if(value > this.maxLevel) this.maxLevel

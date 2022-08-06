@@ -8,8 +8,7 @@ import de.hsos.gaertner_kirkesler_knodt.routing.Router
  *
  * @author Kirkesler
  */
-open class BaseModel() {
-    companion object {
-        var router: Router = RouteController()
-    }
+open class BaseModel(
+    protected open var router: Router
+) {
 }
