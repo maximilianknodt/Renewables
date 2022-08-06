@@ -19,7 +19,7 @@ class StagnatingPopulation(
     }
 
     override fun evolve(round: Int, current: Int, incident: Incident?): Int {
-        var newPopulation = current
+        var newPopulation = if(current == 0) asymptote else current
 
         if (incident != null) {
             newPopulation = (newPopulation * (1.0 - incident.proportionOfPopulationKilled())).toInt()
@@ -27,7 +27,7 @@ class StagnatingPopulation(
 
         val diff = asymptote - newPopulation
         val change = (diff * strength).toInt()
-        return current + change
+        return newPopulation + change
     }
 
 }

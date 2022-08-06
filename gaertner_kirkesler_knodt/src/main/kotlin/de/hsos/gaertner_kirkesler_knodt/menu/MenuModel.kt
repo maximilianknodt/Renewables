@@ -6,8 +6,8 @@ import de.hsos.gaertner_kirkesler_knodt.routing.Router
 import kotlin.system.exitProcess
 
 class MenuModel(
-    override var router: Router
-    ) : BaseModel(router) {
+    override var router: Router,
+) : BaseModel(router) {
 
     fun startGame() {
         println("Starte Spiel")
@@ -17,10 +17,6 @@ class MenuModel(
     fun endApplication() {
         println("Beende Spiel")
         exitProcess(0)
-    }
-
-    fun showMainMenu() {
-        println("Zeige Hauptmenü")
     }
 
 }

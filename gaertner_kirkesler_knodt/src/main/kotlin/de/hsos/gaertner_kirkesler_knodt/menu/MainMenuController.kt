@@ -1,15 +1,9 @@
 package de.hsos.gaertner_kirkesler_knodt.menu
 
-import javafx.event.ActionEvent
-import javafx.event.EventHandler
 import javafx.fxml.FXML
-import javafx.fxml.Initializable
 import javafx.scene.control.Button
-import java.net.URL
-import java.util.*
-import kotlin.system.exitProcess
 
-class MainMenuController : Initializable, EventHandler<ActionEvent> {
+class MainMenuController  {
 
     private lateinit var model: MenuModel
 
@@ -19,11 +13,7 @@ class MainMenuController : Initializable, EventHandler<ActionEvent> {
     @FXML
     private lateinit var exitButton: Button
 
-    override fun initialize(location: URL?, resources: ResourceBundle?) {
-
-    }
-
-    public fun initData(data: MenuModel) {
+    fun initData(data: MenuModel) {
         this.model = data
     }
 
@@ -36,9 +26,4 @@ class MainMenuController : Initializable, EventHandler<ActionEvent> {
     private fun onEnd(){
         model.endApplication()
     }
-
-    override fun handle(event: ActionEvent?) {
-
-    }
-
 }

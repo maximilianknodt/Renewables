@@ -86,7 +86,6 @@ class ConstructableController(
         image.image = Image(RenewablesApp::class.java.getResource(prod.imgPath).toString())
 
         val active: Boolean = model.canPay(prod.cost)
-        println("updateView: " + prod.name + " will be active: " + active)
         val deactivatedStyleClass = "locked"
         if(!active){
             card.styleClass.add(deactivatedStyleClass)
@@ -100,7 +99,8 @@ class ConstructableController(
 
     /**
      * Wird aufgerufen, sobald die ObservableList im GameModel veraendert wird. Falls eine Aenderung an dem hier
-     * dargestellten [EnergyProducer] vorliegt, wird die View aktualisiert.
+     * dargestellten [EnergyProducer] vorliegt, wird die View aktualisiert. Zu Demonstrationszwecken hier im Code nicht
+     * als anonymer Listener, sondern [ConstructableController] realisiert das Interface [ListChangeListener] selbst.
      */
     override fun onChanged(c: ListChangeListener.Change<out EnergyProducer>?) {
         if (c != null) {
@@ -114,7 +114,6 @@ class ConstructableController(
                     }
                 } else if(c.wasUpdated()){
                     for(i in c.from..c.to){
-                        println("updated $i")
                         if(c.list[i] == prod){
                             updateView()
                             break

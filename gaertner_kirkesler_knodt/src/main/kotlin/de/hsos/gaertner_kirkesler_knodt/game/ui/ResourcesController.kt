@@ -37,14 +37,11 @@ class ResourcesController : GameUIControllerBase() {
     override fun initData(model: GameModel) {
         this.model = model
         model.resources.addListener { _, _, changed ->
-            println("Hallo, läuft")
             energyConsumption.text = "- " +  changed.energyConsumption.toString()
             energyProduction.text = "+ " + changed.energyProduction.toString()
             population.text = changed.population.toString()
             money.text = changed.money.toString()
         }
-
-
     }
 
     /**

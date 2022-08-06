@@ -84,7 +84,7 @@ class GameUIController : GameUIControllerBase() {
      * gesetzt, der die naechste Runde starten soll. Dieser Befehl wird an die Spiellogik im [model] delegiert.
      * Dasselbe gilt fuer den Ende-Button, der im [model] die Methode [GameModel.endGame] aufruft.
      */
-    override fun initialize(location: URL?, resources: ResourceBundle?) {
+    override fun initialize(location: URL?, resourceBundle: ResourceBundle) {
         nextRoundButton.onMouseClicked = EventHandler {
             model.simulateRound()
         }
@@ -118,7 +118,6 @@ class GameUIController : GameUIControllerBase() {
         model.notifications.addListener(
             ChangeListener { _, _, newValue ->
                 // Darstellung der Benachrichtigungen zuruecksetzen
-                println("notifications changed")
                 notificationContainer.children.clear()
                 notificationController.clear()
 
@@ -134,7 +133,7 @@ class GameUIController : GameUIControllerBase() {
      * Laedt die View fuer einen konstruierbaren Energieproduzenten, erstellt den zugehoerigen Controller und stellt
      * diesen in der horizontalen Liste der konstruierbaren Energieproduzenten dar.
      */
-    private fun showConstructable(energyProducer: EnergyProducer, constructable: Boolean = true) {
+    private fun showConstructable(energyProducer: EnergyProducer) {
         val loader = FXMLLoader(javaClass.getResource("constructableCard.fxml"))
         val controller = ConstructableController(energyProducer)
         controller.initData(model)
