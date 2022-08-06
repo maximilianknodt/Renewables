@@ -10,10 +10,18 @@ data class Resources (
     var energyConsumption: Int = 0,
     var money: Int = 0 ) {
 
-    public fun spend(amount: Int) {
+    fun spend(amount: Int) {
         this.money -= amount
     }
-    public fun earn(amount: Int) {
+    fun earn(amount: Int) {
         this.money += amount
+    }
+
+    override fun toString(): String {
+        return "Resources(population=$population, energyProduction=$energyProduction, energyConsumption=$energyConsumption, money=$money)"
+    }
+
+    fun copy(): Resources {
+        return Resources(population = population, energyProduction = energyProduction, energyConsumption = energyConsumption, money = money)
     }
 }

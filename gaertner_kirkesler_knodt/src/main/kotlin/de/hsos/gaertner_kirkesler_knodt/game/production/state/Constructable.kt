@@ -7,7 +7,7 @@ package de.hsos.gaertner_kirkesler_knodt.game.production.state
  */
 class Constructable : ProducerState {
     init {
-        println("Energy Producer can be build!")
+        // println("Energy Producer can be build!")
     }
 
     /**

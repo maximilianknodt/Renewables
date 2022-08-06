@@ -31,7 +31,7 @@ class Simulation() : Simulator {
         // Zufaellige Wahl eines Populationsalgorithmus
         val list = listOf(ExponentialPopulation(), LinearPopulation(), StagnatingPopulation())
         populationAlg = list.random()
-        println("algo is $populationAlg")
+        println("population algorithm is ${populationAlg.javaClass.simpleName}")
     }
     /**
      * Diese Methode wird nach erfolgreicher Registrierung eines Models aufgerufen um Initialwerte
@@ -40,7 +40,7 @@ class Simulation() : Simulator {
      * @author Kirkesler
      */
     private fun initValues() {
-        println("generating random start values")
+        println("created simulation, generating random start values")
         var population: Int = Random.nextInt(200, 500)
         model.setResources(Resources(
             population,

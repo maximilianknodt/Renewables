@@ -1,7 +1,6 @@
 package de.hsos.gaertner_kirkesler_knodt.game
 
 import de.hsos.gaertner_kirkesler_knodt.BaseModel
-import de.hsos.gaertner_kirkesler_knodt.game.population.LinearPopulation
 import de.hsos.gaertner_kirkesler_knodt.game.production.*
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.simulation.Simulation
@@ -33,6 +32,9 @@ class GameModel(
 
     init {
         val list = listOf(LNG, NuclearPowerPlant, OilPump, SolarPark, WindFarm)
+        for (energyProducer in list) {
+            energyProducer.resetObject()
+        }
         var observableEnergyProducerList = FXCollections.observableArrayList(list)
         energyProducer = SimpleListProperty(observableEnergyProducerList)
 
@@ -71,22 +73,19 @@ class GameModel(
      */
     fun constructOrLevelupConstructable(prod: EnergyProducer){
         val index = this.energyProducer.indexOf(prod)
+        val cost = prod.cost
+        val res = resources.get().copy()
 
         if(prod.state is Constructed){
             prod.levelUp()
+            println("Leveled up $prod")
         } else {
             prod.construct()
+            println("constructed $prod")
         }
 
-        var res: Resources = resources.get()
-        res.spend(prod.cost)
-        setResources(Resources(
-            res.population,
-            res.energyProduction,
-            res.energyConsumption,
-            res.money
-        ))
-
+        res.spend(cost)
+        setResources(res)
         energyProducer[index] = prod
     }
 
@@ -104,7 +103,7 @@ class GameModel(
         router.showScene(Route.MENU)
     }
 
-    fun setResources(res: Resources) {
+    fun setResources(res: Resources?) {
         resources.set(res)
     }
 
@@ -113,7 +112,6 @@ class GameModel(
     }
 
     fun register() {
-        println("Registriert")
         simulator.register(this)
     }
 

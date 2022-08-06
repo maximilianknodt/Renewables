@@ -54,7 +54,7 @@ abstract class EnergyProducer {
      */
     fun nextLevelEnergyOutput(): Int {
         if(this.level < this.maxLevel) {
-            return this.energy[this.level++]
+            return this.energy[this.level + 1]
         }
         return this.energy[this.maxLevel]
     }
@@ -104,4 +104,9 @@ abstract class EnergyProducer {
     protected fun severityImpact(inc: Incident): Int{
         return (this.level * inc.severity.avgPercentage()).roundToInt()
     }
+
+    override fun toString(): String {
+        return "EnergyProducer(name='$name', cost=$cost, energy=${activeEnergyOutput()}, level=$level, state=${state.javaClass.simpleName})"
+    }
+
 }

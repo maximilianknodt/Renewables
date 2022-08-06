@@ -37,8 +37,9 @@ object WindFarm : EnergyProducer() {
             IncidentType.EARTHQUAKE,
                 IncidentType.ERUPTION,
                 IncidentType.GIANT_LIZARD -> this.severityImpact(incident)
-            else -> println("No Impact")
+            else -> println("incident does not impact energy producer ${this.name}")
         }
         if(this.level == 0) super.state = Constructable()
     }
+
 }

@@ -37,8 +37,9 @@ object SolarPark : EnergyProducer() {
             IncidentType.FIRE,
                 IncidentType.GIANT_LIZARD,
                 IncidentType.EARTHQUAKE -> this.severityImpact(incident)
-            else -> println("No Impact")
+            else -> println("incident does not impact energy producer ${this.name}")
         }
         if(this.level == 0) super.state = Constructable()
     }
+
 }

@@ -7,7 +7,7 @@ package de.hsos.gaertner_kirkesler_knodt.game.production.state
  */
 class Constructing : ProducerState {
     init {
-        println("Energy Producer is being constructed!")
+        // println("Energy Producer is being constructed!")
     }
 
     /**
