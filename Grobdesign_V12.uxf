@@ -1,24 +1,112 @@
-<diagram program="umletino" version="15.0.0"><zoom_level>8</zoom_level><element><id>UMLClass</id><coordinates><x>952</x><y>456</y><w>160</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1190</x>
+      <y>570</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller&gt;&gt;
 GameUIController
 --
 --
 initData(model: GameModel)
 
-bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>976</x><y>112</y><w>88</w><h>56</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+bg=#aaffaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1220</x>
+      <y>140</y>
+      <w>110</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
 Initializable
 --
 --
 # initialize()
-fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>160</x><y>0</y><w>1552</w><h>216</h></coordinates><panel_attributes>javafx
-fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1440</x><y>40</y><w>128</w><h>152</h></coordinates><panel_attributes>scene
-fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1016</x><y>160</y><w>24</w><h>216</h></coordinates><panel_attributes>lt=&lt;&lt;-
-fg=#cccccc</panel_attributes><additional_attributes>10;10;10;250</additional_attributes></element><element><id>UMLClass</id><coordinates><x>952</x><y>360</y><w>160</w><h>56</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+fg=#cccccc</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>200</x>
+      <y>0</y>
+      <w>1940</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>javafx
+fg=#cccccc</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1800</x>
+      <y>50</y>
+      <w>160</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>scene
+fg=#cccccc</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1270</x>
+      <y>200</y>
+      <w>30</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+fg=#cccccc</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1190</x>
+      <y>450</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller&gt;&gt;
 /GameUIControllerBase/
 --
 --
 initData(model: GameModel)
 
-bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1016</x><y>408</y><w>24</w><h>64</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1248</x><y>448</y><w>144</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+bg=#aaffaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1270</x>
+      <y>510</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1560</x>
+      <y>560</y>
+      <w>180</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller&gt;&gt;
 ConstructableController
 --
 - prod: EnergyProducer
@@ -29,14 +117,36 @@ ConstructableController
 --
 - @FXML onClick()
 
-bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1280</x><y>584</y><w>144</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+bg=#aaffaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1600</x>
+      <y>730</y>
+      <w>180</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller&gt;&gt;
 ResourcesController
 --
 - energy: Label
 - population: Label
 - money: Label
 
-bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1312</x><y>688</y><w>144</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+bg=#aaffaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1640</x>
+      <y>860</y>
+      <w>180</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller&gt;&gt;
 NotificationController
 --
 - title: Label
@@ -44,16 +154,93 @@ NotificationController
 --
 - @FXML onClose()
 
-bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1104</x><y>480</y><w>192</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
+bg=#aaffaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1380</x>
+      <y>600</y>
+      <w>240</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-resources
 m1=1
-m2=1</panel_attributes><additional_attributes>220;170;50;170;50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1104</x><y>472</y><w>160</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>220.0;170.0;50.0;170.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1380</x>
+      <y>590</y>
+      <w>200</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-constructables
 m1=0..n
-m2=1</panel_attributes><additional_attributes>180;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1104</x><y>480</y><w>224</w><h>264</h></coordinates><panel_attributes>lt=&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1380</x>
+      <y>600</y>
+      <w>280</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-notification
 m1=1 (ggf. auch 0..n)
-m2=1</panel_attributes><additional_attributes>260;300;50;300;50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1016</x><y>408</y><w>376</w><h>56</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;450;30;450;50</additional_attributes></element><element><id>Relation</id><coordinates><x>1016</x><y>408</y><w>408</w><h>192</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;490;30;490;220</additional_attributes></element><element><id>Relation</id><coordinates><x>1016</x><y>408</y><w>440</w><h>296</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;530;30;530;350</additional_attributes></element><element><id>UMLClass</id><coordinates><x>632</x><y>360</y><w>264</w><h>144</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>260.0;300.0;50.0;300.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1270</x>
+      <y>510</y>
+      <w>470</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;450.0;30.0;450.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1270</x>
+      <y>510</y>
+      <w>510</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;490.0;30.0;490.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1270</x>
+      <y>510</y>
+      <w>550</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;530.0;30.0;530.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>450</y>
+      <w>330</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
 GameModel
 --
 energyProducer: ObservableList&lt;EnergyProducer&gt;
@@ -67,14 +254,80 @@ notification: ObjectProperty&lt;NotificationList&gt;
 + register()
 
 
-bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>952</x><y>72</y><w>136</w><h>120</h></coordinates><panel_attributes>fxml
-fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1464</x><y>80</y><w>80</w><h>24</h></coordinates><panel_attributes>/Node/
-fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1464</x><y>144</y><w>80</w><h>24</h></coordinates><panel_attributes>Label
-fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1496</x><y>104</y><w>24</w><h>56</h></coordinates><panel_attributes>lt=&lt;&lt;-
-fg=#cccccc</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>888</x><y>352</y><w>80</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+bg=#ffaaaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1190</x>
+      <y>90</y>
+      <w>170</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>fxml
+fg=#cccccc</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1830</x>
+      <y>100</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/Node/
+fg=#cccccc</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1830</x>
+      <y>180</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Label
+fg=#cccccc</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1870</x>
+      <y>130</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+fg=#cccccc</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1110</x>
+      <y>440</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=- model
 m1=1
-m2=1</panel_attributes><additional_attributes>10;20;80;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>376</x><y>864</y><w>144</w><h>104</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;80.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>1080</y>
+      <w>180</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller&gt;&gt;
 MainMenuController
 --
 - newGameButton: Button
@@ -84,7 +337,18 @@ initData(d: MenuModel)
 - @FXML onStart()
 - @FXML onEnd()
 
-bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>176</x><y>864</y><w>144</w><h>104</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+bg=#aaffaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>1080</y>
+      <w>180</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller&gt;&gt;
 GameOverController
 --
 - cause: Label
@@ -92,7 +356,18 @@ GameOverController
 --
 initData(d: GameOverModel)
 - @FXML onClick()
-bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>376</x><y>720</y><w>144</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+bg=#aaffaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>900</y>
+      <w>180</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
 MenuModel
 --
 
@@ -100,40 +375,172 @@ MenuModel
 + startGame()
 + endApplication()
 
-bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1496</x><y>456</y><w>136</w><h>32</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+bg=#ffaaaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1870</x>
+      <y>570</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
 constructableCard.fxml
 
-bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1496</x><y>584</y><w>136</w><h>32</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1870</x>
+      <y>730</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
 resourcesBox.fxml
 
-bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1496</x><y>688</y><w>136</w><h>32</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1870</x>
+      <y>860</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
 notification.fxml
 
-bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>952</x><y>552</y><w>144</w><h>32</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1190</x>
+      <y>690</y>
+      <w>180</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
 game.fxml
 
-bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>176</x><y>976</y><w>144</w><h>32</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>1220</y>
+      <w>180</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
 gameOver.fxml
 
-bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>376</x><y>976</y><w>144</w><h>32</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>1220</y>
+      <w>180</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
 menu.fxml
 
-bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>384</y><w>128</w><h>72</h></coordinates><panel_attributes>&lt;&lt;Klasse&gt;&gt;
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>480</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Klasse&gt;&gt;
 RenewablesApp
 --
 
 --
 + start(stage: Stage)
 
-bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>56</x><y>344</y><w>24</w><h>56</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>0</x><y>288</y><w>128</w><h>72</h></coordinates><panel_attributes>javafx.application
-fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>8</x><y>312</y><w>112</w><h>40</h></coordinates><panel_attributes>/Application/
+bg=#bbbbbb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>70</x>
+      <y>430</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>360</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>javafx.application
+fg=#cccccc</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>390</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>/Application/
 --
 --
 + start(stage: Stage)
-fg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>792</y><w>56</w><h>88</h></coordinates><panel_attributes>lt=&lt;-
+fg=#cccccc</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>990</y>
+      <w>70</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-model
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1168</x><y>888</y><w>160</w><h>112</h></coordinates><panel_attributes>&lt;&lt;Data Class&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1460</x>
+      <y>1110</y>
+      <w>200</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Data Class&gt;&gt;
 Resources
 --
 - population: int
@@ -142,137 +549,754 @@ Resources
 - money: int
 --
 + spend(amount: int)
-+ earn(amount: int)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1160</x><y>744</y><w>144</w><h>56</h></coordinates><panel_attributes>In der initialize() Methode
++ earn(amount: int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1450</x>
+      <y>930</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>In der initialize() Methode
 werden je Listener auf die
 Object Properties des
 Models gesetzt.
-fg=#888888</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1344</x><y>792</y><w>144</w><h>64</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+fg=#888888</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1680</x>
+      <y>990</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller&gt;&gt;
 ConstructedController
 --
 - level: Label
 - image: Image (?)
 
-bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1016</x><y>408</y><w>472</w><h>400</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;570;30;570;480</additional_attributes></element><element><id>Relation</id><coordinates><x>1104</x><y>480</y><w>256</w><h>368</h></coordinates><panel_attributes>lt=&lt;-
+bg=#aaffaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1270</x>
+      <y>510</y>
+      <w>590</w>
+      <h>500</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;570.0;30.0;570.0;480.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1380</x>
+      <y>600</y>
+      <w>320</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-constructed
 m1=0..n
-m2=1</panel_attributes><additional_attributes>300;430;50;430;50;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1448</x><y>1016</y><w>168</w><h>88</h></coordinates><panel_attributes>&lt;&lt;Data Class&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>300.0;430.0;50.0;430.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1810</x>
+      <y>1270</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Data Class&gt;&gt;
 Incident
 --
 - type: IncidentType
 - severity: Severity
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1496</x><y>792</y><w>136</w><h>32</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1870</x>
+      <y>990</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
 constructed.fxml
 
-bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1664</x><y>1016</y><w>136</w><h>88</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2080</x>
+      <y>1270</y>
+      <w>170</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
 IncidentType
 --
 EARTHQUAKE,
 ERUPTION,
 APOCALYPSE,
-ALIENS, ...</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1608</x><y>1048</y><w>72</w><h>24</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>1712</x><y>792</y><w>136</w><h>64</h></coordinates><panel_attributes>Builder / Factory / whatever,
+ALIENS, ...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2010</x>
+      <y>1310</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>2140</x>
+      <y>990</y>
+      <w>170</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Builder / Factory / whatever,
 die Incident Objekte baut
 mit Methoden wie 
 randomDestruction() etc.
 fg=#888888
 bg=white
-layer=100</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>760</x><y>1016</y><w>88</w><h>112</h></coordinates><panel_attributes>lt=&lt;-
+layer=100</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>950</x>
+      <y>1270</y>
+      <w>120</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=- populationAlg
 m1=1
-m2=1</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>664</x><y>2032</y><w>160</w><h>40</h></coordinates><panel_attributes>/ObjectProperty/
-template=MyDataClass</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>616</x><y>2040</y><w>64</w><h>112</h></coordinates><panel_attributes>lt=&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>2630</y>
+      <w>200</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>/ObjectProperty/
+template=MyDataClass</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>2640</y>
+      <w>80</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-data
 m1=1
-m2=1</panel_attributes><additional_attributes>60;20;10;20;10;110;60;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>664</x><y>1984</y><w>120</w><h>24</h></coordinates><panel_attributes>/Observable/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>712</x><y>2000</y><w>24</w><h>56</h></coordinates><panel_attributes>lt=&lt;&lt;-
-bg=#eeeeff</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>776</x><y>1976</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>60.0;20.0;10.0;20.0;10.0;110.0;60.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>2570</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/Observable/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>2590</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+bg=#eeeeff</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>950</x>
+      <y>2560</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-listener
 m1=0..n
-m2=1</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>1984</y><w>112</w><h>24</h></coordinates><panel_attributes>ChangeListener</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>928</x><y>2000</y><w>24</w><h>128</h></coordinates><panel_attributes>lt=&lt;&lt;-
-bg=#eeeeff</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1664</x><y>880</y><w>136</w><h>88</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>2570</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ChangeListener</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1140</x>
+      <y>2590</y>
+      <w>30</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+bg=#eeeeff</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2080</x>
+      <y>1100</y>
+      <w>170</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
 Severity
 --
 Low = [0%, 10%],
 Medium = [10%, 30%],
 High,
-catastrophe</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>960</x><y>1144</y><w>160</w><h>160</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+catastrophe</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1200</x>
+      <y>1430</y>
+      <w>220</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
 /EnergyProducer/
 --
+/+ name: String/
+/+ imgPath: String/
+/+ position: Pair&lt;Double, Double&gt;/
 /+ cost: int/
+/+ energy: Array&lt;int&gt;/
 + level: int
 - maxLevel: int
 --
-/+ energyOutput(): int/
 /+ destroy(inc: Incident)/
++ activeEnergyOutput(): int
++ nextLevelEnergyOutput(): int
 + construct()
 + levelUp()
 + finishConstructing()
-# severityImpact(inc: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>960</x><y>1376</y><w>160</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Singleton&gt;&gt;
++ resetObject()
+# severityImpact(inc: Incident)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1200</x>
+      <y>1760</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Singleton&gt;&gt;
 SolarPark
 --
++ name: String
++ imgPath: String
++ position: Pair&lt;Double, Double&gt;
 + cost: int
++ energy: Array&lt;int&gt;
 --
-+ energyOutput(): int
-+ destroy(inc: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1032</x><y>1296</y><w>24</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1136</x><y>1376</y><w>160</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Singleton&gt;&gt;
++ destroy(inc: Incident)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1290</x>
+      <y>1710</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1430</x>
+      <y>1760</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Singleton&gt;&gt;
 WindFarm
 --
++ name: String
++ imgPath: String
++ position: Pair&lt;Double, Double&gt;
 + cost: int
++ energy: Array&lt;int&gt;
 --
-+ energyOutput(): int
-+ destroy(inc: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1032</x><y>1296</y><w>208</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;240;80;240;100</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>584</x><y>288</y><w>1288</w><h>1184</h></coordinates><panel_attributes>game
-layer=-1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>928</x><y>320</y><w>728</w><h>544</h></coordinates><panel_attributes>ui</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>592</x><y>1912</y><w>432</w><h>248</h></coordinates><panel_attributes>MVC Kommunikation mit Properties und Listenern
-halign=left</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>664</x><y>2112</y><w>120</w><h>32</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
++ destroy(inc: Incident)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1290</x>
+      <y>1710</y>
+      <w>270</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;250.0;30.0;250.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>730</x>
+      <y>360</y>
+      <w>1630</w>
+      <h>1570</h>
+    </coordinates>
+    <panel_attributes>game
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1160</x>
+      <y>400</y>
+      <w>910</w>
+      <h>680</h>
+    </coordinates>
+    <panel_attributes>ui</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>720</x>
+      <y>2480</y>
+      <w>540</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>MVC Kommunikation mit Properties und Listenern
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>2730</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
 MyModel
 
 
 
-bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>2112</y><w>112</w><h>32</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+bg=#ffaaaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>2730</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller&gt;&gt;
 MyController
 
 
 
-bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>776</x><y>2112</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+bg=#aaffaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>950</x>
+      <y>2730</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-model
 m1=1
-m2=1</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>608</x><y>1952</y><w>400</w><h>136</h></coordinates><panel_attributes>javafx.beans
-bg=#eeeeff</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>592</x><y>1520</y><w>472</w><h>376</h></coordinates><panel_attributes>Bekanntmachung vom Model beim Controller
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>740</x>
+      <y>2530</y>
+      <w>500</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>javafx.beans
+bg=#eeeeff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>720</x>
+      <y>1990</y>
+      <w>590</w>
+      <h>470</h>
+    </coordinates>
+    <panel_attributes>Bekanntmachung vom Model beim Controller
 (Variante ohne Dependency Injection)
-halign=left</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>928</x><y>2272</y><w>24</w><h>120</h></coordinates><panel_attributes>lt=&lt;-(+)</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1048</x><y>2312</y><w>120</w><h>32</h></coordinates><panel_attributes>&lt;&lt;anonymous&gt;&gt;
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1140</x>
+      <y>2930</y>
+      <w>30</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-(+)</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1290</x>
+      <y>2980</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;anonymous&gt;&gt;
 EventHandler
-layer=1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1032</x><y>2280</y><w>152</w><h>80</h></coordinates><panel_attributes>javafx.event
-bg=#ffddbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>592</x><y>2184</y><w>784</w><h>272</h></coordinates><panel_attributes>MVC Alternative mit anonymen Listenern
-halign=left</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>664</x><y>2384</y><w>120</w><h>32</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1270</x>
+      <y>2940</y>
+      <w>190</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>javafx.event
+bg=#ffddbb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>720</x>
+      <y>2820</y>
+      <w>980</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>MVC Alternative mit anonymen Listenern
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>3070</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
 MyModel
 
 
 
-bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>776</x><y>2384</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+bg=#ffaaaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>950</x>
+      <y>3070</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-model
 m1=1
-m2=1</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>2384</y><w>112</w><h>32</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>3070</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller&gt;&gt;
 MyController
 
 
 
-bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>2248</y><w>112</w><h>32</h></coordinates><panel_attributes>&lt;&lt;anonymous&gt;&gt;
-ChangeListener</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>992</x><y>2336</y><w>128</w><h>72</h></coordinates><panel_attributes>lt=&lt;-(+)</panel_attributes><additional_attributes>140;10;140;70;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1264</x><y>2320</y><w>80</w><h>24</h></coordinates><panel_attributes>Node</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1160</x><y>2312</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+bg=#aaffaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>2900</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;anonymous&gt;&gt;
+ChangeListener</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1220</x>
+      <y>3010</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-(+)</panel_attributes>
+    <additional_attributes>140.0;10.0;140.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1560</x>
+      <y>2990</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Node</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1430</x>
+      <y>2980</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-onAction
 m1=1
-m2=1</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>Relation</id><coordinates><x>984</x><y>2392</y><w>296</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1210</x>
+      <y>3080</y>
+      <w>370</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-myButton
 m1=1
-m2=1</panel_attributes><additional_attributes>350;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1264</x><y>2392</y><w>80</w><h>24</h></coordinates><panel_attributes>Button</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1296</x><y>2336</y><w>24</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1248</x><y>2280</y><w>112</w><h>152</h></coordinates><panel_attributes>javafx.scene
-bg=#ffffdd</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>664</x><y>2304</y><w>160</w><h>40</h></coordinates><panel_attributes>/ObjectProperty/
-template=MyDataClass</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>664</x><y>2256</y><w>120</w><h>24</h></coordinates><panel_attributes>/Observable/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>712</x><y>2272</y><w>24</w><h>56</h></coordinates><panel_attributes>lt=&lt;&lt;-
-bg=#eeeeff</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>776</x><y>2248</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>350.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1560</x>
+      <y>3080</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Button</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1600</x>
+      <y>3010</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1540</x>
+      <y>2940</y>
+      <w>140</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>javafx.scene
+bg=#ffffdd</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>2970</y>
+      <w>200</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>/ObjectProperty/
+template=MyDataClass</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>2910</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/Observable/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>2930</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+bg=#eeeeff</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>950</x>
+      <y>2900</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-listener
 m1=0..n
-m2=1</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>608</x><y>2224</y><w>400</w><h>136</h></coordinates><panel_attributes>javafx.beans
-bg=#eeeeff</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>616</x><y>2312</y><w>64</w><h>112</h></coordinates><panel_attributes>lt=&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>740</x>
+      <y>2870</y>
+      <w>500</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>javafx.beans
+bg=#eeeeff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>2980</y>
+      <w>80</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-data
 m1=1
-m2=1</panel_attributes><additional_attributes>60;20;10;20;10;110;60;110</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>360</x><y>680</y><w>176</w><h>344</h></coordinates><panel_attributes>menu</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>792</y><w>56</w><h>88</h></coordinates><panel_attributes>lt=&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>60.0;20.0;10.0;20.0;10.0;110.0;60.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>450</x>
+      <y>850</y>
+      <w>220</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>menu</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>990</y>
+      <w>70</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-model
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLNote</id><coordinates><x>344</x><y>160</y><w>176</w><h>136</h></coordinates><panel_attributes>Alternative: Statt Routen für
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>430</x>
+      <y>200</y>
+      <w>220</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Alternative: Statt Routen für
 jede anzeigbare Seite eine
 allgemeine Methode showScene
 im RouteController zum Erstellen,
@@ -282,77 +1306,440 @@ dels und alle Root-Controller
 die Interfaces "BaseModel" und
 "BaseController" realisieren wür-
 den.
-fg=#888888</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>456</y><w>168</w><h>32</h></coordinates><panel_attributes>lt=&lt;.
-r1=&lt;&lt;instantiates&gt;&gt;</panel_attributes><additional_attributes>190;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>384</x><y>360</y><w>128</w><h>48</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+fg=#888888</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>570</y>
+      <w>210</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+r1=&lt;&lt;instantiates&gt;&gt;</panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>450</y>
+      <w>160</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
 Router
 --
 + showScene(r: Routes)
 
-bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>424</x><y>400</y><w>24</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>376</y><w>488</w><h>152</h></coordinates><panel_attributes>lt=&lt;.
-r1=&lt;&lt;uses&gt;&gt;</panel_attributes><additional_attributes>590;20;540;20;540;170;10;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>192</x><y>360</y><w>152</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+bg=#bbbbbb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>500</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>470</y>
+      <w>610</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+r1=&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>590.0;20.0;540.0;20.0;540.0;170.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>450</y>
+      <w>190</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
 Routes
 --
 MENU, GAME, GAMEOVER
 --
 +PATH: String
 +stageTitle: String
-bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>176</x><y>288</y><w>352</w><h>272</h></coordinates><panel_attributes>routing</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>56</x><y>448</y><w>184</w><h>56</h></coordinates><panel_attributes>lt=&lt;-
+bg=#bbbbbb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>220</x>
+      <y>360</y>
+      <w>440</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>routing</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>70</x>
+      <y>560</y>
+      <w>230</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-router
 m1=1
-m2=1</panel_attributes><additional_attributes>210;40;10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>336</x><y>368</y><w>64</w><h>24</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>160</x><y>680</y><w>176</w><h>344</h></coordinates><panel_attributes>gameover</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>176</x><y>720</y><w>144</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>210.0;40.0;10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>460</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>200</x>
+      <y>850</y>
+      <w>220</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>gameover</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>900</y>
+      <w>180</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
 GameOverModel
 --
 
 --
 + backToMainMenu()
 
-bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>584</y><w>144</w><h>56</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+bg=#ffaaaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>730</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
 /BaseModel/
 --
 
-bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>632</y><w>128</w><h>104</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;10;140;50;10;50;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>344</x><y>632</y><w>128</w><h>104</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;140;50;140;110</additional_attributes></element><element><id>Relation</id><coordinates><x>232</x><y>520</y><w>80</w><h>216</h></coordinates><panel_attributes>lt=&lt;.
-r1=&lt;&lt;instantiates&gt;&gt;</panel_attributes><additional_attributes>10;250;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>464</x><y>520</y><w>80</w><h>216</h></coordinates><panel_attributes>lt=&lt;.
-r1=&lt;&lt;instantiates&gt;&gt;</panel_attributes><additional_attributes>10;250;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>416</x><y>368</y><w>144</w><h>272</h></coordinates><panel_attributes>lt=&lt;-
+bg=#ffaaaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>790</y>
+      <w>160</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;140.0;50.0;10.0;50.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>790</y>
+      <w>160</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;140.0;50.0;140.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>650</y>
+      <w>110</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+r1=&lt;&lt;instantiates&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>650</y>
+      <w>110</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+r1=&lt;&lt;instantiates&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>460</y>
+      <w>180</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r2=-router
-m2=1</panel_attributes><additional_attributes>120;10;160;10;160;310;10;310</additional_attributes></element><element><id>Relation</id><coordinates><x>344</x><y>480</y><w>304</w><h>208</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;200;10;240;280;240;280;10;360;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>872</x><y>1760</y><w>136</w><h>56</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>120.0;10.0;160.0;10.0;160.0;310.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>600</y>
+      <w>380</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;200.0;10.0;240.0;280.0;240.0;280.0;10.0;360.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1070</x>
+      <y>2290</y>
+      <w>170</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller&gt;&gt;
 MyBaseController
 --
 + initiData(d: MyModel):void
 
 
 
-bg=#aaffaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>872</x><y>1824</y><w>136</w><h>32</h></coordinates><panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
+bg=#aaffaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1070</x>
+      <y>2370</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;View-Basis (Markup)&gt;&gt;
 example.fxml
 
-bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>648</x><y>1768</y><w>120</w><h>32</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>2300</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
 MyModel
 
 
 
-bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>760</x><y>1768</y><w>128</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+bg=#ffaaaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>930</x>
+      <y>2300</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=-model
 m1=1
-m2=1</panel_attributes><additional_attributes>10;20;140;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>624</x><y>1616</y><w>144</w><h>24</h></coordinates><panel_attributes>&lt;&lt;FXMLLoader&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>2110</y>
+      <w>180</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;FXMLLoader&gt;&gt;
 
-bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>632</x><y>1696</y><w>416</w><h>184</h></coordinates><panel_attributes>game
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>840</x><y>1728</y><w>192</w><h>144</h></coordinates><panel_attributes>ui
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>888</x><y>1600</y><w>144</w><h>64</h></coordinates><panel_attributes>&lt;&lt;Klasse&gt;&gt;
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>770</x>
+      <y>2210</y>
+      <w>520</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>game
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1030</x>
+      <y>2250</y>
+      <w>240</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>ui
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>2090</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Klasse&gt;&gt;
 RouteController
 --
 -stage: Stage
 --
 + load():FXMLLoader
-bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>944</x><y>1656</y><w>96</w><h>120</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;initializes data&gt;&gt;</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>864</x><y>1568</y><w>184</w><h>112</h></coordinates><panel_attributes>routing
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>760</x><y>1616</y><w>144</w><h>32</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;uses&gt;&gt;</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>608</x><y>1584</y><w>184</w><h>80</h></coordinates><panel_attributes>javafx.fxml
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>224</x><y>456</y><w>264</w><h>72</h></coordinates><panel_attributes>&lt;&lt;Klasse&gt;&gt;
+bg=#bbbbbb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1160</x>
+      <y>2160</y>
+      <w>130</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;initializes data&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1060</x>
+      <y>2050</y>
+      <w>230</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>routing
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>930</x>
+      <y>2110</y>
+      <w>180</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>740</x>
+      <y>2070</y>
+      <w>230</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>javafx.fxml
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>570</y>
+      <w>330</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Klasse&gt;&gt;
 RouteController
 --
 -stage: Stage
 --
 -loader(path: String): FXMLLoader
-bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>168</x><y>840</y><w>160</w><h>176</h></coordinates><panel_attributes>ui</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>368</x><y>840</y><w>160</w><h>176</h></coordinates><panel_attributes>ui</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1448</x><y>880</y><w>168</w><h>104</h></coordinates><panel_attributes>&lt;&lt;&gt;&gt;
+bg=#bbbbbb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>210</x>
+      <y>1050</y>
+      <w>200</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>ui</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>460</x>
+      <y>1050</y>
+      <w>200</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>ui</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1810</x>
+      <y>1100</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;&gt;&gt;
 IncidentBuilder
 --
 - type: IncidentType
@@ -360,7 +1747,62 @@ IncidentBuilder
 _+ createBuilder(): IncidentBuilder_
 + randomType()
 + withSeverityForRound(i: int)
-+ build(): Incident</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1520</x><y>976</y><w>24</w><h>56</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>992</x><y>896</y><w>472</w><h>128</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>570;10;530;10;530;140;200;140;200;100;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>1608</x><y>912</y><w>72</w><h>24</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1608</x><y>936</y><w>72</w><h>120</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;10;40;10;40;130;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>632</x><y>920</y><w>368</w><h>104</h></coordinates><panel_attributes>Simulation
++ build(): Incident</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1900</x>
+      <y>1220</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1240</x>
+      <y>1120</y>
+      <w>590</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>570.0;10.0;530.0;10.0;530.0;140.0;200.0;140.0;200.0;100.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2010</x>
+      <y>1140</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2010</x>
+      <y>1170</y>
+      <w>90</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;40.0;10.0;40.0;130.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>1150</y>
+      <w>460</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Simulation
 --
 - round: int
 --
@@ -368,10 +1810,32 @@ _+ createBuilder(): IncidentBuilder_
 + next(): void
 --
 in next: Incident bauen
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>632</x><y>1128</y><w>288</w><h>48</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>1420</y>
+      <w>360</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
 PopulationAlg
 --
-+ evolve(round: int, current: int, incident: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>664</x><y>1192</y><w>256</w><h>104</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
++ evolve(round: int, current: int, incident: Incident)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>1500</y>
+      <w>320</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
 ExponentialPopulation
 --
 - base: double
@@ -380,123 +1844,641 @@ ExponentialPopulation
 + evolve(round: int, current: int, incident: Incident)
 - f(x: double): double
 - finv(y: double): double
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>664</x><y>1304</y><w>256</w><h>72</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>1640</y>
+      <w>320</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
 LinearPopulation
 --
 - change: int
 --
 + evolve(round: int, current: int, incident: Incident)
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>664</x><y>1384</y><w>256</w><h>64</h></coordinates><panel_attributes>StagnatingPopulation
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>1740</y>
+      <w>320</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>StagnatingPopulation
 --
 - asymptote: int
 - strength: double
 --
-+ evolve(round: int, current: int, incident: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>632</x><y>1168</y><w>48</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;70;40;70</additional_attributes></element><element><id>Relation</id><coordinates><x>632</x><y>1168</y><w>48</w><h>184</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;210;40;210</additional_attributes></element><element><id>Relation</id><coordinates><x>632</x><y>1168</y><w>48</w><h>264</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;310;40;310</additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>496</y><w>56</w><h>440</h></coordinates><panel_attributes>lt=-&gt;
++ evolve(round: int, current: int, incident: Incident)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>1470</y>
+      <w>60</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;40.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>1470</y>
+      <w>60</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0;40.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>1470</y>
+      <w>60</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;310.0;40.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>620</y>
+      <w>80</w>
+      <h>550</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
 r1=- model
 m1=1
-m2=1</panel_attributes><additional_attributes>10;530;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>664</x><y>632</y><w>160</w><h>88</h></coordinates><panel_attributes>&lt;&lt;Data Class&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>10.0;530.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>790</y>
+      <w>200</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Data Class&gt;&gt;
 Notification
 --
 - id: int
 - title: String
 - desc: String
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>736</x><y>712</y><w>80</w><h>80</h></coordinates><panel_attributes>lt=&lt;-[id]
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>890</y>
+      <w>110</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-[id]
 r1=- notifications
 m1=n
-m2=1</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>664</x><y>784</y><w>160</w><h>72</h></coordinates><panel_attributes>&lt;&lt;Data Class&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>980</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Data Class&gt;&gt;
 NotificationList
 --
 --
 + clear()
-+ close(id: int)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>960</x><y>1000</y><w>120</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
++ close(id: int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1200</x>
+      <y>1250</y>
+      <w>150</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=- energyProducer
 r1pos=-120,-30
 m1=n
-m2=1</panel_attributes><additional_attributes>120;180;120;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>992</x><y>936</y><w>192</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>120.0;180.0;120.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1240</x>
+      <y>1170</y>
+      <w>240</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=- resources
 m1=1
-m2=1</panel_attributes><additional_attributes>220;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>736</x><y>848</y><w>80</w><h>88</h></coordinates><panel_attributes>lt=&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>220.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>1060</y>
+      <w>110</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=- notifications
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1224</x><y>1224</y><w>152</w><h>48</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1540</x>
+      <y>1530</y>
+      <w>190</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
 ProducerState
 --
-+ nextState(): ProducerState</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1424</x><y>1160</y><w>144</w><h>56</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
++ nextState(): ProducerState</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1790</x>
+      <y>1450</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
 Constructable
 --
 --
-nextState(): ProducerState</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1424</x><y>1224</y><w>144</w><h>56</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+nextState(): ProducerState</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1790</x>
+      <y>1530</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
 Constructing
 --
 --
-nextState(): ProducerState</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1424</x><y>1288</y><w>144</w><h>56</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
+nextState(): ProducerState</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1790</x>
+      <y>1610</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
 Constructed
 --
 --
-nextState(): ProducerState</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1368</x><y>1240</y><w>72</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1112</x><y>1232</y><w>128</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+nextState(): ProducerState</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1720</x>
+      <y>1550</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1410</x>
+      <y>1540</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=+ state
 m1=1
-m2=1</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>888</x><y>488</y><w>296</w><h>424</h></coordinates><panel_attributes>lt=&lt;.
-r1=&lt;&lt;uses&gt;&gt;</panel_attributes><additional_attributes>350;510;10;510;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>872</x><y>496</y><w>256</w><h>664</h></coordinates><panel_attributes>lt=&lt;.
+m2=1</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1110</x>
+      <y>610</y>
+      <w>370</w>
+      <h>530</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+r1=&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>350.0;510.0;10.0;510.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1090</x>
+      <y>620</y>
+      <w>320</w>
+      <h>830</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
 r1=&lt;&lt;uses&gt;&gt;
-r1pos=0,-30</panel_attributes><additional_attributes>260;810;260;520;10;520;10;10</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>616</x><y>1096</y><w>320</w><h>368</h></coordinates><panel_attributes>population</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1488</x><y>1376</y><w>160</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Singleton&gt;&gt;
+r1pos=0,-30</panel_attributes>
+    <additional_attributes>260.0;810.0;260.0;520.0;10.0;520.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>770</x>
+      <y>1380</y>
+      <w>400</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>population</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1890</x>
+      <y>1760</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Singleton&gt;&gt;
 LNG
 --
++ name: String
++ imgPath: String
++ position: Pair&lt;Double, Double&gt;
 + cost: int
++ energy: Array&lt;int&gt;
 --
-+ energyOutput(): int
-+ destroy(inc: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1312</x><y>1376</y><w>160</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Singleton&gt;&gt;
++ destroy(inc: Incident)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1660</x>
+      <y>1760</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Singleton&gt;&gt;
 OilPump
 --
++ name: String
++ imgPath: String
++ position: Pair&lt;Double, Double&gt;
 + cost: int
++ energy: Array&lt;int&gt;
 --
-+ energyOutput(): int
-+ destroy(inc: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1664</x><y>1376</y><w>160</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Singleton&gt;&gt;
++ destroy(inc: Incident)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2120</x>
+      <y>1760</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Singleton&gt;&gt;
 NuclearPowerPlant
 --
++ name: String
++ imgPath: String
++ position: Pair&lt;Double, Double&gt;
 + cost: int
++ energy: Array&lt;int&gt;
 --
-+ energyOutput(): int
-+ destroy(inc: Incident)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1032</x><y>1296</y><w>384</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;460;80;460;100</additional_attributes></element><element><id>Relation</id><coordinates><x>1032</x><y>1296</y><w>728</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;890;80;890;100</additional_attributes></element><element><id>Relation</id><coordinates><x>1032</x><y>1296</y><w>552</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;670;80;670;100</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>952</x><y>1104</y><w>880</w><h>360</h></coordinates><panel_attributes>production</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1368</x><y>1240</y><w>72</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;40;10;40;90;70;90</additional_attributes></element><element><id>Relation</id><coordinates><x>1368</x><y>1168</y><w>72</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;100;40;100;40;10;70;10</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1216</x><y>1128</y><w>376</w><h>224</h></coordinates><panel_attributes>state
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>720</x><y>560</y><w>152</w><h>64</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
++ destroy(inc: Incident)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1290</x>
+      <y>1710</y>
+      <w>500</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;480.0;30.0;480.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1290</x>
+      <y>1710</y>
+      <w>950</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;930.0;30.0;930.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1290</x>
+      <y>1710</y>
+      <w>720</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;700.0;30.0;700.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1190</x>
+      <y>1380</y>
+      <w>1160</w>
+      <h>540</h>
+    </coordinates>
+    <panel_attributes>production</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1720</x>
+      <y>1550</y>
+      <w>90</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0;40.0;90.0;70.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1720</x>
+      <y>1460</y>
+      <w>90</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;40.0;100.0;40.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1520</x>
+      <y>1410</y>
+      <w>470</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>state
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>700</y>
+      <w>190</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
 Simulator
 --
 + simulate(): void
-+ register(m: GameModel): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>808</x><y>496</y><w>64</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
++ register(m: GameModel): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1010</x>
+      <y>620</y>
+      <w>90</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r1=1
 r2=1
 r2pos=2,10
 r1pos=2,2
-m2=- simulator</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>832</x><y>616</y><w>24</w><h>320</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;380</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1352</x><y>1560</y><w>128</w><h>48</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+m2=- simulator</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1040</x>
+      <y>770</y>
+      <w>30</w>
+      <h>400</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;380.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1670</x>
+      <y>2040</y>
+      <w>160</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
 Router
 --
 + showScene(r: Routes)
 
-bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1392</x><y>1600</y><w>24</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1160</x><y>1560</y><w>152</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+bg=#bbbbbb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1720</x>
+      <y>2090</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1430</x>
+      <y>2040</y>
+      <w>190</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
 Routes
 --
 MENU, GAME, GAMEOVER
 --
 +PATH: String
 +stageTitle: String
-bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1144</x><y>1528</y><w>352</w><h>216</h></coordinates><panel_attributes>routing</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1304</x><y>1568</y><w>64</w><h>24</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1192</x><y>1656</y><w>264</w><h>72</h></coordinates><panel_attributes>&lt;&lt;Klasse&gt;&gt;
+bg=#bbbbbb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1410</x>
+      <y>2000</y>
+      <w>440</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>routing</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1610</x>
+      <y>2050</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1470</x>
+      <y>2160</y>
+      <w>330</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Klasse&gt;&gt;
 RouteController
 --
 -stage: Stage
 --
 -loader(path: String): FXMLLoader
-bg=#bbbbbb</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1592</x><y>1552</y><w>144</w><h>56</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+bg=#bbbbbb</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1970</x>
+      <y>2030</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
 /BaseModel/
 --
 
-bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1472</x><y>1560</y><w>136</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+bg=#ffaaaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1820</x>
+      <y>2040</y>
+      <w>170</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 r2=-router
-m2=1</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1512</x><y>1656</y><w>144</w><h>56</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1870</x>
+      <y>2160</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
 SubModel
 --
 
-bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1672</x><y>1656</y><w>144</w><h>56</h></coordinates><panel_attributes>&lt;&lt;Model&gt;&gt;
+bg=#ffaaaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2070</x>
+      <y>2160</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
 SubModel
 --
 
-bg=#ffaaaa</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1576</x><y>1600</y><w>104</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;10;110;40;10;40;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>1656</x><y>1600</y><w>112</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;120;40;120;70</additional_attributes></element></diagram>
+bg=#ffaaaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1950</x>
+      <y>2090</y>
+      <w>130</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;110.0;40.0;10.0;40.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2050</x>
+      <y>2090</y>
+      <w>140</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;120.0;40.0;120.0;70.0</additional_attributes>
+  </element>
+</diagram>
