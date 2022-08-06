@@ -1,9 +1,12 @@
 package de.hsos.gaertner_kirkesler_knodt.menu
 
 import javafx.fxml.FXML
+import javafx.fxml.Initializable
 import javafx.scene.control.Button
+import java.net.URL
+import java.util.*
 
-class MainMenuController  {
+class MainMenuController : Initializable {
 
     private lateinit var model: MenuModel
 
@@ -26,4 +29,6 @@ class MainMenuController  {
     private fun onEnd(){
         model.endApplication()
     }
+
+    override fun initialize(location: URL?, resources: ResourceBundle?) { }
 }

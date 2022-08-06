@@ -84,7 +84,7 @@ class GameUIController : GameUIControllerBase() {
      * gesetzt, der die naechste Runde starten soll. Dieser Befehl wird an die Spiellogik im [model] delegiert.
      * Dasselbe gilt fuer den Ende-Button, der im [model] die Methode [GameModel.endGame] aufruft.
      */
-    override fun initialize(location: URL?, resourceBundle: ResourceBundle) {
+    override fun initialize(location: URL?, resourceBundle: ResourceBundle?) {
         nextRoundButton.onMouseClicked = EventHandler {
             model.simulateRound()
         }
