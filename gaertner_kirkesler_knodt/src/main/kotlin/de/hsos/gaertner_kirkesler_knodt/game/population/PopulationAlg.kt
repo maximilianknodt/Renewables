@@ -17,5 +17,5 @@ interface PopulationAlg {
      * @param incident aufgetretenes Ereignis, das Einfluss auf Bevoelkerungsentwicklung haben koennte
      * @return neue Populationsgroesse nach dieser Runde
      */
-    fun evolve(round: Int, current: Int, incident: Incident?): Int;
+    fun evolve(round: Int, current: Int, incident: Incident?): Int
 }

@@ -1,10 +1,7 @@
 package de.hsos.gaertner_kirkesler_knodt.game.ui
 
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
-import javafx.beans.value.ChangeListener
 import javafx.fxml.FXML
-import javafx.scene.control.Label
-import javafx.scene.image.Image
 import javafx.scene.text.Text
 import java.net.URL
 import java.util.*

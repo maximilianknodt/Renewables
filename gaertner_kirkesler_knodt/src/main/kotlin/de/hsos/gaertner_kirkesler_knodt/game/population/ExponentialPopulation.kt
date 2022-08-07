@@ -56,7 +56,7 @@ class ExponentialPopulation(
      * @return Wert der Exponentialfunktion an der Stelle x
      */
     private fun f(x: Double): Double {
-        return  base.pow(x) + startingPopulation;
+        return  base.pow(x) + startingPopulation
     }
 
     /**
@@ -66,7 +66,7 @@ class ExponentialPopulation(
      * @return x-Wert fuer gegebenen y-Achsenabschnitt
      */
     private fun finv(y: Double): Double {
-        return ln(y - startingPopulation) / ln(base);
+        return ln(y - startingPopulation) / ln(base)
     }
 
 }

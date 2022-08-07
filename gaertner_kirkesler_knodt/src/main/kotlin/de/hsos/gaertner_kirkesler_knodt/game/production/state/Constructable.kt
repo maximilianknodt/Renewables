@@ -1,7 +1,7 @@
 package de.hsos.gaertner_kirkesler_knodt.game.production.state
 
 /**
- * Die Klasse Constructable repraesentiert den Zustand, des Konstrukt wenn es gebaut werden kann
+ * Die Klasse Constructable repraesentiert den Zustand des Konstrukts, wenn es gebaut werden kann
  *
  * @author Knodt
  */

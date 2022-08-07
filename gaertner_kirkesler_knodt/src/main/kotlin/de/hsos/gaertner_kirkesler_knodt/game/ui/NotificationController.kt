@@ -1,6 +1,5 @@
 package de.hsos.gaertner_kirkesler_knodt.game.ui
 
-import de.hsos.gaertner_kirkesler_knodt.game.GameModel
 import de.hsos.gaertner_kirkesler_knodt.game.notification.Notification
 import javafx.event.EventHandler
 import javafx.fxml.FXML
@@ -15,7 +14,7 @@ import java.util.*
  * @author Gaertner
  */
 class NotificationController(
-    private val notification: Notification
+    private val notification: Notification,
 ) : GameUIControllerBase() {
 
     @FXML
@@ -35,16 +34,12 @@ class NotificationController(
         }
     }
 
-    override fun initData(model: GameModel) {
-        super.initData(model)
-    }
     /**
      * Methode, die aufgerufen wird, wenn der Benutzer auf den Schliessen-Button klickt. Zu Demonstrationszwecken hier
      * direkt uber den FXMLLoader in der View bekannt gemacht, statt manuell in der initialize()-Methode zugewiesen.
      */
     @FXML
-    public fun onClose(){
-        println("Hab geklickt")
+    fun onClose(){
         model.closeNotification(notification.id)
     }
 }

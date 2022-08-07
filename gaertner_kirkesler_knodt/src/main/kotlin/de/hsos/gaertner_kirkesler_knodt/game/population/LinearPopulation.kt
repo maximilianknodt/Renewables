@@ -15,12 +15,12 @@ class LinearPopulation(
 ) : PopulationAlg {
 
     override fun evolve(round: Int, current: Int, incident: Incident?): Int {
-        var newPopulation = current
+        var change = change
 
         if (incident != null) {
-            newPopulation = (newPopulation * incident.proportionOfPopulationKilled()).toInt()
+           change = (change * incident.proportionOfPopulationKilled()).toInt()
         }
 
-        return newPopulation + change;
+        return current + change
     }
 }

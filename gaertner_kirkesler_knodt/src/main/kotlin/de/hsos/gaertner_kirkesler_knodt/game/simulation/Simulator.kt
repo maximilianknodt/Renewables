@@ -8,6 +8,6 @@ import de.hsos.gaertner_kirkesler_knodt.game.GameModel
  * @author Kirkesler
  */
 interface Simulator {
-    public fun simulate()
-    public fun register(model: GameModel)
+    fun simulate()
+    fun register(model: GameModel)
 }

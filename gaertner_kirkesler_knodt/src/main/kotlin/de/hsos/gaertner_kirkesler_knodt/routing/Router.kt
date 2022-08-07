@@ -13,5 +13,5 @@ interface Router {
      *
      * @author Kirkesler
      */
-    public fun showScene(route: Route)
+    fun showScene(route: Route)
 }

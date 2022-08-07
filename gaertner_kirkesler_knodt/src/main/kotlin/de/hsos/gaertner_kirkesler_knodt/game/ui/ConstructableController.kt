@@ -4,14 +4,11 @@ import de.hsos.gaertner_kirkesler_knodt.RenewablesApp
 import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
 import de.hsos.gaertner_kirkesler_knodt.game.Resources
-import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
-import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing
 import javafx.beans.value.ChangeListener
 import javafx.beans.value.ObservableValue
 import javafx.collections.ListChangeListener
 import javafx.event.EventHandler
 import javafx.fxml.FXML
-import javafx.scene.control.Label
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.input.MouseEvent

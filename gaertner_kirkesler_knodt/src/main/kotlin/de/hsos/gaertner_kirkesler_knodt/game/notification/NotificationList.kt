@@ -7,19 +7,22 @@ package de.hsos.gaertner_kirkesler_knodt.game.notification
  * @author Kirkesler
  */
 class NotificationList(
-    var notifications: LinkedHashMap<Int, Notification> = LinkedHashMap<Int, Notification>()
+    var notifications: LinkedHashMap<Int, Notification> = LinkedHashMap(),
 ) {
 
-    public fun clear() {
-        this.notifications?.clear()
+    fun clear() {
+        this.notifications.clear()
     }
-    public fun close(id: Int) {
-        this.notifications?.remove(id)
+
+    fun close(id: Int) {
+        this.notifications.remove(id)
     }
-    public fun add(title: String, desc: String) {
+
+    fun add(title: String, desc: String) {
         val id: Int = this.notifications.size
-        this.notifications?.put(id, Notification(id, title, desc))
+        this.notifications[id] = Notification(id, title, desc)
     }
+
     fun copy(): NotificationList {
         return NotificationList(notifications = notifications)
     }

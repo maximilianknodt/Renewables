@@ -2,13 +2,12 @@ package de.hsos.gaertner_kirkesler_knodt.game.simulation
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
 import de.hsos.gaertner_kirkesler_knodt.game.Resources
 import de.hsos.gaertner_kirkesler_knodt.game.incident.Incident
-import de.hsos.gaertner_kirkesler_knodt.game.notification.Notification
 import de.hsos.gaertner_kirkesler_knodt.game.notification.NotificationList
 import de.hsos.gaertner_kirkesler_knodt.game.population.ExponentialPopulation
 import de.hsos.gaertner_kirkesler_knodt.game.population.LinearPopulation
 import de.hsos.gaertner_kirkesler_knodt.game.population.PopulationAlg
 import de.hsos.gaertner_kirkesler_knodt.game.population.StagnatingPopulation
-import de.hsos.gaertner_kirkesler_knodt.game.production.*
+import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructable
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing
@@ -18,11 +17,9 @@ import kotlin.random.Random
 /**
  * Diese Klasse dient als 'Steuerklasse' fuer die Spiellogik.
  *
- * @param populationAlg Strategy-Pattern, Auswahl der Populationswachstrumsstrategie
- *
  * @author Kirkesler
  */
-class Simulation() : Simulator {
+class Simulation : Simulator {
     private lateinit var model: GameModel
     private var populationAlg: PopulationAlg
     private val earnRate: Double = 4.0
@@ -42,7 +39,7 @@ class Simulation() : Simulator {
      */
     private fun initValues() {
         println("created simulation, generating random start values")
-        var population: Int = Random.nextInt(200, 500)
+        val population: Int = Random.nextInt(200, 500)
         model.setResources(Resources(
             population,
             floor(population * earnRate).toInt() + 1000,
@@ -81,11 +78,12 @@ class Simulation() : Simulator {
             )
 
             // Geld verdienen
-            res.earn(kotlin.math.floor((res.population * Random.nextDouble(1.0, earnRate))).toInt())
-            res.energyConsumption = kotlin.math.floor(res.population * earnRate).toInt()
+            res.earn(floor((res.population * Random.nextDouble(1.0, earnRate))).toInt())
+            res.energyConsumption = floor(res.population * earnRate).toInt()
 
             // Zerstoerung aufrufen und ggf. State erhoehen
-            model.energyProducer.forEach {
+            val remove: MutableList<EnergyProducer> = emptyList<EnergyProducer>().toMutableList()
+            for (it in model.energyProducer) {
                 when(it.state) {
                     is Constructed -> {
                         res.energyProduction -= it.activeEnergyOutput()
@@ -94,7 +92,7 @@ class Simulation() : Simulator {
 
                         if (it.state is Constructable) {
                             not.add("Zerstoert!", "Der Energieproduzent ${it.name} wurde zerstoert.")
-                            model.energyProducer.remove(it)
+                            remove.add(it)
                         }
                     }
                     is Constructing -> {
@@ -103,6 +101,7 @@ class Simulation() : Simulator {
                     }
                 }
             }
+            remove.forEach { model.energyProducer.remove(it) }
 
             // Ressourcen neu setzen
             model.setResources(res)

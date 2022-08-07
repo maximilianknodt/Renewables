@@ -13,7 +13,6 @@ import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleObjectProperty
 import javafx.collections.FXCollections
 import javafx.collections.ObservableList
-import java.util.*
 
 /**
  * Zentrales Model des Spiels (in-game) des JavaFX-MVC Patterns. Haelt die Daten, die die UI anzeigen soll in Form von
@@ -37,11 +36,11 @@ class GameModel(
         for (energyProducer in list) {
             energyProducer.resetObject()
         }
-        var observableEnergyProducerList = FXCollections.observableArrayList(list)
+        val observableEnergyProducerList = FXCollections.observableArrayList(list)
         energyProducer = SimpleListProperty(observableEnergyProducerList)
 
-        resources = SimpleObjectProperty<Resources>(Resources())
-        notifications = SimpleObjectProperty<NotificationList>(NotificationList())
+        resources = SimpleObjectProperty(Resources())
+        notifications = SimpleObjectProperty(NotificationList())
     }
 
     /**
@@ -61,8 +60,8 @@ class GameModel(
      */
     fun closeNotification(id: Int) {
         print("close notification $id")
-        var oldNotifications: NotificationList = notifications.get() // der get()-Aufruf ist notwendig, da es sich um eine ObjectProperty handelt
-        var notifications: NotificationList = oldNotifications.copy()
+        val oldNotifications: NotificationList = notifications.get() // der get()-Aufruf ist notwendig, da es sich um eine ObjectProperty handelt
+        val notifications: NotificationList = oldNotifications.copy()
 
         notifications.close(id)
         setNotifications(notifications)

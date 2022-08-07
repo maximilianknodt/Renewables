@@ -94,7 +94,7 @@ class GameUIController : GameUIControllerBase() {
 
     /**
      * Initialisiert die Bindings / Listener zu den Daten des Models.
-     * Die Verbindungen zu der [ObservableList] energyProducer und der [ObjectProperty] notificationList sind relevant,
+     * Die Verbindungen zu der ObservableList energyProducer und der ObjectProperty notificationList sind relevant,
      * da es sich eine Aenderung in diesen Daten auf die Menge der Kinder der View-Komponenten [constructableContainer]
      * und [notificationContainer] auswirkt.
      */
@@ -114,18 +114,16 @@ class GameUIController : GameUIControllerBase() {
             }
         )
 
-        model.notifications.addListener(
-            ChangeListener { _, _, newValue ->
-                // Darstellung der Benachrichtigungen zuruecksetzen
-                notificationContainer.children.clear()
-                notificationController.clear()
+        model.notifications.addListener { _, _, newValue ->
+            // Darstellung der Benachrichtigungen zuruecksetzen
+            notificationContainer.children.clear()
+            notificationController.clear()
 
-                // Benachrichtigungen anzeigen
-                for (notification in newValue.notifications.values) {
-                    showNotification(notification)
-                }
+            // Benachrichtigungen anzeigen
+            for (notification in newValue.notifications.values) {
+                showNotification(notification)
             }
-        )
+        }
     }
 
     /**
