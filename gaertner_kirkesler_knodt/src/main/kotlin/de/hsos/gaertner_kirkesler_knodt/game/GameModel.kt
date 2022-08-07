@@ -1,6 +1,7 @@
 package de.hsos.gaertner_kirkesler_knodt.game
 
 import de.hsos.gaertner_kirkesler_knodt.BaseModel
+import de.hsos.gaertner_kirkesler_knodt.game.notification.NotificationList
 import de.hsos.gaertner_kirkesler_knodt.game.production.*
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.simulation.Simulation
@@ -12,6 +13,7 @@ import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleObjectProperty
 import javafx.collections.FXCollections
 import javafx.collections.ObservableList
+import java.util.*
 
 /**
  * Zentrales Model des Spiels (in-game) des JavaFX-MVC Patterns. Haelt die Daten, die die UI anzeigen soll in Form von
@@ -59,7 +61,9 @@ class GameModel(
      */
     fun closeNotification(id: Int) {
         print("close notification $id")
-        var notifications = notifications.get() // der get()-Aufruf ist notwendig, da es sich um eine ObjectProperty handelt
+        var oldNotifications: NotificationList = notifications.get() // der get()-Aufruf ist notwendig, da es sich um eine ObjectProperty handelt
+        var notifications: NotificationList = oldNotifications.copy()
+
         notifications.close(id)
         setNotifications(notifications)
     }
@@ -111,8 +115,8 @@ class GameModel(
         resources.set(res)
     }
 
-    fun setNotifications(notifcation: NotificationList) {
-        notifications.set(notifcation)
+    fun setNotifications(notifcations: NotificationList) {
+        notifications.set(notifcations)
     }
 
     fun register() {

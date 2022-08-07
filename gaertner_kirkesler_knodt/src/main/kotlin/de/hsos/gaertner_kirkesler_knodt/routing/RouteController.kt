@@ -10,6 +10,7 @@ import de.hsos.gaertner_kirkesler_knodt.menu.MenuModel
 import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
 import javafx.scene.Scene
+import javafx.scene.image.Image
 import javafx.stage.Stage
 /**
  * Diese Klasse implementiert das Interface 'Router' und die dort deklarierte Methode
@@ -42,6 +43,7 @@ object RouteController : Router {
 
         stage.title = route.stageTitle
         stage.scene = scene
+        stage.getIcons().add(Image(RenewablesApp::class.java.getResourceAsStream("assets/atomic.png")));
         //stage.setResizable(false)
         stage.show()
     }

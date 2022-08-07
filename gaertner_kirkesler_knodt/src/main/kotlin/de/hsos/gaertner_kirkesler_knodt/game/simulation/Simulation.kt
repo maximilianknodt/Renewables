@@ -2,11 +2,14 @@ package de.hsos.gaertner_kirkesler_knodt.game.simulation
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
 import de.hsos.gaertner_kirkesler_knodt.game.Resources
 import de.hsos.gaertner_kirkesler_knodt.game.incident.Incident
+import de.hsos.gaertner_kirkesler_knodt.game.notification.Notification
+import de.hsos.gaertner_kirkesler_knodt.game.notification.NotificationList
 import de.hsos.gaertner_kirkesler_knodt.game.population.ExponentialPopulation
 import de.hsos.gaertner_kirkesler_knodt.game.population.LinearPopulation
 import de.hsos.gaertner_kirkesler_knodt.game.population.PopulationAlg
 import de.hsos.gaertner_kirkesler_knodt.game.population.StagnatingPopulation
 import de.hsos.gaertner_kirkesler_knodt.game.production.*
+import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructable
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing
 import kotlin.math.floor
@@ -48,13 +51,16 @@ class Simulation() : Simulator {
         ))
     }
     /**
-     * Diese Methode wird bei jeder neuen Runde aufgerufen. Berechnet neue Resourcenwerte.
+     * Diese Methode wird bei jeder neuen Runde aufgerufen. Berechnet neue Ressourcenwerte.
      *
      * @author Kirkesler
      */
     override fun simulate() {
         if(model != null) {
             val oldRes: Resources = model.resources.value
+            val oldNot: NotificationList = model.notifications.value
+            val res: Resources = oldRes.copy()
+            val not: NotificationList = oldNot.copy()
 
             // Runde erhoehen
             round++
@@ -65,39 +71,45 @@ class Simulation() : Simulator {
                 .randomType()
                 .withSeverityForRound(round)
                 .build()
+            not.add("Achtung!", "Das Ereignis ${currentIncident.type} ist mit einer Schwere von ${currentIncident.severity} eingetreten!")
 
             // Bevoelkerungswachstum aufrufen
-            var population: Int = populationAlg.evolve(
+            res.population = populationAlg.evolve(
                 round,
-                oldRes.population,
+                res.population,
                 currentIncident
             )
 
             // Geld verdienen
-            var money: Int = kotlin.math.floor(oldRes.money + (oldRes.population * Random.nextDouble(1.0, earnRate))).toInt()
-            var energyConsumption: Int = kotlin.math.floor(oldRes.population * earnRate).toInt()
-
+            res.earn(kotlin.math.floor((res.population * Random.nextDouble(1.0, earnRate))).toInt())
+            res.energyConsumption = kotlin.math.floor(res.population * earnRate).toInt()
 
             // Zerstoerung aufrufen und ggf. State erhoehen
-            var energyProduction: Int = oldRes.energyProduction
             model.energyProducer.forEach {
-                it.destroy(currentIncident)
-                if (it.state is Constructing) {
-                    it.finishConstructing()
-                    energyProduction += it.activeEnergyOutput()
+                when(it.state) {
+                    is Constructed -> {
+                        res.energyProduction -= it.activeEnergyOutput()
+                        it.destroy(currentIncident)
+                        res.energyProduction += it.activeEnergyOutput()
+
+                        if (it.state is Constructable) {
+                            not.add("Zerstoert!", "Der Energieproduzent ${it.name} wurde zerstoert.")
+                            model.energyProducer.remove(it)
+                        }
+                    }
+                    is Constructing -> {
+                        it.finishConstructing()
+                        res.energyProduction += it.activeEnergyOutput()
+                    }
                 }
             }
 
             // Ressourcen neu setzen
-            model.setResources(Resources(
-                population,
-                energyProduction,
-                energyConsumption,
-                money
-            ))
+            model.setResources(res)
+            model.setNotifications(not)
 
             // Ueberpruefung, ob Spiel verloren ist
-            if(energyProduction < energyConsumption && round > 3) {
+            if(res.energyProduction < res.energyConsumption && round > 3) {
                 model.gameOver()
             }
         }

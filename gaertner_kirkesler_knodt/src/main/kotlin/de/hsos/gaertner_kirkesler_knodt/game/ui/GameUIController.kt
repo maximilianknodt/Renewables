@@ -1,9 +1,8 @@
 package de.hsos.gaertner_kirkesler_knodt.game.ui
 
 import de.hsos.gaertner_kirkesler_knodt.game.GameModel
-import de.hsos.gaertner_kirkesler_knodt.game.Notification
+import de.hsos.gaertner_kirkesler_knodt.game.notification.Notification
 import de.hsos.gaertner_kirkesler_knodt.game.production.EnergyProducer
-import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructable
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructing
 import javafx.beans.value.ChangeListener

@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <!-- FXML-Layout zur Darstellung des Spielfelds (@author Kirkesler) -->
 
@@ -20,7 +21,6 @@
                   <StackPane alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <fx:include fx:id="resources" maxHeight="-Infinity" source="ui/resources.fxml" StackPane.alignment="TOP_LEFT" />
-                        <VBox fx:id="notificationContainer" maxHeight="-Infinity" maxWidth="-Infinity" StackPane.alignment="TOP_RIGHT" />
                      </children>
                      <padding>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -32,8 +32,15 @@
                           </image>
                       </ImageView>
                   <AnchorPane fx:id="constructedContainer" layoutX="590.0" prefWidth="785.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Button fx:id="nextRoundButton" alignment="BOTTOM_RIGHT" mnemonicParsing="false" prefWidth="120.0" text="Runde ausführen" AnchorPane.bottomAnchor="55.0" AnchorPane.rightAnchor="20.0" />
-                  <Button fx:id="endGameButton" alignment="CENTER" mnemonicParsing="false" prefWidth="120.0" text="Spiel beenden" textAlignment="CENTER" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Button fx:id="nextRoundButton" alignment="BOTTOM_RIGHT" mnemonicParsing="false" prefHeight="29.0" prefWidth="134.0" style="-fx-background-color: #212D5B; -fx-text-fill: #ffffff; -fx-border-color: #00BCDE;" text="Runde ausführen" textFill="#ffffff" AnchorPane.bottomAnchor="55.0" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font name="Minecraft" size="13.0" />
+                     </font></Button>
+                  <Button fx:id="endGameButton" alignment="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="134.0" style="-fx-background-color: #212D5B; -fx-text-fill: #ffffff; -fx-border-color: #00BCDE;" text="Spiel beenden" textAlignment="CENTER" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                      <font>
+                          <Font name="Minecraft" size="13.0" />
+                      </font></Button>
+                  <VBox fx:id="notificationContainer" maxHeight="-Infinity" maxWidth="-Infinity" spacing="5.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
                   </children>
               </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" style="-fx-background-color: #212D5B;" styleClass="outlined-container">

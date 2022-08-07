@@ -1,4 +1,5 @@
-package de.hsos.gaertner_kirkesler_knodt.game
+package de.hsos.gaertner_kirkesler_knodt.game.notification
+
 /**
  * Diese Datenklasse stellt eine einzelne Benachrichtigung dar.
  *
