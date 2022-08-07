@@ -103,6 +103,10 @@ class GameModel(
         router.showScene(Route.MENU)
     }
 
+    fun gameOver() {
+        router.showScene(Route.GAMEOVER)
+    }
+
     fun setResources(res: Resources?) {
         resources.set(res)
     }

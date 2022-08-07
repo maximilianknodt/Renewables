@@ -21,11 +21,9 @@ import kotlin.random.Random
  */
 class Simulation() : Simulator {
     private lateinit var model: GameModel
-    private lateinit var populationAlg: PopulationAlg
-    private val EARNRATE: Double = 4.0
-    companion object {
-        private var ROUND: Int = 1
-    }
+    private var populationAlg: PopulationAlg
+    private val earnRate: Double = 4.0
+    private var round: Int = 1
 
     init {
         // Zufaellige Wahl eines Populationsalgorithmus
@@ -44,9 +42,9 @@ class Simulation() : Simulator {
         var population: Int = Random.nextInt(200, 500)
         model.setResources(Resources(
             population,
-            Random.nextInt(400, 1000),
-            floor(population * EARNRATE).toInt(),
-            Random.nextInt(30000, 60000)
+            floor(population * earnRate).toInt() + 1000,
+            floor(population * earnRate).toInt(),
+            Random.nextInt(50000, 60000)
         ))
     }
     /**
@@ -59,41 +57,49 @@ class Simulation() : Simulator {
             val oldRes: Resources = model.resources.value
 
             // Runde erhoehen
-            ROUND++
+            round++
 
             // Incident bauen
             val currentIncident: Incident = Incident
                 .Builder()
                 .randomType()
-                .withSeverityForRound(ROUND)
+                .withSeverityForRound(round)
                 .build()
 
             // Bevoelkerungswachstum aufrufen
-            var population = populationAlg.evolve(
-                ROUND,
+            var population: Int = populationAlg.evolve(
+                round,
                 oldRes.population,
                 currentIncident
             )
 
             // Geld verdienen
-            var money = kotlin.math.floor(oldRes.money + (oldRes.population * Random.nextDouble(1.0, EARNRATE))).toInt()
-            var energyConsumption = kotlin.math.floor(oldRes.population * EARNRATE).toInt()
+            var money: Int = kotlin.math.floor(oldRes.money + (oldRes.population * Random.nextDouble(1.0, earnRate))).toInt()
+            var energyConsumption: Int = kotlin.math.floor(oldRes.population * earnRate).toInt()
 
-            var energyProduction: Int = oldRes.energyProduction
+
             // Zerstoerung aufrufen und ggf. State erhoehen
+            var energyProduction: Int = oldRes.energyProduction
             model.energyProducer.forEach {
                 it.destroy(currentIncident)
-                if (it.state is Constructing) it.finishConstructing()
-                if (it.state is Constructed) energyProduction += it.activeEnergyOutput()
+                if (it.state is Constructing) {
+                    it.finishConstructing()
+                    energyProduction += it.activeEnergyOutput()
+                }
             }
 
-            // TODO: EnergyConsumption und Demand fehlen
+            // Ressourcen neu setzen
             model.setResources(Resources(
                 population,
                 energyProduction,
                 energyConsumption,
                 money
             ))
+
+            // Ueberpruefung, ob Spiel verloren ist
+            if(energyProduction < energyConsumption && round > 3) {
+                model.gameOver()
+            }
         }
     }
 

@@ -11,7 +11,7 @@ import de.hsos.gaertner_kirkesler_knodt.game.incident.Incident
  * @author Gaertner
  */
 class LinearPopulation(
-    private val change: Int = 1000,
+    private val change: Int = 10000,
 ) : PopulationAlg {
 
     override fun evolve(round: Int, current: Int, incident: Incident?): Int {

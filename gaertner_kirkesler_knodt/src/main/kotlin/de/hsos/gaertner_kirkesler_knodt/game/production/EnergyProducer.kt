@@ -83,7 +83,7 @@ abstract class EnergyProducer {
      */
     fun finishConstructing(){
         if(this.state is Constructing) {
-            this.state.nextState()
+            this.state = this.state.nextState()
         }
     }
 
