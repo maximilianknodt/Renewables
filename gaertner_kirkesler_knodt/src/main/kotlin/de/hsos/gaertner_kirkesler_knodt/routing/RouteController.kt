@@ -20,7 +20,6 @@ import javafx.stage.Stage
  * @author Kirkesler
  */
 object RouteController : Router {
-    // TODO: In Modellierung uebernehmen
     private val stage: Stage = Stage()
 
     /**
@@ -28,7 +27,6 @@ object RouteController : Router {
      * unterschiedlichen Szenen.
      *
      * @param route Zielroute als Instanz des Enums 'Route'
-     * @author Kirkesler
      */
     override fun showScene(route: Route) {
         val fxmlLoader = FXMLLoader(RenewablesApp::class.java.getResource(route.path))

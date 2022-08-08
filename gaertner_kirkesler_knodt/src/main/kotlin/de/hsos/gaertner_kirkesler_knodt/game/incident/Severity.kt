@@ -30,7 +30,6 @@ enum class Severity(
     }
 
     companion object {
-
         fun getSeverity(random: Double): Severity {
             println("getSeverity $random")
             return values().first {

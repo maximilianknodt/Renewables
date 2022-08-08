@@ -10,20 +10,16 @@ import java.util.*
 class GameOverController : Initializable {
     private lateinit var model: GameOverModel
 
-    @FXML
-    private lateinit var cause: Label
-
-    @FXML
-    private lateinit var backToMenuButton: Button
-
     fun initData(model: GameOverModel) {
         this.model = model
     }
 
+    @FXML
     fun onReturn() {
         model.backToMainMenu()
     }
 
+    @FXML
     fun onEnd() {
         model.endGame()
     }

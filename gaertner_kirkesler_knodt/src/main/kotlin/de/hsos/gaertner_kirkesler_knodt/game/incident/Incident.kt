@@ -15,7 +15,7 @@ import de.hsos.gaertner_kirkesler_knodt.game.incident.IncidentType.*
  */
 class Incident private constructor(
     val type: IncidentType?,
-    val severity: Severity,
+    val severity: Severity
 ) {
 
     /*  Hier wird ein sekundaerer Konstruktor implementiert, welcher als Parameter ein Objekt
@@ -42,7 +42,6 @@ class Incident private constructor(
             else -> 0.0
         }
     }
-
 
     class Builder {
         var type: IncidentType? = null

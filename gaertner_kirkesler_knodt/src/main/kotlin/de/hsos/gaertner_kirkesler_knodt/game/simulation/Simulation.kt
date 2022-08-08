@@ -19,9 +19,10 @@ import kotlin.random.Random
  *
  * @author Kirkesler
  */
-class Simulation : Simulator {
+class Simulation(
+    private var populationAlg: PopulationAlg = listOf(ExponentialPopulation(), LinearPopulation(), StagnatingPopulation()).random()
+) : Simulator {
     private lateinit var model: GameModel
-    private var populationAlg: PopulationAlg
     private val earnRate: Double = 4.0
     private var round: Int = 1
 
@@ -34,8 +35,6 @@ class Simulation : Simulator {
     /**
      * Diese Methode wird nach erfolgreicher Registrierung eines Models aufgerufen um Initialwerte
      * des Spiels zu setzen.
-     *
-     * @author Kirkesler
      */
     private fun initValues() {
         println("created simulation, generating random start values")
@@ -50,7 +49,6 @@ class Simulation : Simulator {
     /**
      * Diese Methode wird bei jeder neuen Runde aufgerufen. Berechnet neue Ressourcenwerte.
      *
-     * @author Kirkesler
      */
     override fun simulate() {
         if(model != null) {
@@ -118,8 +116,6 @@ class Simulation : Simulator {
      * Diese Methode dient zur Registrierung eines Models an einem Simulator.
      *
      * @param model GameModel, welches registriert werden soll
-     *
-     * @author Kirkesler
      */
     override fun register(model: GameModel) {
         this.model = model

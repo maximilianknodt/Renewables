@@ -2,6 +2,7 @@ package de.hsos.gaertner_kirkesler_knodt.game
 
 import de.hsos.gaertner_kirkesler_knodt.BaseModel
 import de.hsos.gaertner_kirkesler_knodt.game.notification.NotificationList
+import de.hsos.gaertner_kirkesler_knodt.game.population.LinearPopulation
 import de.hsos.gaertner_kirkesler_knodt.game.production.*
 import de.hsos.gaertner_kirkesler_knodt.game.production.state.Constructed
 import de.hsos.gaertner_kirkesler_knodt.game.simulation.Simulation
@@ -106,6 +107,9 @@ class GameModel(
         router.showScene(Route.MENU)
     }
 
+    /**
+     * Beendet das Spiel, indem der Router zu dem GameOverMenü wechseln soll.
+     */
     fun gameOver() {
         router.showScene(Route.GAMEOVER)
     }
@@ -118,6 +122,9 @@ class GameModel(
         notifications.set(notifcations)
     }
 
+    /**
+     * Methode, um das GameModel am Simulator zu registrieren.
+     */
     fun register() {
         simulator.register(this)
     }

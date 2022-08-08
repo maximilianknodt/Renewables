@@ -14,7 +14,7 @@ import kotlin.math.pow
  *
  * @author Gaertner
  */
-class ExponentialPopulation(
+class   ExponentialPopulation(
     private val base: Double = 2.0,
     private val startingPopulation: Int = 100
 ) : PopulationAlg {

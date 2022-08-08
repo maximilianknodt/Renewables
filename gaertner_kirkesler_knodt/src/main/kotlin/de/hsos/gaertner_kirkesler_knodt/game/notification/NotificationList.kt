@@ -9,7 +9,6 @@ package de.hsos.gaertner_kirkesler_knodt.game.notification
 class NotificationList(
     var notifications: LinkedHashMap<Int, Notification> = LinkedHashMap(),
 ) {
-
     fun clear() {
         this.notifications.clear()
     }
