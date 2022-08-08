@@ -7,7 +7,7 @@ import javafx.stage.Stage
 /**
  * Hauptklasse 'RenewablesApp'. Instanziiert einen Router und setzt die Szene auf das Hauptmenue.
  *
- * @author Kirkesler, Gaertner, Knodt
+ * @author Gaertner, Kirkesler, Knodt
  */
 class RenewablesApp : Application() {
     private val router: RouteController = RouteController

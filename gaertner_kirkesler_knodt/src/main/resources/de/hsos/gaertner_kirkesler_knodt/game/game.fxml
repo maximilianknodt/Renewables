@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<!-- FXML-Layout zur Darstellung des Spielfelds (@author Kirkesler) -->
+<!-- FXML-Layout zur Darstellung des Spielfelds (@author Kirkesler, Gaertner) -->
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hsos.gaertner_kirkesler_knodt.game.ui.GameUIController">
    <children>
