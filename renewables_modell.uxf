@@ -353,16 +353,16 @@ Notification
 --</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>966</x><y>455</y><w>77</w><h>70</h></coordinates><panel_attributes>lt=&lt;-[id]
 r1=- notifications
 m1=n
-m2=1</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>903</x><y>385</y><w>140</w><h>70</h></coordinates><panel_attributes>&lt;&lt;Data Class&gt;&gt;
+m2=1</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>896</x><y>385</y><w>154</w><h>70</h></coordinates><panel_attributes>&lt;&lt;Data Class&gt;&gt;
 NotificationList
 --
 --
 + clear(): void
 + close(id: int): void
-+ add(title: String, desc: String): voi</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>819</x><y>567</y><w>294</w><h>252</h></coordinates><panel_attributes>lt=&lt;.
++ add(title: String, desc: String): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>819</x><y>567</y><w>294</w><h>252</h></coordinates><panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes><additional_attributes>400;340;250;340;250;110;10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>539</x><y>427</y><w>126</w><h>70</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;uses&gt;&gt;</panel_attributes><additional_attributes>10;10;10;80;160;80</additional_attributes></element><element><id>Relation</id><coordinates><x>812</x><y>385</y><w>105</w><h>98</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;uses&gt;&gt;</panel_attributes><additional_attributes>130;20;20;20;20;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1414</x><y>812</y><w>133</w><h>42</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+&lt;&lt;uses&gt;&gt;</panel_attributes><additional_attributes>10;10;10;80;160;80</additional_attributes></element><element><id>Relation</id><coordinates><x>812</x><y>385</y><w>98</w><h>98</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes><additional_attributes>120;20;20;20;20;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1414</x><y>812</y><w>133</w><h>42</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
 ProducerState
 --
 + nextState(): ProducerState</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1589</x><y>756</y><w>126</w><h>49</h></coordinates><panel_attributes>&lt;&lt;Class&gt;&gt;
