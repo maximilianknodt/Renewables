@@ -70,8 +70,8 @@ class GameUIController : GameUIControllerBase() {
 
         // initData Aufrufe an alle Sub-Controller deligieren
         constructableController.forEach { it.initData(model) }
-        constructedController.forEach { it.initData(model) } // TODO: wird nie aufgerufen?
-        notificationController.forEach { it.initData(model) } // TODO: wird nie aufgerufen?
+        constructedController.forEach { it.initData(model) }
+        notificationController.forEach { it.initData(model) }
         resourcesController.initData(model)
 
         // Model registriert sich bei der Simulation
