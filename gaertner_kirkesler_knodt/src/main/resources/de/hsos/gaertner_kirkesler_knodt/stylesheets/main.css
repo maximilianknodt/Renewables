@@ -1,8 +1,8 @@
 /* CSS classes for root */
 
 @font-face {
-  font-family: 'Minecraft';
-  src: url('../fonts/Minecraft.ttf');
+    -fx-font-family: 'Minecraft';
+    src: url('../fonts/Minecraft.ttf');
 }
 
 .button {

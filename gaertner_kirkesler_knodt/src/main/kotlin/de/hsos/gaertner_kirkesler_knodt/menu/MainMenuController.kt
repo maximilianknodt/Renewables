@@ -10,12 +10,6 @@ class MainMenuController : Initializable {
 
     private lateinit var model: MenuModel
 
-    @FXML
-    private lateinit var newGameButton: Button
-
-    @FXML
-    private lateinit var exitButton: Button
-
     fun initData(data: MenuModel) {
         this.model = data
     }
